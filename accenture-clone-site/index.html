@@ -1596,56 +1596,6 @@
         </article>
     </div>
 </section>
-<script>
-    (function () {
-        var counters = document.querySelectorAll('.archon-countup');
-        if (!counters.length) return;
-
-        function animateCount(el) {
-            if (el.dataset.animated === 'true') return;
-            el.dataset.animated = 'true';
-
-            var target = parseInt(el.getAttribute('data-target') || '0', 10);
-            var prefix = el.getAttribute('data-prefix') || '';
-            var suffix = el.getAttribute('data-suffix') || '';
-            var duration = 2400;
-            var startTime = null;
-
-            function tick(timestamp) {
-                if (!startTime) startTime = timestamp;
-                var progress = Math.min((timestamp - startTime) / duration, 1);
-                var eased = 1 - Math.pow(1 - progress, 3);
-                var value = Math.floor(eased * target);
-                el.textContent = prefix + value + suffix;
-
-                if (progress < 1) {
-                    window.requestAnimationFrame(tick);
-                } else {
-                    el.textContent = prefix + target + suffix;
-                }
-            }
-
-            window.requestAnimationFrame(tick);
-        }
-
-        if ('IntersectionObserver' in window) {
-            var observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        animateCount(entry.target);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.55 });
-
-            counters.forEach(function (counter) {
-                observer.observe(counter);
-            });
-        } else {
-            counters.forEach(animateCount);
-        }
-    })();
-</script>
 <div class="tilegridv2 tilegrid rad-component-spacing-top-large">
 		<div class="rad-card-grid rad-spacing-vertical-md" id="block-tilegrid" data-cmp-data-layer="{&quot;block-tilegrid&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/blocks/tilegridv2&quot;,&quot;analytics-module-name&quot;:&quot;tilegridv2-1&quot;,&quot;analytics-template-zone&quot;:&quot;block-tilegrid&quot;}}">
 		  <div class="rad-card-grid__cards-viewport">
@@ -2823,6 +2773,12 @@ This recognition is especially meaningful because it is based on feedback from o
                 
                 
                     <script src="js/accenture-change-more-quick-fix.js" type="text/javascript"></script>
+                
+            
+                
+                
+                
+                    <script src="js/archon-credibility-band.js" type="text/javascript"></script>
                 
             
         
