@@ -215,30 +215,22 @@
 	
 
 	
-	<script>
-		var origin = window.location.origin.toLowerCase();
-		var otScript = document.createElement("script");
-	    otScript.setAttribute("type", "text/javascript");
-	    otScript.setAttribute("data-document-language", "true");
-	    otScript.setAttribute("charset", "UTF-8");
-
-	    if (origin.indexOf(".cdnsvc") > 1) {
-	    otScript.setAttribute("src", "/etc/clientlibs/onetrust/ot-s/scripttemplates/otSDKStub.js");
-	    otScript.setAttribute("data-domain-script","447538ad-b6bf-4dce-a2c6-6517ede21fc1-test");
-	    }
-
-		else if (origin.indexOf(".cn") > 1) {
-	    otScript.setAttribute("src", "/etc/clientlibs/onetrust/ot-p/scripttemplates/otSDKStub.js");
-		otScript.setAttribute("data-domain-script","447538ad-b6bf-4dce-a2c6-6517ede21fc1");
+	<style>
+		#onetrust-consent-sdk,
+		#onetrust-banner-sdk,
+		.ot-sdk-container,
+		.otPlaceholder {
+			display: none !important;
 		}
 
-		else {
-		otScript.setAttribute("src", "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js");
-		otScript.setAttribute("data-domain-script","d6e38d3c-2419-4258-8e8d-d1a7d3972604");
-
-	    }
-	    document.head.appendChild(otScript);
-	</script>
+		/* Rotate logo mark to read as an abstract A, preserving size/color */
+		.rad-global-nav__static-logo svg path,
+		.cmp-logo__greater-than {
+			transform: rotate(-90deg);
+			transform-origin: center;
+			transform-box: fill-box;
+		}
+	</style>
 	
 	<script>
 		!function(e,a,n,t){var i=e.head;if(i){
@@ -249,47 +241,7 @@
 	</script>
 	
 	<script type="text/javascript"> function OptanonWrapper() { } </script>
-	<script>
-  		var origin = window.location.origin.toLowerCase();
-  		function jsonFeed(locationJson) {
-   		window.otUserLocation = locationJson.country;
-  	}
- 
- 		if (origin.indexOf(".cn") > 1 || origin.indexOf(".cdnsvc") > 1) {
-    		fetch("https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location", {
-     	 	headers: {
-        		'Accept': 'application/json'
-     			 }
-    		})
-   			.then(response => response.json())
-    		.then(geo => jsonFeed(geo))
-  		} else {
-    		var geolink = "//geolocation.onetrust.com/"
-    		var link1 = document.createElement("link");
-   			link1.setAttribute("rel", "preconnect");
-    		link1.setAttribute("href", geolink);
-    		link1.setAttribute("crossorigin", "");
-    		document.head.appendChild(link1);
- 
-    		var link2 = document.createElement("link");
-    		link2.setAttribute("rel", "dns-prefetch");
-    		link2.setAttribute("href", geolink);
-    		document.head.appendChild(link2);
- 
-    		var geolink2 = "https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location"
-    		var link4 = document.createElement("script");
-    		link4.setAttribute("href", geolink2);
-			document.head.appendChild(link4);
-
-   			fetch(geolink2, {
-    	  	headers: {
-     		   'Accept': 'application/json'
-   			   }
-    			})
-   			 .then(response => response.json())
-   			 .then(geo => jsonFeed(geo))
-  			}
-		</script>
+	
 	
 	
 	
@@ -526,9 +478,9 @@
 						<div class="rad-icon rad-icon--compact rad-icon__close" aria-hidden="true"></div>
 					</button>
 					<ul class="rad-global-nav__menu-items">
-						<li id="globalnav_copy-primarynavlinks-item0-428684c05f" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item0-428684c05f&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;What we do&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
-							<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="What we do">
-								<div class="rad-button__text">What we do</div>
+						<li id="globalnav_copy-primarynavlinks-item0-428684c05f" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item0-428684c05f&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Home&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
+							<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Home">
+								<div class="rad-button__text">Home</div>
 								<div class="rad-button__icon-right rad-icon rad-icon__chevron-down rad-icon--compact"></div>
 							</button> <div class="xfpage page basicpage">
 
@@ -814,14 +766,14 @@
 						
 
 
-						<li id="globalnav_copy-primarynavlinks-item1-92f6c072eb" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item1-92f6c072eb&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/insights-index&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;What we think&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
+						<li id="globalnav_copy-primarynavlinks-item1-92f6c072eb" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item1-92f6c072eb&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/insights-index&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Services&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
 							<a data-cmp-clickable="" class="rad-button rad-button--ghost rad-global-nav__l1--link" href="insights-index.html" target="_self" rel=" ">
-								<div class="rad-button__text">What we think</div>
+								<div class="rad-button__text">Services</div>
 							</a></li>
 					
-						<li id="globalnav_copy-primarynavlinks-item2-f6fc52286f" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item2-f6fc52286f&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Who we are&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
-							<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Who we are">
-								<div class="rad-button__text">Who we are</div>
+						<li id="globalnav_copy-primarynavlinks-item2-f6fc52286f" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item2-f6fc52286f&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Insights&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
+							<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Insights">
+								<div class="rad-button__text">Insights</div>
 								<div class="rad-button__icon-right rad-icon rad-icon__chevron-down rad-icon--compact"></div>
 							</button> <div class="xfpage page basicpage">
 
@@ -995,9 +947,9 @@
 
 						
 					
-						<li id="globalnav_copy-primarynavlinks-item3-fee1e9f7d3" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item3-fee1e9f7d3&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Careers&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
-							<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Careers">
-								<div class="rad-button__text">Careers</div>
+						<li id="globalnav_copy-primarynavlinks-item3-fee1e9f7d3" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item3-fee1e9f7d3&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Contact&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
+							<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Contact">
+								<div class="rad-button__text">Contact</div>
 								<div class="rad-button__icon-right rad-icon rad-icon__chevron-down rad-icon--compact"></div>
 							</button> <div class="xfpage page basicpage">
 
@@ -1364,7 +1316,7 @@
             type=&quot;video/mp4&quot; />
     </video>
     <div id=&quot;hero_headline_h1&quot;>
-        <h1>Together We Reinvented</h1>
+        <h1>AI &amp; Cloud Systems Engineering</h1>
     </div>
     <!-- Live URL destination is expected per request from stakeholder - do not update and please set expectation with content-owner- JP - 05/27/2025 --->
     <a class=&quot;hero_custom__cta_1&quot; href=&quot;https://www.accenture.com/us-en/insights/strategy/reinvented-with-accenture&quot;
@@ -1373,23 +1325,18 @@
         <div class=&quot;hero_custom__grid&quot;>
             <p class=&quot;hero_custom__headline&quot;>
                 <span class=&quot;hero_custom__headline__text hero_custom__headline__text--left&quot; role=&quot;presentation&quot;
-                    aria-hidden=&quot;true&quot;>Together We</span>
+                    aria-hidden=&quot;true&quot;>AI &amp; Cloud</span>
                 <span class=&quot;hero_custom__headline__text hero_custom__headline__text--right&quot; role=&quot;presentation&quot;
-                    aria-hidden=&quot;true&quot;>
-                    <span>Rein</span>
-                    <svg class=&quot;hero_custom__headline__text--V&quot; viewBox=&quot;0 0 107 118&quot;
-                        xmlns=&quot;http://www.w3.org/2000/svg&quot;>
-                        <path d=&quot;M0 118L107 74.4053V43.5947L0 0V30.8107L69.1887 59L0 87.1893V118Z&quot; />
-                    </svg>
-                    <span>ented</span>
-                </span>
+                    aria-hidden=&quot;true&quot;>Systems Engineering</span>
             </p>
             <article class=&quot;hero_custom__body&quot;>
                 <div role=&quot;presentation&quot; aria-hidden=&quot;true&quot; class=&quot;hero_custom__body__border&quot;></div>
                 <div class=&quot;hero_custom__body__hero_text&quot;>
-                    <h2>Shaping tomorrow, today</h2>
+                    <h2>Archon designs and deploys structured AI and cloud systems that move beyond experimentation.</h2>
                     <p class=&quot;hero_custom__body__hero_text__title&quot;>
-                        In a world of constant change, reinvention is a continuous strategy. That’s why we work with organizations to rewrite the rules of growth, innovation and resilience.
+                        We support AI transformation initiatives by building scalable, observable, and governance-aware systems -- from workforce enablement to AI platform modernization.
+                        <br><br>
+                        We are engineering-led and delivery-focused, emphasizing reliability, accountability, and long-term maintainability.
                     </p>
                     <div class=&quot;hero_cta_2&quot;>
                         <span class=&quot;cta_span&quot;>See what we do</span>
@@ -2823,3 +2770,5 @@ This recognition is especially meaningful because it is based on feedback from o
     
 
 </body></html>
+
+
