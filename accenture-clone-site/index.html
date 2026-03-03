@@ -1336,14 +1336,14 @@
         <div class="custom-html"><div>
     <div class="cmp-custom__html__wrapper" id="reinvent-hero">
     	<div class="html_content" htmlcontent="<section id=&quot;hero_custom&quot; class=&quot;hero_custom&quot;>
-    <video aria-hidden=&quot;true&quot; role=&quot;presentation&quot; class=&quot;hero_custom__background hero_custom__background--video&quot;
-        webkit-playsinline=&quot;true&quot; playsinline=&quot;true&quot; loop=&quot;true&quot; autoplay=&quot;true&quot; muted=&quot;true&quot;
-        poster=&quot;/content/dam/system-files/acom/custom-code/change-more/imagery/custom-hero-poster.png&quot;>
-        <source src=&quot;/content/dam/system-files/acom/custom-code/change-more/media/custom-rad-hero-bg-video.mp4&quot;
-            type=&quot;video/mp4&quot; />
-    </video>
+    <div aria-hidden=&quot;true&quot; role=&quot;presentation&quot; class=&quot;hero_custom__background hero_custom__background--image-set&quot;>
+        <div class=&quot;hero_custom__background-slide is-active&quot; style=&quot;background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=2200&amp;q=80');&quot;></div>
+        <div class=&quot;hero_custom__background-slide&quot; style=&quot;background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=2200&amp;q=80');&quot;></div>
+        <div class=&quot;hero_custom__background-slide&quot; style=&quot;background-image: url('/dist/assets/cloud.png');&quot;></div>
+        <div class=&quot;hero_custom__background-slide&quot; style=&quot;background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&amp;fit=crop&amp;w=2200&amp;q=80');&quot;></div>
+    </div>
     <div id=&quot;hero_headline_h1&quot;>
-        <h1>AI &amp; Cloud Systems Engineering</h1>
+        <h1>AI TRANSFORMATION, ENGINEERED.</h1>
     </div>
     <!-- Live URL destination is expected per request from stakeholder - do not update and please set expectation with content-owner- JP - 05/27/2025 --->
     <a class=&quot;hero_custom__cta_1&quot; href=&quot;https://www.accenture.com/us-en/insights/strategy/reinvented-with-accenture&quot;
@@ -1352,9 +1352,9 @@
         <div class=&quot;hero_custom__grid&quot;>
             <p class=&quot;hero_custom__headline&quot;>
                 <span class=&quot;hero_custom__headline__text hero_custom__headline__text--left&quot; role=&quot;presentation&quot;
-                    aria-hidden=&quot;true&quot;>AI &amp; Cloud</span>
+                    aria-hidden=&quot;true&quot;>AI TRANSFORMATION,</span>
                 <span class=&quot;hero_custom__headline__text hero_custom__headline__text--right&quot; role=&quot;presentation&quot;
-                    aria-hidden=&quot;true&quot;>Systems Engineering</span>
+                    aria-hidden=&quot;true&quot;>ENGINEERED.</span>
             </p>
             <article class=&quot;hero_custom__body&quot;>
                 <div role=&quot;presentation&quot; aria-hidden=&quot;true&quot; class=&quot;hero_custom__body__border&quot;></div>
@@ -1378,17 +1378,6 @@
 
         </div>
     </a>
-    <button class=&quot;hero_custom__video_button&quot; title=&quot;Pause background video&quot; aria-hidden>
-        <svg class=&quot;hero_custom__video_button--pause&quot; width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 14 14&quot;
-            xmlns=&quot;http://www.w3.org/2000/svg&quot;>
-            <path d=&quot;M8 14V0H14V14H8ZM0 14V0H6V14H0Z&quot;></path>
-        </svg>
-        <svg class=&quot;hero_custom__video_button--play hero_custom__video_button--hidden&quot; width=&quot;24&quot; height=&quot;24&quot;
-            viewBox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;>
-            <path d=&quot;M6.5 19V5L17.5 12L6.5 19Z&quot;></path>
-        </svg>
-    </button>
-
     <script async>
         &quot;use strict&quot;; const customEvent_radTransitionStarted = &quot;radTransitionStarted&quot;, customEvent_radTransitionFinished = &quot;radTransitionFinished&quot;; function handleHeroCustomElement() { let e = 0; const t = window.setInterval((() => { e > 2e3 &amp;&amp; window.clearInterval(t); const n = document.getElementsByClassName(&quot;hero_custom&quot;)[0]; n ? (window.clearInterval(t), handlePlayPauseHeroCustomBgVideo(n), handleHeroCustomExitAnimation(n)) : e += 200 }), 200) } function handlePlayPauseHeroCustomBgVideo(e) { const t = e.getElementsByClassName(&quot;hero_custom__background--video&quot;)[0], n = e.getElementsByClassName(&quot;hero_custom__video_button&quot;)[0]; if (!t || !n) return null; const s = n.getElementsByClassName(&quot;hero_custom__video_button--play&quot;)[0], o = n.getElementsByClassName(&quot;hero_custom__video_button--pause&quot;)[0], a = &quot;hero_custom__video_button--hidden&quot;, r = async () => { await t.play(), n.title = &quot;Pause background video&quot;, s?.classList.add(a), o?.classList.remove(a) }, i = async () => { try { t.paused ? await r() : (t.pause(), n.title = &quot;Play background video&quot;, s?.classList.remove(a), o?.classList.add(a)) } catch { } }; t?.paused &amp;&amp; r(), n?.addEventListener(&quot;click&quot;, i), addEventListener(customEvent_radTransitionStarted, (() => { n?.removeEventListener(&quot;click&quot;, i) }), { once: !0 }) } function handleHeroCustomExitAnimation(e) { const t = e.getElementsByClassName(&quot;hero_custom__background&quot;), n = e.getElementsByClassName(&quot;hero_custom__grid&quot;)[0], s = e.getElementsByClassName(&quot;hero_custom__headline&quot;)[0], o = e.getElementsByClassName(&quot;hero_custom__headline__text&quot;), a = e.getElementsByClassName(&quot;hero_custom__body&quot;)[0], r = e.getElementsByClassName(&quot;hero_custom__title&quot;)[0]; for (const e of t) e.addEventListener(&quot;error&quot;, (() => e.style.display = &quot;none&quot;), { once: !0 }); const i = (e, t) => { const { sourceStart: n = 0, sourceEnd: s = 1, targetEnd: o, targetStart: a } = t; if (n === s) return e; return ((e, t, n) => e * (1 - n) + t * n)(a, o, ((e, t = 0, n = 1) => Math.min(n, Math.max(t, e)))((e - (r = n)) / (s - r))); var r }, d = () => { const d = e.clientHeight, l = e.clientWidth, c = e.offsetTop, m = Math.max(0, window.scrollY - c), u = Math.min(1, m / d); var _; const E = d * u * .5, v = .5 * m * -1, h = l * ((_ = u) * _ * _), y = i(u, { sourceStart: 0, sourceEnd: .33, targetStart: 1, targetEnd: 0 }).toFixed(3), g = i(u, { sourceStart: 0, sourceEnd: .33, targetStart: 1, targetEnd: 0 }).toFixed(3); if (n &amp;&amp; (n.style.transform = `translateY(${E}px)`), s) { s.style.transform = `translateY(${v}px)`, s.style.opacity = y; const e = .5; for (let t = 0; t < o.length; t++) { const n = o.item(t); n &amp;&amp; (n.style.transform = `translateX(-${h * (1 + t * e)}px)`) } } a &amp;&amp; (a.style.transform = `translate(${h}px, ${v}px)`, a.style.opacity = y), r &amp;&amp; (r.style.transform = `translateY(${v}px)`); for (const e of t) e.style.opacity = g, e.style.transform = `translateY(${E}px)` }; if (&quot;IntersectionObserver&quot; in window) { const t = new IntersectionObserver((e => { e.forEach((e => { e.isIntersecting ? document.addEventListener(&quot;scroll&quot;, d) : document.removeEventListener(&quot;scroll&quot;, d) })) }), { threshold: 0 }); t.observe(e), addEventListener(customEvent_radTransitionStarted, (() => { t.disconnect(), document.removeEventListener(&quot;scroll&quot;, d) }), { once: !0 }) } else document.addEventListener(&quot;scroll&quot;, d), addEventListener(customEvent_radTransitionStarted, (() => { document.removeEventListener(&quot;scroll&quot;, d) }), { once: !0 }) } &quot;undefined&quot; != typeof window &amp;&amp; (window.addEventListener(&quot;DOMContentLoaded&quot;, handleHeroCustomElement), window.addEventListener(&quot;radTransitionFinished&quot;, handleHeroCustomElement));
 
@@ -1404,6 +1393,38 @@
             $(&quot;.hero_custom__cta_1&quot;).attr(&quot;href&quot;, k)
         }
 
+    </script>
+    <script async>
+        (function () {
+            function initHeroImageRotation() {
+                var hero = document.getElementById('hero_custom');
+                if (!hero) return false;
+                var slides = hero.querySelectorAll('.hero_custom__background-slide');
+                if (!slides || slides.length === 0) return false;
+
+                var active = 0;
+                for (var i = 0; i < slides.length; i += 1) {
+                    slides[i].classList.toggle('is-active', i === 0);
+                }
+
+                window.setInterval(function () {
+                    slides[active].classList.remove('is-active');
+                    active = (active + 1) % slides.length;
+                    slides[active].classList.add('is-active');
+                }, 7000);
+                return true;
+            }
+
+            if (!initHeroImageRotation()) {
+                var elapsed = 0;
+                var timer = window.setInterval(function () {
+                    elapsed += 200;
+                    if (initHeroImageRotation() || elapsed >= 5000) {
+                        window.clearInterval(timer);
+                    }
+                }, 200);
+            }
+        })();
     </script>
 </section>
 <style>
@@ -1425,6 +1446,79 @@
         font-size: 100%;
     }
 
+    #hero_custom {
+        position: relative;
+        overflow: hidden;
+    }
+
+    #hero_custom .hero_custom__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+        gap: clamp(24px, 4vw, 64px);
+        align-items: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    #hero_custom .hero_custom__headline {
+        grid-column: 1;
+        margin: 0;
+        max-width: min(58vw, 900px);
+        line-height: 0.94;
+        letter-spacing: 0.01em;
+    }
+
+    #hero_custom .hero_custom__headline__text {
+        display: block;
+        font-size: clamp(1.6rem, 4.8vw, 4.6rem) !important;
+        white-space: normal;
+    }
+
+    #hero_custom .hero_custom__body {
+        grid-column: 2;
+        justify-self: end;
+        max-width: 520px;
+    }
+
+    .hero_custom__background--image-set {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .hero_custom__background--image-set::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg,
+                rgba(0, 0, 0, 0.96) 0%,
+                rgba(0, 0, 0, 0.90) 35%,
+                rgba(0, 0, 0, 0.78) 65%,
+                rgba(0, 0, 0, 0.62) 100%);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .hero_custom__background-slide {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 900ms ease;
+        will-change: opacity;
+        z-index: 0;
+    }
+
+    .hero_custom__background-slide.is-active {
+        opacity: 1;
+    }
+
     @media (min-width: 1024px) {
         .hero_custom__body__hero_text {
             padding-right: 1.5vw;
@@ -1444,6 +1538,8 @@
             height: 1.5vw;
         }
     }
+
+    /* Keep hero locked to left/right layout */
 </style>
 <!-- Hero Custom component end -->"></div>
     </div>
