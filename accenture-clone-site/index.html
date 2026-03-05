@@ -1497,6 +1497,26 @@
         }
     }
 
+    #header-archon-difference .rad-header__headline {
+        font-size: clamp(2rem, 4.2vw, 64px);
+        line-height: 1.1;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 14px;
+    }
+
+    #header-archon-difference .rad-header__sub-headline {
+        max-width: 760px;
+        margin: 0 auto;
+        font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+        line-height: 1.5;
+        color: #cfcfcf;
+    }
+
+    #header-archon-difference .rad-header__sub-headline p + p {
+        margin-top: 14px;
+    }
+
     #hero_custom .hero_custom__body {
         grid-column: 2;
         justify-self: end;
@@ -2310,7 +2330,11 @@ AI only delivers value when it is engineered for scale, governance, and operatio
 	<div class="rad-header__wrapper">
 		<div class="rad-header__text-container">
 			<h2 class="rad-header__headline">Why Archon Is Different</h2>
-			<h3 class="rad-header__sub-headline">We engineer production-ready AI and cloud systems with clear system boundaries, governance by design, and measurable operational outcomes.</h3>
+			<div class="rad-header__sub-headline">
+				<p>Building AI systems requires more than models and prototypes.</p>
+				<p>Enterprise environments demand reliable architectures, clear system boundaries, robust monitoring, and disciplined deployment practices.</p>
+				<p>Archon approaches AI as an engineering challenge — integrating architecture, infrastructure, and governance to ensure systems perform reliably in real operational environments.</p>
+			</div>
 		</div>
 	</div>
 </div>
