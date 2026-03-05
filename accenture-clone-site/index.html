@@ -1517,6 +1517,145 @@
         margin-top: 14px;
     }
 
+    #archon-build-process {
+        background: #000;
+        color: #fff;
+        padding: 120px var(--rad-spacing-sm);
+    }
+
+    #archon-build-process .archon-build-process__inner {
+        margin: 0 auto;
+        max-width: 1280px;
+    }
+
+    #archon-build-process .archon-build-process__title {
+        font-size: clamp(2rem, 4.4vw, 4rem);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin: 0 0 24px;
+        text-align: center;
+    }
+
+    #archon-build-process .archon-build-process__intro {
+        color: #cfcfcf;
+        font-size: clamp(1rem, 1.5vw, 1.2rem);
+        line-height: 1.5;
+        margin: 0 auto 52px;
+        max-width: 860px;
+        text-align: center;
+    }
+
+    #archon-build-process .archon-build-process__timeline-scroll {
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    #archon-build-process .archon-build-process__timeline {
+        margin: 0 auto;
+        min-width: 980px;
+        padding-top: 6px;
+        position: relative;
+    }
+
+    #archon-build-process .archon-build-process__line-base,
+    #archon-build-process .archon-build-process__line-progress {
+        border-radius: 999px;
+        height: 3px;
+        position: absolute;
+        top: 18px;
+    }
+
+    #archon-build-process .archon-build-process__line-base {
+        background: #2a2a2a;
+    }
+
+    #archon-build-process .archon-build-process__line-progress {
+        background: #1747e5;
+        width: 0;
+    }
+
+    #archon-build-process .archon-build-process__nodes {
+        display: grid;
+        gap: 0;
+        grid-template-columns: repeat(4, minmax(220px, 1fr));
+    }
+
+    #archon-build-process .archon-build-process__step {
+        padding: 0 18px;
+        text-align: center;
+    }
+
+    #archon-build-process .archon-build-process__step-circle {
+        background: #000;
+        border: 3px solid #3b3b3b;
+        border-radius: 50%;
+        height: 18px;
+        margin: 6px auto 24px;
+        transition: border-color 380ms ease, box-shadow 380ms ease;
+        width: 18px;
+    }
+
+    #archon-build-process .archon-build-process__step-label {
+        color: #a7a7a7;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    #archon-build-process .archon-build-process__step-title {
+        font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        line-height: 1.25;
+        margin: 0 0 10px;
+    }
+
+    #archon-build-process .archon-build-process__step-body {
+        color: #c9c9c9;
+        font-size: clamp(0.95rem, 1.25vw, 1.05rem);
+        line-height: 1.52;
+        margin: 0 auto;
+        max-width: 260px;
+        opacity: 0.45;
+        transition: opacity 380ms ease;
+    }
+
+    #archon-build-process .archon-build-process__step.is-active .archon-build-process__step-circle {
+        border-color: #1747e5;
+        box-shadow: 0 0 0 6px rgba(23, 71, 229, 0.18);
+    }
+
+    #archon-build-process .archon-build-process__step.is-active .archon-build-process__step-body {
+        opacity: 1;
+    }
+
+    @media (min-width: 1024px) {
+        #archon-build-process {
+            padding-bottom: 140px;
+            padding-top: 140px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #archon-build-process .archon-build-process__timeline {
+            min-width: 920px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        #archon-build-process .archon-build-process__line-progress {
+            transition: none;
+        }
+
+        #archon-build-process .archon-build-process__step-circle,
+        #archon-build-process .archon-build-process__step-body {
+            transition: none;
+        }
+    }
+
     #hero_custom .hero_custom__body {
         grid-column: 2;
         justify-self: end;
@@ -2340,6 +2479,48 @@ AI only delivers value when it is engineered for scale, governance, and operatio
 </div>
 
 </div>
+<section id="archon-build-process" aria-label="How Archon Builds AI Systems">
+	<div class="archon-build-process__inner">
+		<h2 class="archon-build-process__title">How Archon Builds AI Systems</h2>
+		<p class="archon-build-process__intro">A structured engineering process ensures AI systems move from concept to reliable enterprise infrastructure.</p>
+		<div class="archon-build-process__timeline-scroll">
+			<div class="archon-build-process__timeline" id="archon-build-process-timeline">
+				<div class="archon-build-process__line-base" aria-hidden="true"></div>
+				<div class="archon-build-process__line-progress" aria-hidden="true"></div>
+
+				<div class="archon-build-process__nodes">
+					<article class="archon-build-process__step">
+						<div class="archon-build-process__step-circle" aria-hidden="true"></div>
+						<div class="archon-build-process__step-label">Step 1</div>
+						<h3 class="archon-build-process__step-title">Architecture</h3>
+						<p class="archon-build-process__step-body">Define system architecture, infrastructure requirements, and governance controls.</p>
+					</article>
+
+					<article class="archon-build-process__step">
+						<div class="archon-build-process__step-circle" aria-hidden="true"></div>
+						<div class="archon-build-process__step-label">Step 2</div>
+						<h3 class="archon-build-process__step-title">Prototype</h3>
+						<p class="archon-build-process__step-body">Develop targeted prototypes to validate system behavior and integration.</p>
+					</article>
+
+					<article class="archon-build-process__step">
+						<div class="archon-build-process__step-circle" aria-hidden="true"></div>
+						<div class="archon-build-process__step-label">Step 3</div>
+						<h3 class="archon-build-process__step-title">Deployment</h3>
+						<p class="archon-build-process__step-body">Deploy production-ready AI systems with monitoring, security, and reliability mechanisms.</p>
+					</article>
+
+					<article class="archon-build-process__step">
+						<div class="archon-build-process__step-circle" aria-hidden="true"></div>
+						<div class="archon-build-process__step-label">Step 4</div>
+						<h3 class="archon-build-process__step-title">Optimization</h3>
+						<p class="archon-build-process__step-body">Continuously evaluate and improve system performance, workflows, and operational stability.</p>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 <div class="mixedmediatextblock rad-component-spacing-bottom-none">
 
 
@@ -2781,7 +2962,116 @@ AI only delivers value when it is engineered for scale, governance, and operatio
     
 
         
-    
+    <script type="text/javascript">
+        (function () {
+            function initArchonBuildProcessTimeline() {
+                var section = document.getElementById("archon-build-process");
+                var timeline = document.getElementById("archon-build-process-timeline");
+                if (!section || !timeline || timeline.dataset.timelineInitialized === "true") return;
+                timeline.dataset.timelineInitialized = "true";
+
+                var baseLine = timeline.querySelector(".archon-build-process__line-base");
+                var progressLine = timeline.querySelector(".archon-build-process__line-progress");
+                var steps = timeline.querySelectorAll(".archon-build-process__step");
+                var circles = timeline.querySelectorAll(".archon-build-process__step-circle");
+                if (!baseLine || !progressLine || !steps.length || !circles.length) return;
+
+                var active = false;
+                var ticking = false;
+                var startX = 0;
+                var totalWidth = 0;
+                var circleRatios = [];
+
+                function clamp(v, min, max) {
+                    return Math.min(max, Math.max(min, v));
+                }
+
+                function measureLine() {
+                    var timelineRect = timeline.getBoundingClientRect();
+                    var centers = [];
+                    circles.forEach(function (circle) {
+                        var rect = circle.getBoundingClientRect();
+                        centers.push((rect.left - timelineRect.left) + (rect.width / 2));
+                    });
+                    if (!centers.length) return;
+
+                    startX = centers[0];
+                    totalWidth = Math.max(1, centers[centers.length - 1] - centers[0]);
+                    circleRatios = centers.map(function (x) { return (x - startX) / totalWidth; });
+
+                    baseLine.style.left = startX.toFixed(2) + "px";
+                    baseLine.style.width = totalWidth.toFixed(2) + "px";
+                    progressLine.style.left = startX.toFixed(2) + "px";
+                }
+
+                function updateTimeline() {
+                    ticking = false;
+                    if (!active) return;
+
+                    var rect = section.getBoundingClientRect();
+                    var vh = window.innerHeight || document.documentElement.clientHeight;
+                    var progress = clamp((vh - rect.top) / (vh + rect.height * 0.35), 0, 1);
+                    var progressWidth = totalWidth * progress;
+                    progressLine.style.width = progressWidth.toFixed(2) + "px";
+
+                    steps.forEach(function (step, index) {
+                        var threshold = circleRatios[index] || 0;
+                        step.classList.toggle("is-active", progress >= threshold - 0.02);
+                    });
+                }
+
+                function requestUpdate() {
+                    if (ticking) return;
+                    ticking = true;
+                    window.requestAnimationFrame(updateTimeline);
+                }
+
+                function onResize() {
+                    measureLine();
+                    requestUpdate();
+                }
+
+                function attach() {
+                    if (active) return;
+                    active = true;
+                    window.addEventListener("scroll", requestUpdate, { passive: true });
+                    window.addEventListener("resize", onResize);
+                    onResize();
+                }
+
+                function detach() {
+                    active = false;
+                    window.removeEventListener("scroll", requestUpdate);
+                    window.removeEventListener("resize", onResize);
+                }
+
+                if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                    measureLine();
+                    progressLine.style.width = totalWidth.toFixed(2) + "px";
+                    steps.forEach(function (step) { step.classList.add("is-active"); });
+                    return;
+                }
+
+                if ("IntersectionObserver" in window) {
+                    var observer = new IntersectionObserver(function (entries) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                attach();
+                            } else {
+                                detach();
+                            }
+                        });
+                    }, { threshold: 0 });
+                    observer.observe(section);
+                } else {
+                    attach();
+                }
+            }
+
+            window.addEventListener("DOMContentLoaded", initArchonBuildProcessTimeline);
+            window.addEventListener("radTransitionFinished", initArchonBuildProcessTimeline);
+        })();
+    </script>
 
 </body></html>
 
