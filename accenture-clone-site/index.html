@@ -1520,12 +1520,17 @@
     #archon-build-process {
         background: #000;
         color: #fff;
-        padding: 120px var(--rad-spacing-sm);
+        min-height: 260vh;
+        overflow-x: clip;
+        position: relative;
     }
 
     #archon-build-process .archon-build-process__inner {
         margin: 0 auto;
         max-width: 1280px;
+        padding: 84px var(--rad-spacing-sm) 64px;
+        position: sticky;
+        top: calc(var(--rad-nav-height) + 12px);
     }
 
     #archon-build-process .archon-build-process__title {
@@ -1547,15 +1552,15 @@
     }
 
     #archon-build-process .archon-build-process__timeline-scroll {
-        overflow-x: auto;
+        overflow: visible;
         padding-bottom: 10px;
     }
 
     #archon-build-process .archon-build-process__timeline {
         margin: 0 auto;
-        min-width: 980px;
         padding-top: 6px;
         position: relative;
+        width: 100%;
     }
 
     #archon-build-process .archon-build-process__line-base,
@@ -1564,6 +1569,7 @@
         height: 3px;
         position: absolute;
         top: 18px;
+        z-index: 1;
     }
 
     #archon-build-process .archon-build-process__line-base {
@@ -1592,8 +1598,10 @@
         border-radius: 50%;
         height: 18px;
         margin: 6px auto 24px;
+        position: relative;
         transition: border-color 380ms ease, box-shadow 380ms ease;
         width: 18px;
+        z-index: 2;
     }
 
     #archon-build-process .archon-build-process__step-label {
@@ -1602,7 +1610,10 @@
         font-weight: 600;
         letter-spacing: 0.08em;
         margin-bottom: 10px;
+        opacity: 0.35;
         text-transform: uppercase;
+        transform: translateY(18px);
+        transition: opacity 420ms ease, transform 420ms ease;
     }
 
     #archon-build-process .archon-build-process__step-title {
@@ -1611,6 +1622,9 @@
         letter-spacing: -0.01em;
         line-height: 1.25;
         margin: 0 0 10px;
+        opacity: 0.35;
+        transform: translateY(18px);
+        transition: opacity 420ms ease, transform 420ms ease;
     }
 
     #archon-build-process .archon-build-process__step-body {
@@ -1618,9 +1632,10 @@
         font-size: clamp(0.95rem, 1.25vw, 1.05rem);
         line-height: 1.52;
         margin: 0 auto;
-        max-width: 260px;
-        opacity: 0.45;
-        transition: opacity 380ms ease;
+        max-width: 290px;
+        opacity: 0.28;
+        transform: translateY(18px);
+        transition: opacity 420ms ease, transform 420ms ease;
     }
 
     #archon-build-process .archon-build-process__step.is-active .archon-build-process__step-circle {
@@ -1628,20 +1643,32 @@
         box-shadow: 0 0 0 6px rgba(23, 71, 229, 0.18);
     }
 
+    #archon-build-process .archon-build-process__step.is-active .archon-build-process__step-label,
+    #archon-build-process .archon-build-process__step.is-active .archon-build-process__step-title,
     #archon-build-process .archon-build-process__step.is-active .archon-build-process__step-body {
         opacity: 1;
+        transform: translateY(0);
     }
 
     @media (min-width: 1024px) {
         #archon-build-process {
-            padding-bottom: 140px;
-            padding-top: 140px;
+            min-height: 300vh;
         }
     }
 
     @media (max-width: 768px) {
+        #archon-build-process {
+            min-height: auto;
+        }
+
+        #archon-build-process .archon-build-process__inner {
+            padding: 96px var(--rad-spacing-sm) 84px;
+            position: relative;
+            top: auto;
+        }
+
         #archon-build-process .archon-build-process__timeline {
-            min-width: 920px;
+            width: 100%;
         }
     }
 
@@ -2979,6 +3006,7 @@ AI only delivers value when it is engineered for scale, governance, and operatio
                 var active = false;
                 var ticking = false;
                 var startX = 0;
+                var endX = 0;
                 var totalWidth = 0;
                 var circleRatios = [];
 
@@ -2995,29 +3023,39 @@ AI only delivers value when it is engineered for scale, governance, and operatio
                     });
                     if (!centers.length) return;
 
-                    startX = centers[0];
-                    totalWidth = Math.max(1, centers[centers.length - 1] - centers[0]);
+                    var circleRadius = circles[0].getBoundingClientRect().width / 2;
+                    startX = centers[0] + circleRadius;
+                    endX = centers[centers.length - 1] - circleRadius;
+                    totalWidth = Math.max(1, endX - startX);
                     circleRatios = centers.map(function (x) { return (x - startX) / totalWidth; });
 
                     baseLine.style.left = startX.toFixed(2) + "px";
                     baseLine.style.width = totalWidth.toFixed(2) + "px";
                     progressLine.style.left = startX.toFixed(2) + "px";
+                    progressLine.style.width = "0px";
                 }
 
                 function updateTimeline() {
                     ticking = false;
                     if (!active) return;
 
-                    var rect = section.getBoundingClientRect();
                     var vh = window.innerHeight || document.documentElement.clientHeight;
-                    var progress = clamp((vh - rect.top) / (vh + rect.height * 0.35), 0, 1);
+                    var scrollY = window.scrollY || window.pageYOffset || 0;
+                    var rect = section.getBoundingClientRect();
+                    var sectionTop = rect.top + scrollY;
+                    var sectionRange = Math.max(1, section.offsetHeight - vh);
+                    var progress = clamp((scrollY - sectionTop) / sectionRange, 0, 1);
                     var progressWidth = totalWidth * progress;
                     progressLine.style.width = progressWidth.toFixed(2) + "px";
 
                     steps.forEach(function (step, index) {
                         var threshold = circleRatios[index] || 0;
-                        step.classList.toggle("is-active", progress >= threshold - 0.02);
+                        step.classList.toggle("is-active", progress >= threshold - 0.01);
                     });
+
+                    if (progress >= 0.995) {
+                        steps.forEach(function (step) { step.classList.add("is-active"); });
+                    }
                 }
 
                 function requestUpdate() {
