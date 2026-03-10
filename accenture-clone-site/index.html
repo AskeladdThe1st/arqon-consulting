@@ -2778,62 +2778,141 @@ AI only delivers value when it is engineered for scale, governance, and operatio
                 });
                 gsap.set(bodies, { autoAlpha: 0, maxHeight: 0 });
 
-                function buildCardTween(activeIndex) {
-                    return gsap.timeline()
-                        .to(steps, {
-                            duration: 1,
-                            flexGrow: function (_, target) {
-                                return steps.indexOf(target) === activeIndex ? 3.4 : 1;
-                            },
-                            scale: function (_, target) {
-                                return steps.indexOf(target) === activeIndex ? 1 : 0.9;
-                            },
-                            opacity: function (_, target) {
-                                return steps.indexOf(target) === activeIndex ? 1 : 0.5;
-                            },
-                            x: function (_, target) {
-                                var index = steps.indexOf(target);
-                                if (index < activeIndex) return -12;
-                                if (index > activeIndex) return 12;
-                                return 0;
-                            },
-                            backgroundColor: function (_, target) {
-                                return steps.indexOf(target) === activeIndex ? "rgba(161, 0, 255, 0.14)" : "rgba(255, 255, 255, 0.04)";
-                            },
-                            ease: "power2.inOut"
-                        }, 0)
-                        .to(bodies, {
-                            duration: 0.55,
-                            autoAlpha: function (_, target) {
-                                return bodies.indexOf(target) === activeIndex ? 1 : 0;
-                            },
-                            maxHeight: function (_, target) {
-                                return bodies.indexOf(target) === activeIndex ? 220 : 0;
-                            },
-                            ease: "power2.out"
-                        }, 0.15);
-                }
-
                 var cardsTl = gsap.timeline({
                     defaults: { overwrite: "auto" },
                     scrollTrigger: {
                         trigger: section,
                         start: "top top",
-                        end: "+=260%",
-                        scrub: true,
+                        end: "+=220%",
+                        scrub: 0.35,
                         pin: true,
-                        anticipatePin: 1
+                        anticipatePin: 1,
+                        invalidateOnRefresh: true
                     }
                 });
 
-                cardsTl.add(buildCardTween(0));
-                cardsTl.add(buildCardTween(1));
-                cardsTl.add(buildCardTween(2));
-                cardsTl.add(buildCardTween(3));
+                function addState(activeIndex, position) {
+                    steps.forEach(function (step, index) {
+                        var xOffset = 0;
+                        if (index < activeIndex) xOffset = -8;
+                        if (index > activeIndex) xOffset = 8;
+
+                        cardsTl.to(step, {
+                            duration: 0.8,
+                            flexGrow: index === activeIndex ? 3.2 : 1,
+                            scale: index === activeIndex ? 1 : 0.9,
+                            opacity: index === activeIndex ? 1 : 0.5,
+                            x: xOffset,
+                            backgroundColor: index === activeIndex ? "rgba(161, 0, 255, 0.14)" : "rgba(255, 255, 255, 0.04)",
+                            ease: "none"
+                        }, position);
+                    });
+
+                    bodies.forEach(function (body, index) {
+                        cardsTl.to(body, {
+                            duration: 0.5,
+                            autoAlpha: index === activeIndex ? 1 : 0,
+                            maxHeight: index === activeIndex ? 220 : 0,
+                            ease: "none"
+                        }, position + 0.1);
+                    });
+                }
+
+                addState(0, 0);
+                addState(1, 1);
+                addState(2, 2);
+                addState(3, 3);
             }
 
             window.addEventListener("DOMContentLoaded", initArchonBuildProcessTimeline);
             window.addEventListener("radTransitionFinished", initArchonBuildProcessTimeline);
+        })();
+    </script>
+    <script type="text/javascript">
+        (function () {
+            function initArchonCultureScrollAnimation() {
+                var block = document.getElementById("mixedmediatextblock-178a5a195b");
+                if (!block || block.dataset.scrollAnimationInitialized === "true") return;
+                block.dataset.scrollAnimationInitialized = "true";
+
+                var media = block.querySelector(".rad-mixed-media-and-text__media");
+                var text = block.querySelector(".rad-mixed-media-and-text__text");
+                var title = block.querySelector(".rad-mixed-media-and-text__title");
+                var description = block.querySelector(".rad-mixed-media-and-text__description");
+                var attribution = block.querySelector(".archon-quote-attribution");
+                if (!media || !text || !title || !description) return;
+
+                if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                    media.style.opacity = "1";
+                    media.style.transform = "none";
+                    text.style.opacity = "1";
+                    text.style.transform = "none";
+                    title.style.opacity = "1";
+                    title.style.transform = "none";
+                    description.style.opacity = "1";
+                    description.style.transform = "none";
+                    if (attribution) {
+                        attribution.style.opacity = "1";
+                        attribution.style.transform = "none";
+                    }
+                    return;
+                }
+
+                if (!window.ScrollMagic || !window.TimelineMax || !window.TweenMax) return;
+
+                TweenMax.set(media, { autoAlpha: 0.55, x: -72, scale: 1.06 });
+                TweenMax.set(text, { autoAlpha: 0.4, x: 72 });
+                TweenMax.set(title, { autoAlpha: 0, y: 26 });
+                TweenMax.set(description, { autoAlpha: 0, y: 26 });
+                if (attribution) TweenMax.set(attribution, { autoAlpha: 0, y: 22 });
+
+                var revealTl = new TimelineMax();
+                revealTl
+                    .to(media, 1, {
+                        autoAlpha: 1,
+                        x: 0,
+                        scale: 1,
+                        ease: Power2.easeOut
+                    }, 0)
+                    .to(text, 1, {
+                        autoAlpha: 1,
+                        x: 0,
+                        ease: Power2.easeOut
+                    }, 0)
+                    .to(title, 0.66, {
+                        autoAlpha: 1,
+                        y: 0,
+                        ease: Power2.easeOut
+                    }, 0.16)
+                    .to(description, 0.66, {
+                        autoAlpha: 1,
+                        y: 0,
+                        ease: Power2.easeOut
+                    }, 0.3);
+
+                if (attribution) {
+                    revealTl.to(attribution, 0.6, {
+                        autoAlpha: 1,
+                        y: 0,
+                        ease: Power2.easeOut
+                    }, 0.44);
+                }
+
+                var controller = window.__archonCultureController || new ScrollMagic.Controller();
+                window.__archonCultureController = controller;
+                new ScrollMagic.Scene({
+                    triggerElement: block,
+                    triggerHook: 0.82,
+                    duration: "110%",
+                    reverse: true,
+                    tweenChanges: true
+                })
+                    .setTween(revealTl)
+                    .addTo(controller);
+            }
+
+            window.addEventListener("DOMContentLoaded", initArchonCultureScrollAnimation);
+            window.addEventListener("radTransitionFinished", initArchonCultureScrollAnimation);
         })();
     </script>
 
