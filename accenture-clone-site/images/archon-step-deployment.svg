@@ -1,0 +1,40 @@
+<svg width="1080" height="1440" viewBox="0 0 1080 1440" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="540" y1="0" x2="540" y2="1440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0618"/>
+      <stop offset="1" stop-color="#120B23"/>
+    </linearGradient>
+    <linearGradient id="grid" x1="90" y1="520" x2="990" y2="1320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6B30FF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#2E9BFF" stop-opacity="0.25"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="340" y1="700" x2="760" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DF6EFF"/>
+      <stop offset="1" stop-color="#7DB0FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1080" height="1440" fill="url(#bg)"/>
+
+  <g opacity="0.24">
+    <path d="M0 680H1080M0 760H1080M0 840H1080M0 920H1080M0 1000H1080M0 1080H1080M0 1160H1080M0 1240H1080M0 1320H1080" stroke="#7A67A5"/>
+    <path d="M60 620V1380M140 620V1380M220 620V1380M300 620V1380M380 620V1380M460 620V1380M540 620V1380M620 620V1380M700 620V1380M780 620V1380M860 620V1380M940 620V1380M1020 620V1380" stroke="#7A67A5"/>
+  </g>
+
+  <g opacity="0.85">
+    <rect x="320" y="720" width="130" height="130" rx="10" transform="rotate(12 320 720)" fill="#6D2BFF"/>
+    <rect x="500" y="790" width="180" height="180" rx="12" transform="rotate(12 500 790)" fill="#8F42FF"/>
+    <rect x="720" y="900" width="120" height="120" rx="10" transform="rotate(12 720 900)" fill="#4D77FF"/>
+    <rect x="390" y="980" width="95" height="95" rx="10" transform="rotate(12 390 980)" fill="#2D9BFF"/>
+    <rect x="595" y="1035" width="78" height="78" rx="10" transform="rotate(12 595 1035)" fill="#B55CFF"/>
+  </g>
+
+  <g stroke="url(#edge)" stroke-width="3" opacity="0.75">
+    <path d="M425 785L575 860L775 960"/>
+    <path d="M575 860L440 1030"/>
+    <path d="M575 860L635 1080"/>
+    <path d="M775 960L640 1080"/>
+  </g>
+
+  <rect x="0" y="620" width="1080" height="820" fill="url(#grid)" opacity="0.45"/>
+</svg>

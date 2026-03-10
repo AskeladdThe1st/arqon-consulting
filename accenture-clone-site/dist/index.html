@@ -363,8 +363,7 @@
 
 
 	
-    
-
+    
 
 
 
@@ -374,8 +373,7 @@
 
 
 	
-    
-
+    
 
 
 
@@ -411,10 +409,8 @@
 
     
         
-            
-
-            
-
+            
+            
             
         
     
@@ -428,13 +424,56 @@
     
 
     
-  <link rel="stylesheet" crossorigin href="/assets/index-CSP5dMqc.css">
 <style>
-.custom-footer{background:#000;color:#fff;padding:20px 0;}
-.custom-footer__nav{text-align:center;margin-bottom:10px;}
-.custom-footer__nav a{color:#fff;margin:0 15px;text-decoration:none;font-size:14px;}
-.custom-footer__copyright{text-align:center;font-size:14px;}
+.custom-footer{
+  background:#000;
+  color:#a8b0bc;
+  font-family:inherit;
+  font-size:1rem;
+  line-height:1.5;
+  padding:34px 0 40px;
+}
+.custom-footer::before{
+  content:"";
+  display:block;
+  width:min(1200px,84%);
+  margin:0 auto;
+  border-top:1px solid #1b1f26;
+}
+.custom-footer::before{
+  margin-bottom:34px;
+}
+.custom-footer__nav{
+  max-width:960px;
+  margin:0 auto;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:14px 30px;
+}
+.custom-footer__nav a{
+  color:#a8b0bc;
+  font-family:inherit;
+  text-decoration:none;
+  font-size:1rem;
+  font-weight:400;
+  line-height:1.5;
+  letter-spacing:0;
+  transition:color .2s ease;
+}
+.custom-footer__nav a:hover{
+  color:#a100ff;
+}
+.custom-footer__copyright{
+  text-align:center;
+  font-family:inherit;
+  font-size:1rem;
+  font-weight:400;
+  color:#7e8794;
+  margin-top:28px;
+}
 </style>
+  <link rel="stylesheet" crossorigin href="/assets/index-CSP5dMqc.css">
 </head>
     <body class="radicalaccenturedesign generic page basicpage " id="page-f3f3debf6f" data-barba="wrapper" data-cmp-data-layer-enabled="">
         <script>
@@ -1481,6 +1520,152 @@
         white-space: normal;
     }
 
+    /* Archon branding: reduce this section headline ~12% vs default RAD sizing */
+    #header-c90dc8acc7.rad-header .rad-header__headline {
+        font-size: 1.76rem;
+    }
+
+    @media (min-width: 600px) {
+        #header-c90dc8acc7.rad-header .rad-header__headline {
+            font-size: 3.3rem;
+        }
+    }
+
+    @media (min-width: 1441px) {
+        #header-c90dc8acc7.rad-header .rad-header__headline {
+            font-size: calc(3.3rem + 3.67433vw - 52.94697px);
+        }
+    }
+
+    @media (min-width: 1920px) {
+        #header-c90dc8acc7.rad-header .rad-header__headline {
+            font-size: 4.4rem;
+        }
+    }
+
+    #header-archon-difference .rad-header__headline {
+        font-size: clamp(2rem, 4.2vw, 64px);
+        line-height: 1.1;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 14px;
+    }
+
+    #header-archon-difference .rad-header__sub-headline {
+        max-width: 760px;
+        margin: 0 auto;
+        font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+        line-height: 1.5;
+        color: #cfcfcf;
+    }
+
+    #header-archon-difference .rad-header__sub-headline p + p {
+        margin-top: 14px;
+    }
+
+    #archon-build-process {
+        background: #000;
+        color: #fff;
+        overflow-x: clip;
+        position: relative;
+    }
+
+    #archon-build-process .archon-build-process__inner {
+        margin: 0 auto;
+        max-width: 1280px;
+        padding: 84px var(--rad-spacing-sm) 64px;
+    }
+
+    #archon-build-process .archon-build-process__title {
+        font-size: clamp(2rem, 4.4vw, 4rem);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin: 0 0 24px;
+        text-align: center;
+    }
+
+    #archon-build-process .archon-build-process__intro {
+        color: #cfcfcf;
+        font-size: clamp(1rem, 1.5vw, 1.2rem);
+        line-height: 1.5;
+        margin: 0 auto 52px;
+        max-width: 860px;
+        text-align: center;
+    }
+
+    #archon-build-process .archon-build-process__timeline-scroll {
+        overflow: visible;
+        padding-bottom: 10px;
+    }
+
+    #archon-build-process .archon-build-process__timeline {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    #archon-build-process .archon-build-process__nodes {
+        display: flex;
+        gap: 16px;
+        width: 100%;
+    }
+
+    #archon-build-process .archon-build-process__step {
+        align-items: flex-start;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        display: flex;
+        flex: 1 1 0;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 280px;
+        opacity: 0.5;
+        overflow: hidden;
+        padding: 28px 24px;
+        transform: scale(0.9);
+        transform-origin: center center;
+        will-change: transform, opacity, flex-grow;
+    }
+
+    #archon-build-process .archon-build-process__step-title {
+        font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        line-height: 1.25;
+        margin: 0;
+        opacity: 1;
+        white-space: nowrap;
+    }
+
+    #archon-build-process .archon-build-process__step-body {
+        color: #c9c9c9;
+        font-size: clamp(0.95rem, 1.25vw, 1.05rem);
+        line-height: 1.52;
+        margin: 18px 0 0;
+        max-height: 0;
+        max-width: 440px;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+    }
+
+    @media (max-width: 768px) {
+        #archon-build-process .archon-build-process__inner {
+            padding: 96px var(--rad-spacing-sm) 84px;
+        }
+
+        #archon-build-process .archon-build-process__nodes {
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        #archon-build-process .archon-build-process__step {
+            min-height: 190px;
+            min-width: 38vw;
+        }
+    }
+
     #hero_custom .hero_custom__body {
         grid-column: 2;
         justify-self: end;
@@ -1626,10 +1811,10 @@
       
          <div class="rad-content-grid-card__full-image">
             <div class="image radimage">
-<div data-cmp-is="image" data-cmp-dmimage="" data-cmp-smartcroprendition="rad-card-full" data-cmp-src="https://dynamicmedia.accenture.com/is/image/accenture/Pulse-Of-Change-2026-Glance-Image-600x848%3Arad-card-full?ts=1772218106711&amp;fit=constrain&amp;dpr=off" data-asset-id="4236911d-80eb-4ab2-8887-e63dd6e79684" data-cmp-filereference="/content/dam/accenture/final/accenture-com/imagery-14/Pulse-Of-Change-2026-Glance-Image-600x848.jpg" id="image-" data-cmp-data-layer="{&quot;image-&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/radimage&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;&quot;,&quot;analytics-module-name&quot;:&quot;radimage-1&quot;}}" data-cmp-hook-image="imageV3" class="cmp-image
+<div data-cmp-is="image" data-cmp-dmimage="" data-cmp-smartcroprendition="rad-card-full" data-cmp-src="images/cards/card-operational-ai.svg" data-asset-id="4236911d-80eb-4ab2-8887-e63dd6e79684" data-cmp-filereference="/content/dam/accenture/final/accenture-com/imagery-14/Pulse-Of-Change-2026-Glance-Image-600x848.jpg" id="image-" data-cmp-data-layer="{&quot;image-&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/radimage&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;&quot;,&quot;analytics-module-name&quot;:&quot;radimage-1&quot;}}" data-cmp-hook-image="imageV3" class="cmp-image
      " itemscope="" itemtype="http://schema.org/ImageObject">
     
-        <img src="https://dynamicmedia.accenture.com/is/image/accenture/Pulse-Of-Change-2026-Glance-Image-600x848%3Arad-card-full?ts=1772218106711&amp;fit=constrain&amp;dpr=off" loading="lazy" class="cmp-image__image" itemprop="contentUrl" width="600" height="848" alt="">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20848'%20role='img'%20aria-label='Abstract%20neon%20waveform'%3e%3cdefs%3e%3clinearGradient%20id='bg'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3e%3cstop%20offset='0'%20stop-color='%23050426'/%3e%3cstop%20offset='0.45'%20stop-color='%2311105a'/%3e%3cstop%20offset='1'%20stop-color='%230b153f'/%3e%3c/linearGradient%3e%3clinearGradient%20id='waveA'%20x1='0'%20y1='0'%20x2='1'%20y2='0'%3e%3cstop%20offset='0'%20stop-color='%232ec9ff'/%3e%3cstop%20offset='1'%20stop-color='%237f8dff'/%3e%3c/linearGradient%3e%3clinearGradient%20id='waveB'%20x1='0'%20y1='0'%20x2='1'%20y2='0'%3e%3cstop%20offset='0'%20stop-color='%23ff6ce5'/%3e%3cstop%20offset='1'%20stop-color='%238ab3ff'/%3e%3c/linearGradient%3e%3cfilter%20id='glow'%20x='-30%25'%20y='-30%25'%20width='160%25'%20height='160%25'%3e%3cfeGaussianBlur%20stdDeviation='6'%20result='b'/%3e%3cfeMerge%3e%3cfeMergeNode%20in='b'/%3e%3cfeMergeNode%20in='SourceGraphic'/%3e%3c/feMerge%3e%3c/filter%3e%3c/defs%3e%3crect%20width='600'%20height='848'%20fill='url(%23bg)'/%3e%3cg%20opacity='0.35'%3e%3ccircle%20cx='120'%20cy='110'%20r='170'%20fill='%233d2fd0'/%3e%3ccircle%20cx='490'%20cy='720'%20r='220'%20fill='%232a4fff'/%3e%3c/g%3e%3cg%20filter='url(%23glow)'%20fill='none'%20stroke-linecap='round'%3e%3cpath%20d='M-20%20560%20C%2080%20470,%20140%20650,%20235%20550%20S%20380%20480,%20460%20570%20S%20590%20640,%20640%20560'%20stroke='url(%23waveA)'%20stroke-width='12'/%3e%3cpath%20d='M-20%20535%20C%2090%20450,%20170%20630,%20250%20535%20S%20390%20460,%20470%20550%20S%20590%20620,%20640%20545'%20stroke='url(%23waveB)'%20stroke-width='10'/%3e%3cpath%20d='M-20%20600%20C%2070%20515,%20150%20690,%20235%20600%20S%20380%20520,%20470%20610%20S%20580%20675,%20640%20605'%20stroke='url(%23waveA)'%20stroke-width='9'/%3e%3cpath%20d='M-20%20500%20C%2070%20420,%20160%20590,%20250%20500%20S%20390%20420,%20470%20515%20S%20590%20585,%20640%20510'%20stroke='url(%23waveB)'%20stroke-width='8'/%3e%3cpath%20d='M-20%20640%20C%2065%20565,%20145%20735,%20235%20640%20S%20390%20560,%20475%20655%20S%20585%20720,%20640%20650'%20stroke='url(%23waveA)'%20stroke-width='8'/%3e%3c/g%3e%3crect%20width='600'%20height='848'%20fill='url(%23bg)'%20opacity='0.22'/%3e%3c/svg%3e" loading="lazy" class="cmp-image__image" itemprop="contentUrl" width="600" height="848" alt="">
     
     
     
@@ -1644,21 +1829,21 @@
       
       
       <div class="rad-content-grid-card__label">
-         Research Report
+         CORE SERVICES
       </div>
       <div class="rad-content-grid-card__title">
-         Pulse of Change: What’s top of mind for today’s leaders
+         Operational AI Systems
       </div>
       <div class="rad-content-grid-card__sliding-content">
          <div class="rad-content-grid-card__front-content"></div>
          <div class="rad-content-grid-card__back-content">
             <div class="rad-content-grid-card__content">
-               <p>After two years of rapid AI acceleration, global executives enter 2026 with unmistakable confidence. But beneath the optimism, data shows a series of gaps standing in the way of scale and value.</p>
+               <p>AI-enabled workflows that enhance productivity and operational intelligence through structured automation, defined system boundaries, and human oversight.</p>
 
             </div>
 			
 				<a href="pulse-of-change.html" class="rad-button rad-button--ghost" tabindex="-1" target="_self" aria-label="Expand: Pulse of Change: January 2025" data-barba-transition="">
-				   <div class="rad-button__text">Expand</div>
+				   <div class="rad-button__text">Learn more →</div>
 				   <div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact" aria-hidden="true"></div>
 				</a>
 			
@@ -1694,19 +1879,19 @@
          <div class="rad-icon rad-icon__close" aria-hidden="true"></div>
       </button>
       <div class="rad-content-grid-card__label">
-         Perspective
+         CORE SERVICES
       </div>
       <div class="rad-content-grid-card__title">
-         Making self-funding supply chains real
+         Cloud &amp; AI Architecture
       </div>
       <div class="rad-content-grid-card__sliding-content">
          <div class="rad-content-grid-card__front-content">
             <div class="rad-content-grid-card__half-image">
                <div class="image radimage">
-<div data-cmp-is="image" data-cmp-dmimage="" data-cmp-src="https://dynamicmedia.accenture.com/is/content/accenture/00_IllustrationTemp_SizingDoc_640x452_withgrey-03?ts=1761149682942&amp;$none$&amp;wid=1200&amp;fit=constrain&amp;dpr=off" data-asset-id="e3288e1f-ab10-44b2-9197-d5f573052d37" data-cmp-filereference="/content/dam/accenture/final/accenture-com/imagery/00_IllustrationTemp_SizingDoc_640x452_withgrey-03.svg" id="image-3" data-cmp-data-layer="{&quot;image-3&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/radimage&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;&quot;,&quot;analytics-module-name&quot;:&quot;radimage-1&quot;}}" data-cmp-hook-image="imageV3" class="cmp-image
+<div data-cmp-is="image" data-cmp-dmimage="" data-cmp-src="images/cards/card-cloud-ai-architecture.svg" data-asset-id="e3288e1f-ab10-44b2-9197-d5f573052d37" data-cmp-filereference="/content/dam/accenture/final/accenture-com/imagery/00_IllustrationTemp_SizingDoc_640x452_withgrey-03.svg" id="image-3" data-cmp-data-layer="{&quot;image-3&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/radimage&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;&quot;,&quot;analytics-module-name&quot;:&quot;radimage-1&quot;}}" data-cmp-hook-image="imageV3" class="cmp-image
      " itemscope="" itemtype="http://schema.org/ImageObject">
     
-        <img src="https://dynamicmedia.accenture.com/is/content/accenture/00_IllustrationTemp_SizingDoc_640x452_withgrey-03?ts=1761149682942&amp;$none$&amp;wid=1200&amp;fit=constrain&amp;dpr=off" loading="lazy" class="cmp-image__image" itemprop="contentUrl" alt="">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20848'%20role='img'%20aria-label='Technical%20line%20art%20illustration'%3e%3cdefs%3e%3cpattern%20id='grid'%20width='24'%20height='24'%20patternUnits='userSpaceOnUse'%3e%3cpath%20d='M24%200H0V24'%20fill='none'%20stroke='%23d9d9d9'%20stroke-width='1'/%3e%3c/pattern%3e%3c/defs%3e%3crect%20width='600'%20height='848'%20fill='%23f3f3f3'/%3e%3crect%20width='600'%20height='848'%20fill='url(%23grid)'%20opacity='0.6'/%3e%3cg%20fill='none'%20stroke='%23202020'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3crect%20x='0'%20y='490'%20width='600'%20height='24'/%3e%3ccircle%20cx='180'%20cy='690'%20r='110'/%3e%3ccircle%20cx='360'%20cy='640'%20r='84'/%3e%3ccircle%20cx='455'%20cy='700'%20r='72'/%3e%3crect%20x='42'%20y='415'%20width='120'%20height='84'%20rx='8'/%3e%3cpath%20d='M42%20445h120M66%20414v84M138%20414v84'/%3e%3cpath%20d='M205%20360h155v22H205z'/%3e%3cpath%20d='M205%20360c-8-42%2022-90%2067-104m88%20104c8-42-22-90-67-104'/%3e%3ccircle%20cx='273'%20cy='255'%20r='16'/%3e%3ccircle%20cx='342'%20cy='255'%20r='16'/%3e%3cpath%20d='M273%20271v43m69-43v43'/%3e%3cpath%20d='M242%20558h135l30%2055H212z'/%3e%3crect%20x='252'%20y='530'%20width='56'%20height='28'%20rx='4'/%3e%3cpath%20d='M105%20635l110%2038M90%20670h70M275%20688l30-48m110%2020l75%2045'/%3e%3cpath%20d='M438%20425c36-32%2098-24%20126%2017'/%3e%3cpath%20d='M480%20394l26-26m28%2017l28-11m-68%2074h54'/%3e%3cpath%20d='M470%20484l34%2014m32%208l24-25'/%3e%3crect%20x='14'%20y='602'%20width='160'%20height='80'%20rx='8'/%3e%3cpath%20d='M34%20650c20-20%2038-16%2054%204%2014-28%2044-23%2068%203'/%3e%3cpath%20d='M355%20572l52-26%2030%2038-40%2028z'/%3e%3cpath%20d='M420%20548l62%2020-16%2047-62-20z'/%3e%3c/g%3e%3c/svg%3e" loading="lazy" class="cmp-image__image" itemprop="contentUrl" alt="">
     
     
     
@@ -1721,12 +1906,12 @@
          </div>
          <div class="rad-content-grid-card__back-content">
             <div class="rad-content-grid-card__content">
-               <p>Discover how AI and autonomous technologies create self‑funding supply chains, cutting costs, boosting productivity and enabling end‑to‑end growth.</p>
+               <p>Scalable cloud environments and AI infrastructure designed to support secure AI adoption, high-availability workloads, and operational resilience.</p>
 
             </div>
 			
 				<a href="making-self-funding-supply-chains-real.html" class="rad-button rad-button--ghost" tabindex="-1" target="_self" aria-label="Expand: Making self-funding supply chains real" data-barba-transition="">
-				   <div class="rad-button__text">Expand</div>
+				   <div class="rad-button__text">Learn more →</div>
 				   <div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact" aria-hidden="true"></div>
 				</a>
 			
@@ -1762,10 +1947,10 @@
       
          <div class="rad-content-grid-card__full-image">
             <div class="image radimage">
-<div data-cmp-is="image" data-cmp-dmimage="" data-cmp-smartcroprendition="rad-card-full" data-cmp-src="https://dynamicmedia.accenture.com/is/image/accenture/State-of-Cybersecurity-SkimGlance-600x848%3Arad-card-full?ts=1751957996678&amp;fit=constrain&amp;dpr=off" data-asset-id="ca9cbca4-fc99-4c6a-bc48-37bd3f8370f5" data-cmp-filereference="/content/dam/accenture/final/accenture-com/imagery-12/State-of-Cybersecurity-SkimGlance-600x848.jpg" id="image-86" data-cmp-data-layer="{&quot;image-86&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/radimage&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;&quot;,&quot;analytics-module-name&quot;:&quot;radimage-1&quot;}}" data-cmp-hook-image="imageV3" class="cmp-image
+<div data-cmp-is="image" data-cmp-dmimage="" data-cmp-smartcroprendition="rad-card-full" data-cmp-src="images/cards/card-applied-ai-products.svg" data-asset-id="ca9cbca4-fc99-4c6a-bc48-37bd3f8370f5" data-cmp-filereference="/content/dam/accenture/final/accenture-com/imagery-12/State-of-Cybersecurity-SkimGlance-600x848.jpg" id="image-86" data-cmp-data-layer="{&quot;image-86&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/radimage&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;&quot;,&quot;analytics-module-name&quot;:&quot;radimage-1&quot;}}" data-cmp-hook-image="imageV3" class="cmp-image
      " itemscope="" itemtype="http://schema.org/ImageObject">
     
-        <img src="https://dynamicmedia.accenture.com/is/image/accenture/State-of-Cybersecurity-SkimGlance-600x848%3Arad-card-full?ts=1751957996678&amp;fit=constrain&amp;dpr=off" loading="lazy" class="cmp-image__image" itemprop="contentUrl" width="600" height="848" alt="">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20848'%20role='img'%20aria-label='Symmetrical%20AI%20portrait%20abstract'%3e%3cdefs%3e%3clinearGradient%20id='bg'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3e%3cstop%20offset='0'%20stop-color='%23150a2d'/%3e%3cstop%20offset='0.55'%20stop-color='%231b1138'/%3e%3cstop%20offset='1'%20stop-color='%232a0f47'/%3e%3c/linearGradient%3e%3clinearGradient%20id='skin'%20x1='0'%20y1='0'%20x2='0'%20y2='1'%3e%3cstop%20offset='0'%20stop-color='%23f2d4d5'/%3e%3cstop%20offset='1'%20stop-color='%23b9839b'/%3e%3c/linearGradient%3e%3clinearGradient%20id='glow'%20x1='0'%20y1='0'%20x2='1'%20y2='0'%3e%3cstop%20offset='0'%20stop-color='%238e4dff'/%3e%3cstop%20offset='1'%20stop-color='%23da4be2'/%3e%3c/linearGradient%3e%3c/defs%3e%3crect%20width='600'%20height='848'%20fill='url(%23bg)'/%3e%3cg%20opacity='0.22'%3e%3crect%20x='0'%20y='620'%20width='600'%20height='228'%20fill='url(%23glow)'/%3e%3ccircle%20cx='300'%20cy='170'%20r='180'%20fill='%2325104f'/%3e%3c/g%3e%3cg%3e%3cellipse%20cx='140'%20cy='360'%20rx='90'%20ry='130'%20fill='url(%23skin)'/%3e%3cellipse%20cx='460'%20cy='360'%20rx='90'%20ry='130'%20fill='url(%23skin)'/%3e%3ccircle%20cx='130'%20cy='355'%20r='11'%20fill='%23181323'/%3e%3ccircle%20cx='470'%20cy='355'%20r='11'%20fill='%23181323'/%3e%3cpath%20d='M103%20412c25%2018%2047%2018%2072%200'%20fill='none'%20stroke='%233a2435'%20stroke-width='5'%20stroke-linecap='round'/%3e%3cpath%20d='M424%20412c25%2018%2047%2018%2072%200'%20fill='none'%20stroke='%233a2435'%20stroke-width='5'%20stroke-linecap='round'/%3e%3c/g%3e%3cg%20fill='%2309070f'%3e%3cellipse%20cx='138'%20cy='243'%20rx='95'%20ry='95'/%3e%3cellipse%20cx='462'%20cy='243'%20rx='95'%20ry='95'/%3e%3ccircle%20cx='110'%20cy='182'%20r='48'/%3e%3ccircle%20cx='488'%20cy='182'%20r='48'/%3e%3c/g%3e%3crect%20x='256'%20y='0'%20width='88'%20height='848'%20fill='%23130e23'/%3e%3cg%20opacity='0.45'%3e%3crect%20x='0'%20y='625'%20width='40'%20height='40'%20fill='%2351329b'/%3e%3crect%20x='45'%20y='625'%20width='40'%20height='40'%20fill='%236637af'/%3e%3crect%20x='90'%20y='625'%20width='40'%20height='40'%20fill='%237842c1'/%3e%3crect%20x='135'%20y='625'%20width='40'%20height='40'%20fill='%238646ca'/%3e%3crect%20x='180'%20y='625'%20width='40'%20height='40'%20fill='%235f3ba7'/%3e%3crect%20x='225'%20y='625'%20width='40'%20height='40'%20fill='%234f368f'/%3e%3crect%20x='265'%20y='625'%20width='40'%20height='40'%20fill='%23432f7c'/%3e%3crect%20x='305'%20y='625'%20width='40'%20height='40'%20fill='%234f368f'/%3e%3crect%20x='345'%20y='625'%20width='40'%20height='40'%20fill='%235f3ba7'/%3e%3crect%20x='390'%20y='625'%20width='40'%20height='40'%20fill='%238646ca'/%3e%3crect%20x='435'%20y='625'%20width='40'%20height='40'%20fill='%237842c1'/%3e%3crect%20x='480'%20y='625'%20width='40'%20height='40'%20fill='%236637af'/%3e%3crect%20x='525'%20y='625'%20width='40'%20height='40'%20fill='%2351329b'/%3e%3crect%20x='560'%20y='625'%20width='40'%20height='40'%20fill='%233f2b77'/%3e%3c/g%3e%3cg%20stroke='%23a279ff'%20stroke-width='1'%20opacity='0.35'%3e%3cpath%20d='M0%20678h600M0%20708h600M0%20738h600M0%20768h600M0%20798h600'/%3e%3cpath%20d='M60%20620v228M120%20620v228M180%20620v228M240%20620v228M300%20620v228M360%20620v228M420%20620v228M480%20620v228M540%20620v228'/%3e%3c/g%3e%3c/svg%3e" loading="lazy" class="cmp-image__image" itemprop="contentUrl" width="600" height="848" alt="">
     
     
     
@@ -1780,21 +1965,21 @@
       
       
       <div class="rad-content-grid-card__label">
-         Research Report
+         CORE SERVICES
       </div>
       <div class="rad-content-grid-card__title">
-         4 critical actions to take now to strengthen your cyber defenses
+         Applied AI Products
       </div>
       <div class="rad-content-grid-card__sliding-content">
          <div class="rad-content-grid-card__front-content"></div>
          <div class="rad-content-grid-card__back-content">
             <div class="rad-content-grid-card__content">
-               <p>Cyber risks are growing faster than ever, outpacing security efforts. How do you get ahead of these threats? In this year’s State of Cybersecurity Resilience, learn the steps to build resilience as you embrace AI transformation.</p>
+               <p>AI-native applications and data-connected systems built for measurable outcomes, predictable behavior, and controlled deployment.</p>
 
             </div>
 			
 				<a href="state-cybersecurity-2025.html" class="rad-button rad-button--ghost" tabindex="-1" target="_self" aria-label="Expand: 4 critical actions to take now to strengthen your cyber defenses" data-barba-transition="">
-				   <div class="rad-button__text">Expand</div>
+				   <div class="rad-button__text">Learn more →</div>
 				   <div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact" aria-hidden="true"></div>
 				</a>
 			
@@ -1831,10 +2016,10 @@
       
          <div class="rad-content-grid-card__full-image">
             <div class="image radimage">
-<div data-cmp-is="image" data-cmp-dmimage="" data-cmp-smartcroprendition="rad-card-full" data-cmp-src="https://dynamicmedia.accenture.com/is/image/accenture/New-Rules-Platform-Strategy-Glance-Skim-Image-600x848%3Arad-card-full?ts=1767339380562&amp;fit=constrain&amp;dpr=off" data-asset-id="f382046c-caf7-487d-a5d6-71a880b17cf0" data-cmp-filereference="/content/dam/accenture/final/accenture-com/imagery-14/New-Rules-Platform-Strategy-Glance-Skim-Image-600x848.jpg" id="image-01b" data-cmp-data-layer="{&quot;image-01b&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/radimage&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;&quot;,&quot;analytics-module-name&quot;:&quot;radimage-1&quot;}}" data-cmp-hook-image="imageV3" class="cmp-image
+<div data-cmp-is="image" data-cmp-dmimage="" data-cmp-smartcroprendition="rad-card-full" data-cmp-src="images/cards/card-ai-platform-engineering.svg" data-asset-id="f382046c-caf7-487d-a5d6-71a880b17cf0" data-cmp-filereference="/content/dam/accenture/final/accenture-com/imagery-14/New-Rules-Platform-Strategy-Glance-Skim-Image-600x848.jpg" id="image-01b" data-cmp-data-layer="{&quot;image-01b&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/radimage&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;&quot;,&quot;analytics-module-name&quot;:&quot;radimage-1&quot;}}" data-cmp-hook-image="imageV3" class="cmp-image
      " itemscope="" itemtype="http://schema.org/ImageObject">
     
-        <img src="https://dynamicmedia.accenture.com/is/image/accenture/New-Rules-Platform-Strategy-Glance-Skim-Image-600x848%3Arad-card-full?ts=1767339380562&amp;fit=constrain&amp;dpr=off" loading="lazy" class="cmp-image__image" itemprop="contentUrl" width="600" height="848" alt="">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20848'%20role='img'%20aria-label='Isometric%20cube%20network'%3e%3cdefs%3e%3clinearGradient%20id='bg'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3e%3cstop%20offset='0'%20stop-color='%23090819'/%3e%3cstop%20offset='0.45'%20stop-color='%23140e35'/%3e%3cstop%20offset='1'%20stop-color='%23090819'/%3e%3c/linearGradient%3e%3clinearGradient%20id='f1'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3e%3cstop%20offset='0'%20stop-color='%23a055ff'/%3e%3cstop%20offset='1'%20stop-color='%235f8dff'/%3e%3c/linearGradient%3e%3clinearGradient%20id='f2'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3e%3cstop%20offset='0'%20stop-color='%23ff4ed5'/%3e%3cstop%20offset='1'%20stop-color='%237d4dff'/%3e%3c/linearGradient%3e%3clinearGradient%20id='f3'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3e%3cstop%20offset='0'%20stop-color='%2351d2ff'/%3e%3cstop%20offset='1'%20stop-color='%23695bff'/%3e%3c/linearGradient%3e%3cfilter%20id='glow'%20x='-40%25'%20y='-40%25'%20width='180%25'%20height='180%25'%3e%3cfeGaussianBlur%20stdDeviation='5'%20result='b'/%3e%3cfeMerge%3e%3cfeMergeNode%20in='b'/%3e%3cfeMergeNode%20in='SourceGraphic'/%3e%3c/feMerge%3e%3c/filter%3e%3c/defs%3e%3crect%20width='600'%20height='848'%20fill='url(%23bg)'/%3e%3cg%20opacity='0.2'%3e%3ccircle%20cx='450'%20cy='380'%20r='210'%20fill='%234d2fbe'/%3e%3ccircle%20cx='510'%20cy='640'%20r='180'%20fill='%232c6eff'/%3e%3c/g%3e%3cg%20filter='url(%23glow)'%3e%3cg%3e%3cpolygon%20points='430,240%20490,270%20430,300%20370,270'%20fill='url(%23f1)'/%3e%3cpolygon%20points='430,300%20490,270%20490,336%20430,366'%20fill='%235b4bda'/%3e%3cpolygon%20points='430,300%20370,270%20370,336%20430,366'%20fill='%237f36d7'/%3e%3c/g%3e%3cg%3e%3cpolygon%20points='500,300%20560,330%20500,360%20440,330'%20fill='url(%23f2)'/%3e%3cpolygon%20points='500,360%20560,330%20560,396%20500,426'%20fill='%237046e0'/%3e%3cpolygon%20points='500,360%20440,330%20440,396%20500,426'%20fill='%238f45df'/%3e%3c/g%3e%3cg%3e%3cpolygon%20points='365,320%20425,350%20365,380%20305,350'%20fill='url(%23f3)'/%3e%3cpolygon%20points='365,380%20425,350%20425,416%20365,446'%20fill='%234e66ea'/%3e%3cpolygon%20points='365,380%20305,350%20305,416%20365,446'%20fill='%235c4ed8'/%3e%3c/g%3e%3cg%3e%3cpolygon%20points='435,385%20495,415%20435,445%20375,415'%20fill='url(%23f2)'/%3e%3cpolygon%20points='435,445%20495,415%20495,481%20435,511'%20fill='%236a4ee2'/%3e%3cpolygon%20points='435,445%20375,415%20375,481%20435,511'%20fill='%238b3ddd'/%3e%3c/g%3e%3cg%3e%3cpolygon%20points='300,400%20360,430%20300,460%20240,430'%20fill='url(%23f1)'/%3e%3cpolygon%20points='300,460%20360,430%20360,496%20300,526'%20fill='%235a5ce6'/%3e%3cpolygon%20points='300,460%20240,430%20240,496%20300,526'%20fill='%237a40d9'/%3e%3c/g%3e%3cg%3e%3cpolygon%20points='500,430%20560,460%20500,490%20440,460'%20fill='url(%23f3)'/%3e%3cpolygon%20points='500,490%20560,460%20560,526%20500,556'%20fill='%234c6ee8'/%3e%3cpolygon%20points='500,490%20440,460%20440,526%20500,556'%20fill='%235f56df'/%3e%3c/g%3e%3c/g%3e%3cg%20opacity='0.55'%20fill='%23a87dff'%3e%3crect%20x='258'%20y='610'%20width='10'%20height='10'/%3e%3crect%20x='316'%20y='585'%20width='8'%20height='8'/%3e%3crect%20x='540'%20y='360'%20width='8'%20height='8'/%3e%3crect%20x='406'%20y='548'%20width='7'%20height='7'/%3e%3crect%20x='356'%20y='244'%20width='6'%20height='6'/%3e%3crect%20x='458'%20y='224'%20width='7'%20height='7'/%3e%3crect%20x='205'%20y='463'%20width='8'%20height='8'/%3e%3c/g%3e%3c/svg%3e" loading="lazy" class="cmp-image__image" itemprop="contentUrl" width="600" height="848" alt="">
     
     
     
@@ -1849,21 +2034,21 @@
       
       
       <div class="rad-content-grid-card__label">
-         Research Report
+         CAPABILITY
       </div>
       <div class="rad-content-grid-card__title">
-         Rewriting platform strategy for agentic AI
+         AI Platform Engineering
       </div>
       <div class="rad-content-grid-card__sliding-content">
          <div class="rad-content-grid-card__front-content"></div>
          <div class="rad-content-grid-card__back-content">
             <div class="rad-content-grid-card__content">
-               <p>Agentic AI is reshaping work and redefining enterprise foundations. To capture its full value, companies must reinvent platforms and align AI, platform and business strategies.</p>
+               <p>MLOps, DevSecOps, and observability frameworks that support reliable deployment, monitoring, and lifecycle management of enterprise AI systems.</p>
 
             </div>
 			
 				<a href="new-rules-platform-strategy-agentic-ai.html" class="rad-button rad-button--ghost" tabindex="-1" target="_self" aria-label="Expand: Rewriting platform strategy for agentic AI" data-barba-transition="">
-				   <div class="rad-button__text">Expand</div>
+				   <div class="rad-button__text">Learn more →</div>
 				   <div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact" aria-hidden="true"></div>
 				</a>
 			
@@ -1900,10 +2085,10 @@
       
          <div class="rad-content-grid-card__full-image">
             <div class="image radimage">
-<div data-cmp-is="image" data-cmp-dmimage="" data-cmp-smartcroprendition="rad-card-full" data-cmp-src="https://dynamicmedia.accenture.com/is/image/accenture/Banking-Trends-2026-Glance-Skim-600x848%3Arad-card-full?ts=1768430793330&amp;fit=constrain&amp;dpr=off" data-asset-id="ff200eaa-923e-4162-87e4-a472f945e5e3" data-title="Abstract, flowing shape of glowing light purple text lines on a dark purple background." data-cmp-filereference="/content/dam/accenture/final/accenture-com/imagery-14/Banking-Trends-2026-Glance-Skim-600x848.jpg" id="image-d51a" data-cmp-data-layer="{&quot;image-d51a&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/radimage&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;Abstract, flowing shape of glowing light purple text lines on a dark purple background.&quot;,&quot;analytics-module-name&quot;:&quot;radimage-1&quot;}}" data-cmp-hook-image="imageV3" class="cmp-image
+<div data-cmp-is="image" data-cmp-dmimage="" data-cmp-smartcroprendition="rad-card-full" data-cmp-src="images/cards/card-responsible-ai-governance.svg" data-asset-id="ff200eaa-923e-4162-87e4-a472f945e5e3" data-title="Abstract, flowing shape of glowing light purple text lines on a dark purple background." data-cmp-filereference="/content/dam/accenture/final/accenture-com/imagery-14/Banking-Trends-2026-Glance-Skim-600x848.jpg" id="image-d51a" data-cmp-data-layer="{&quot;image-d51a&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/radimage&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;Abstract, flowing shape of glowing light purple text lines on a dark purple background.&quot;,&quot;analytics-module-name&quot;:&quot;radimage-1&quot;}}" data-cmp-hook-image="imageV3" class="cmp-image
      " itemscope="" itemtype="http://schema.org/ImageObject">
     
-        <img src="https://dynamicmedia.accenture.com/is/image/accenture/Banking-Trends-2026-Glance-Skim-600x848%3Arad-card-full?ts=1768430793330&amp;fit=constrain&amp;dpr=off" loading="lazy" class="cmp-image__image" itemprop="contentUrl" width="600" height="848" alt="Abstract, flowing shape of glowing light purple text lines on a dark purple background.">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20848'%20role='img'%20aria-label='Abstract%20governance%20wave%20pattern'%3e%3cdefs%3e%3clinearGradient%20id='bg'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3e%3cstop%20offset='0'%20stop-color='%231d0d54'/%3e%3cstop%20offset='1'%20stop-color='%2332077d'/%3e%3c/linearGradient%3e%3clinearGradient%20id='line'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3e%3cstop%20offset='0'%20stop-color='%23f4dbff'/%3e%3cstop%20offset='1'%20stop-color='%239e77ff'/%3e%3c/linearGradient%3e%3cfilter%20id='soft'%20x='-20%25'%20y='-20%25'%20width='140%25'%20height='140%25'%3e%3cfeGaussianBlur%20stdDeviation='1.2'/%3e%3c/filter%3e%3c/defs%3e%3crect%20width='600'%20height='848'%20fill='url(%23bg)'/%3e%3cg%20stroke='url(%23line)'%20fill='none'%20stroke-linecap='round'%20opacity='0.92'%3e%3cpath%20d='M-60%20770%20C%2060%20640,%20180%20700,%20300%20610%20S%20520%20610,%20660%20515'%20stroke-width='2.4'/%3e%3cpath%20d='M-60%20755%20C%2060%20625,%20180%20685,%20300%20595%20S%20520%20595,%20660%20500'%20stroke-width='2.3'/%3e%3cpath%20d='M-60%20740%20C%2060%20610,%20180%20670,%20300%20580%20S%20520%20580,%20660%20485'%20stroke-width='2.2'/%3e%3cpath%20d='M-60%20725%20C%2060%20595,%20180%20655,%20300%20565%20S%20520%20565,%20660%20470'%20stroke-width='2.1'/%3e%3cpath%20d='M-60%20710%20C%2060%20580,%20180%20640,%20300%20550%20S%20520%20550,%20660%20455'%20stroke-width='2'/%3e%3cpath%20d='M-60%20695%20C%2060%20565,%20180%20625,%20300%20535%20S%20520%20535,%20660%20440'%20stroke-width='1.9'/%3e%3cpath%20d='M-60%20680%20C%2060%20550,%20180%20610,%20300%20520%20S%20520%20520,%20660%20425'%20stroke-width='1.8'/%3e%3cpath%20d='M-60%20665%20C%2060%20535,%20180%20595,%20300%20505%20S%20520%20505,%20660%20410'%20stroke-width='1.7'/%3e%3cpath%20d='M-60%20650%20C%2060%20520,%20180%20580,%20300%20490%20S%20520%20490,%20660%20395'%20stroke-width='1.6'/%3e%3cpath%20d='M-60%20635%20C%2060%20505,%20180%20565,%20300%20475%20S%20520%20475,%20660%20380'%20stroke-width='1.5'/%3e%3cpath%20d='M-60%20620%20C%2060%20490,%20180%20550,%20300%20460%20S%20520%20460,%20660%20365'%20stroke-width='1.4'/%3e%3cpath%20d='M-60%20605%20C%2060%20475,%20180%20535,%20300%20445%20S%20520%20445,%20660%20350'%20stroke-width='1.3'/%3e%3c/g%3e%3cg%20opacity='0.5'%20filter='url(%23soft)'%3e%3cellipse%20cx='145'%20cy='590'%20rx='120'%20ry='160'%20fill='%236d2ad8'/%3e%3cellipse%20cx='392'%20cy='690'%20rx='170'%20ry='140'%20fill='%234814ad'/%3e%3c/g%3e%3c/svg%3e" loading="lazy" class="cmp-image__image" itemprop="contentUrl" width="600" height="848" alt="Abstract, flowing shape of glowing light purple text lines on a dark purple background.">
     
     
     
@@ -1918,21 +2103,21 @@
       
       
       <div class="rad-content-grid-card__label">
-         Research Report
+         CAPABILITY
       </div>
       <div class="rad-content-grid-card__title">
-         Top Banking Trends for 2026
+         Responsible AI Governance
       </div>
       <div class="rad-content-grid-card__sliding-content">
          <div class="rad-content-grid-card__front-content"></div>
          <div class="rad-content-grid-card__back-content">
             <div class="rad-content-grid-card__content">
-               <p>Accenture’s Banking Trends 2026 reveals how agentic AI, smart money and shifting competition will reshape customer experience and growth.</p>
+               <p>Security, compliance, explainability, and governance frameworks embedded directly into AI systems for enterprise accountability and trust.</p>
 
             </div>
 			
 				<a href="accenture-banking-trends-2026.html" class="rad-button rad-button--ghost" tabindex="-1" target="_self" aria-label="Expand: Top Banking Trends for 2026" data-barba-transition="">
-				   <div class="rad-button__text">Expand</div>
+				   <div class="rad-button__text">Learn more →</div>
 				   <div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact" aria-hidden="true"></div>
 				</a>
 			
@@ -1969,10 +2154,10 @@
       
          <div class="rad-content-grid-card__full-image">
             <div class="image radimage">
-<div data-cmp-is="image" data-cmp-dmimage="" data-cmp-smartcroprendition="rad-card-full" data-cmp-src="https://dynamicmedia.accenture.com/is/image/accenture/Glance-Skim-Hero-Image-Based-600x848-1%3Arad-card-full?ts=1763433188832&amp;fit=constrain&amp;dpr=off" data-asset-id="198c49a4-540c-44ce-8f9a-07f4f97dcc10" data-cmp-filereference="/content/dam/accenture/final/accenture-com/imagery-13/Glance-Skim-Hero-Image-Based-600x848.png" id="image-84e0c" data-cmp-data-layer="{&quot;image-84e0c&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/radimage&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;&quot;,&quot;analytics-module-name&quot;:&quot;radimage-1&quot;}}" data-cmp-hook-image="imageV3" class="cmp-image
+<div data-cmp-is="image" data-cmp-dmimage="" data-cmp-smartcroprendition="rad-card-full" data-cmp-src="images/cards/card-ai-transformation.svg" data-asset-id="198c49a4-540c-44ce-8f9a-07f4f97dcc10" data-cmp-filereference="/content/dam/accenture/final/accenture-com/imagery-13/Glance-Skim-Hero-Image-Based-600x848.png" id="image-84e0c" data-cmp-data-layer="{&quot;image-84e0c&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/radimage&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;&quot;,&quot;analytics-module-name&quot;:&quot;radimage-1&quot;}}" data-cmp-hook-image="imageV3" class="cmp-image
      " itemscope="" itemtype="http://schema.org/ImageObject">
     
-        <img src="https://dynamicmedia.accenture.com/is/image/accenture/Glance-Skim-Hero-Image-Based-600x848-1%3Arad-card-full?ts=1763433188832&amp;fit=constrain&amp;dpr=off" loading="lazy" class="cmp-image__image" itemprop="contentUrl" width="600" height="848" alt="">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20848'%20role='img'%20aria-label='Futuristic%20landscape%20with%20luminous%20river'%3e%3cdefs%3e%3clinearGradient%20id='sky'%20x1='0'%20y1='0'%20x2='0'%20y2='1'%3e%3cstop%20offset='0'%20stop-color='%23f3b2a8'/%3e%3cstop%20offset='0.45'%20stop-color='%23f7d9ba'/%3e%3cstop%20offset='1'%20stop-color='%23766f8f'/%3e%3c/linearGradient%3e%3clinearGradient%20id='terrain1'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3e%3cstop%20offset='0'%20stop-color='%232f3d3d'/%3e%3cstop%20offset='1'%20stop-color='%2316252b'/%3e%3c/linearGradient%3e%3clinearGradient%20id='terrain2'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3e%3cstop%20offset='0'%20stop-color='%233e4f42'/%3e%3cstop%20offset='1'%20stop-color='%23202f33'/%3e%3c/linearGradient%3e%3clinearGradient%20id='river'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3e%3cstop%20offset='0'%20stop-color='%23e9f9ff'/%3e%3cstop%20offset='0.35'%20stop-color='%238be3ff'/%3e%3cstop%20offset='1'%20stop-color='%235ac8ff'/%3e%3c/linearGradient%3e%3cfilter%20id='glow'%20x='-30%25'%20y='-30%25'%20width='160%25'%20height='160%25'%3e%3cfeGaussianBlur%20stdDeviation='4'%20result='b'/%3e%3cfeMerge%3e%3cfeMergeNode%20in='b'/%3e%3cfeMergeNode%20in='SourceGraphic'/%3e%3c/feMerge%3e%3c/filter%3e%3c/defs%3e%3crect%20width='600'%20height='848'%20fill='url(%23sky)'/%3e%3ccircle%20cx='490'%20cy='220'%20r='62'%20fill='%23ffe7bc'%20opacity='0.35'/%3e%3cpath%20d='M0%20420%20C%20110%20380,%20220%20460,%20340%20420%20C%20430%20390,%20520%20415,%20600%20380%20L%20600%20848%20L%200%20848%20Z'%20fill='url(%23terrain1)'/%3e%3cpath%20d='M0%20530%20C%20130%20500,%20220%20560,%20310%20540%20C%20430%20515,%20500%20560,%20600%20520%20L%20600%20848%20L%200%20848%20Z'%20fill='url(%23terrain2)'/%3e%3cpath%20d='M0%20645%20C%2090%20640,%20145%20690,%20235%20670%20C%20340%20646,%20430%20706,%20600%20685%20L%20600%20848%20L%200%20848%20Z'%20fill='%231b2a2f'/%3e%3cg%20filter='url(%23glow)'%20fill='none'%20stroke-linecap='round'%3e%3cpath%20d='M620%20360%20C%20530%20360,%20500%20410,%20430%20420%20C%20350%20430,%20320%20475,%20245%20485%20C%20160%20496,%20145%20560,%2095%20595%20C%2055%20622,%2040%20680,%20-10%20735'%20stroke='url(%23river)'%20stroke-width='22'/%3e%3cpath%20d='M620%20360%20C%20530%20360,%20500%20410,%20430%20420%20C%20350%20430,%20320%20475,%20245%20485%20C%20160%20496,%20145%20560,%2095%20595%20C%2055%20622,%2040%20680,%20-10%20735'%20stroke='%23eefcff'%20stroke-width='8'%20opacity='0.9'/%3e%3c/g%3e%3cg%20opacity='0.55'%3e%3cellipse%20cx='420'%20cy='510'%20rx='46'%20ry='18'%20fill='%23364a46'/%3e%3cellipse%20cx='468'%20cy='506'%20rx='24'%20ry='10'%20fill='%233f5550'/%3e%3cellipse%20cx='305'%20cy='565'%20rx='38'%20ry='15'%20fill='%23334846'/%3e%3cellipse%20cx='150'%20cy='650'%20rx='40'%20ry='16'%20fill='%232f4542'/%3e%3c/g%3e%3c/svg%3e" loading="lazy" class="cmp-image__image" itemprop="contentUrl" width="600" height="848" alt="">
     
     
     
@@ -1987,21 +2172,21 @@
       
       
       <div class="rad-content-grid-card__label">
-         Research Report
+         CAPABILITY
       </div>
       <div class="rad-content-grid-card__title">
-         Sovereign AI: From managing risk to accelerating growth
+         AI Transformation
       </div>
       <div class="rad-content-grid-card__sliding-content">
          <div class="rad-content-grid-card__front-content"></div>
          <div class="rad-content-grid-card__back-content">
             <div class="rad-content-grid-card__content">
-               <p>Sovereign AI isn’t just a control play—it’s a game-changer for global competitiveness and cultural value. Discover how organizations are moving fast to secure their advantage and shape AI’s future, following four bold moves.</p>
+               <p>Engineering-led initiatives that move organizations from experimental AI pilots to scalable production systems with measurable business impact.</p>
 
             </div>
 			
 				<a href="sovereign-ai.html" class="rad-button rad-button--ghost" tabindex="-1" target="_self" aria-label="Expand: Sovereign AI: From managing compliance to creating new markets" data-barba-transition="">
-				   <div class="rad-button__text">Expand</div>
+				   <div class="rad-button__text">Learn more →</div>
 				   <div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact" aria-hidden="true"></div>
 				</a>
 			
@@ -2088,14 +2273,19 @@
   <div class="rad-carousel-image-and-text__slide">
     
       <div class="cmp-image">
-        <img class="cmp-image__image" src="https://dynamicmedia.accenture.com/is/image/accenture/Julie-Sweet-Headshot-December2025%3Arad-3x2?ts=1772142702938&amp;fit=constrain&amp;qlt=40&amp;dpr=off" alt="">
+        <img class="cmp-image__image" src="/assets/network-dashboard-CrCI7Q_d.jpg" alt="">
       </div>
     
     
     <div class="rad-carousel-image-and-text__slide-text">
-      <h4 class="rad-carousel-block__title">“Companies will have a greater technology landscape, but we need to completely change the narrative to inspire people to paint the future. It is human in the lead, not human in the loop.”</h4>
+      <h4 class="rad-carousel-block__title">“AI adoption is accelerating across every industry.<br>
+But most initiatives never reach production.<br>
+<br>
+The challenge is not the model — it is the system.<br>
+<br>
+AI only delivers value when it is engineered for scale, governance, and operational reliability.”</h4>
       <div class="rad-carousel-block__body">
-        <p>Julie Sweet</p>
+        <p>Archon Engineering Perspective</p>
       </div>
       
     </div>
@@ -2125,15 +2315,15 @@
 
 	<div class="rad-header__wrapper" data-analytics-template-zone="block-360-value">
 		<div class="rad-header__text-container">
-			<h2 class="rad-header__headline">360° VALUE</h2>
+			<h2 class="rad-header__headline">Latest Thinking</h2>
 			<!-- DEV NOTE: optional element -->
-			<h3 class="rad-header__sub-headline">Every day, we embrace change and create value for all our stakeholders around the world.</h3>
+			<h3 class="rad-header__sub-headline">Engineering-led systems that transform AI from experimentation into reliable enterprise infrastructure.</h3>
 		</div>
 		<!-- DEV NOTE: optional element -->
 		
 			<div class="rad-header__cta-button">
-				<a href="integrated-reporting.html" target="_self" aria-label="See the report: Every day, we create 360° value." class="rad-button rad-button--tertiary" data-barba-transition="">
-					<div class="rad-button__text">See the report </div>
+				<a href="integrated-reporting.html" target="_self" aria-label="Discuss an Engagement: AI TRANSFORMATION, ENGINEERED." class="rad-button rad-button--tertiary" data-barba-transition="">
+					<div class="rad-button__text">Discuss an Engagement →</div>
 					<div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact"></div>
 				</a>
 			</div>
@@ -2180,13 +2370,13 @@
 	<div class="rad-carousel-image-and-text__carousel rad-carousel rad-carousel--custom-controls rad-carousel--only-read-active rad-carousel--autorotate" data-autorotate-duration="10000" id="carousel-09c18bca55-image-and-text__carousel" aria-live="off">
 		<div class="rad-carousel-image-and-text__slide" role="group" aria-roledescription="slide"><div id="carouselslide-69758b9772" data-cmp-data-layer="{&quot;carouselslide-69758b9772&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/modules/carouselslide&quot;,&quot;analytics-module-name&quot;:&quot;carouselslide-2&quot;,&quot;analytics-template-zone&quot;:&quot;block-carousel-poste-italiane-pivots-to-platform-powerhouse&quot;}}" class="cmp-image">
 	
-		<img class="cmp-image__image" data-flickity-lazyload="https://dynamicmedia.accenture.com/is/image/accenture/PI-Carouselimage1-1920x1080%3Arad-3x2?ts=1772142703113&amp;fit=constrain&amp;qlt=40&amp;dpr=off" alt="Posteitaliane">
+		<img class="cmp-image__image" data-flickity-lazyload="images/slider/1_slider.jpg" alt="Posteitaliane">
 	
 	
 </div>
 <div id="carouselslide-69758b9772-slide" class="rad-carousel-image-and-text__slide-text">
-	<h4 class="rad-carousel-image-and-text__slide-title">Poste Italiane pivots to platform powerhouse</h4>
-	<p class="rad-carousel-image-and-text__slide-body">Italy's postal service has transformed into the country's top integrated service platform, serving 45 million citizens and elevating its role to a national engine for connection, inclusion and innovation.</p>
+	<h4 class="rad-carousel-image-and-text__slide-title">Production Patterns in AI Deployment</h4>
+	<p class="rad-carousel-image-and-text__slide-body">How enterprise AI systems move from prototypes to reliable operational environments through architecture, governance, and disciplined engineering.</p>
 	<a href="poste-italianes-pivot-postal-service-platform-powerhouse.html" target="_self" data-barba-transition="" aria-label="Read more: Poste Italiane's pivot to platform powerhouse" data-cmp-data-layer="{&quot;carouselslide-69758b9772-cta&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/modules/carouselslide&quot;,&quot;xdm:linkURL&quot;:&quot;/us-en/case-studies/data-ai/poste-italianes-pivot-postal-service-platform-powerhouse&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;Read more: Poste Italiane pivots to platform powerhouse&quot;,&quot;analytics-module-name&quot;:&quot;client story card button&quot;}}" data-cmp-clickable="" class="rad-carousel-image-and-text__slide-cta rad-button rad-button--tertiary">
 		<div class="rad-button__text">Read more</div>
 		<div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact"></div>
@@ -2197,13 +2387,13 @@
 </div>
 <div class="rad-carousel-image-and-text__slide" role="group" aria-roledescription="slide"><div id="carouselslide-8cc8f89b68" data-cmp-data-layer="{&quot;carouselslide-8cc8f89b68&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/modules/carouselslide&quot;,&quot;analytics-module-name&quot;:&quot;carouselslide-3&quot;,&quot;analytics-template-zone&quot;:&quot;block-carousel-bristol-myers-squibb-uses-data-and-insights-to-accelerate-drug-development&quot;}}" class="cmp-image">
 	
-		<img class="cmp-image__image" data-flickity-lazyload="https://dynamicmedia.accenture.com/is/image/accenture/BMS-Hero-Image-3840x2160%3Arad-3x2?ts=1772142703156&amp;fit=constrain&amp;qlt=40&amp;dpr=off" alt="">
+		<img class="cmp-image__image" data-flickity-lazyload="images/slider/2_slider.jpg" alt="">
 	
 	
 </div>
 <div id="carouselslide-8cc8f89b68-slide" class="rad-carousel-image-and-text__slide-text">
-	<h4 class="rad-carousel-image-and-text__slide-title">Bristol Myers Squibb uses data and insights to accelerate drug development</h4>
-	<p class="rad-carousel-image-and-text__slide-body">The global biopharmaceutical leader is bringing breakthrough therapies to more patients faster by integrating over 30 generative AI-powered solutions across its business.</p>
+	<h4 class="rad-carousel-image-and-text__slide-title">Observability in Multi-Agent Systems</h4>
+	<p class="rad-carousel-image-and-text__slide-body">Monitoring complex AI workflows requires visibility across agents, infrastructure, and decision pipelines.</p>
 	<a href="bristol-myers-squibb-accelerates-drug-development-genai.html" target="_self" data-barba-transition="" aria-label="Read more: Bristol Myers Squibb accelerates drug development with generative AI" data-cmp-data-layer="{&quot;carouselslide-8cc8f89b68-cta&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/modules/carouselslide&quot;,&quot;xdm:linkURL&quot;:&quot;/us-en/case-studies/health/bristol-myers-squibb-accelerates-drug-development-genai&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;Read more: Bristol Myers Squibb uses data and insights to accelerate drug development&quot;,&quot;analytics-module-name&quot;:&quot;client story card button&quot;}}" data-cmp-clickable="" class="rad-carousel-image-and-text__slide-cta rad-button rad-button--tertiary">
 		<div class="rad-button__text">Read more</div>
 		<div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact"></div>
@@ -2214,13 +2404,13 @@
 </div>
 <div class="rad-carousel-image-and-text__slide" role="group" aria-roledescription="slide"><div id="carouselslide-475cc08852" data-cmp-data-layer="{&quot;carouselslide-475cc08852&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/modules/carouselslide&quot;,&quot;analytics-module-name&quot;:&quot;carouselslide-4&quot;,&quot;analytics-template-zone&quot;:&quot;block-carousel-sumitomo-metal-mining-reimagines-materials-to-drive-global-innovation&quot;}}" class="cmp-image">
 	
-		<img class="cmp-image__image" data-flickity-lazyload="https://dynamicmedia.accenture.com/is/image/accenture/Solament-Carousel3-3840x2160%3Arad-3x2?ts=1772142703199&amp;fit=constrain&amp;qlt=20&amp;dpr=off" alt="">
+		<img class="cmp-image__image" data-flickity-lazyload="images/slider/3_slider.jpg" alt="">
 	
 	
 </div>
 <div id="carouselslide-475cc08852-slide" class="rad-carousel-image-and-text__slide-text">
-	<h4 class="rad-carousel-image-and-text__slide-title">Sumitomo Metal Mining reimagines materials to drive global innovation</h4>
-	<p class="rad-carousel-image-and-text__slide-body">The natural resources company has transformed an existing product as a bold new brand to unlock growth, spark innovation, and address practical applications from sustainable agriculture to energy efficiency.</p>
+	<h4 class="rad-carousel-image-and-text__slide-title">Scaling Workforce AI Responsibly</h4>
+	<p class="rad-carousel-image-and-text__slide-body">Enterprise AI adoption must balance productivity gains with governance, accountability, and operational safeguards.</p>
 	<a href="sumitomo-metal-mining-reimagines-materials-drive-global-innovation.html" target="_self" data-barba-transition="" aria-label="Read more: Sumitomo Metal Mining reimagines materials to drive global innovation" data-cmp-data-layer="{&quot;carouselslide-475cc08852-cta&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/modules/carouselslide&quot;,&quot;xdm:linkURL&quot;:&quot;/us-en/case-studies/song/sumitomo-metal-mining-reimagines-materials-drive-global-innovation&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;Read more: Sumitomo Metal Mining reimagines materials to drive global innovation&quot;,&quot;analytics-module-name&quot;:&quot;client story card button&quot;}}" data-cmp-clickable="" class="rad-carousel-image-and-text__slide-cta rad-button rad-button--tertiary">
 		<div class="rad-button__text">Read more</div>
 		<div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact"></div>
@@ -2231,13 +2421,13 @@
 </div>
 <div class="rad-carousel-image-and-text__slide" role="group" aria-roledescription="slide"><div id="carouselslide-63a4cdbdb2" data-cmp-data-layer="{&quot;carouselslide-63a4cdbdb2&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/modules/carouselslide&quot;,&quot;analytics-module-name&quot;:&quot;carouselslide-5&quot;,&quot;analytics-template-zone&quot;:&quot;block-carousel-unicef-builds-a-foundation-for-ethical-ai&quot;}}" class="cmp-image">
 	
-		<img class="cmp-image__image" data-flickity-lazyload="https://dynamicmedia.accenture.com/is/image/accenture/Unicef-Image-1-1920x1080%3Arad-3x2?ts=1772142703241&amp;fit=constrain&amp;qlt=20&amp;dpr=off" alt="">
+		<img class="cmp-image__image" data-flickity-lazyload="images/slider/4_slider.jpg" alt="">
 	
 	
 </div>
 <div id="carouselslide-63a4cdbdb2-slide" class="rad-carousel-image-and-text__slide-text">
-	<h4 class="rad-carousel-image-and-text__slide-title">UNICEF builds a foundation for ethical AI</h4>
-	<p class="rad-carousel-image-and-text__slide-body">The United Nations agency is developing a unified strategy for AI, helping it stay at the forefront of technological advancements and build a brighter, safer future for children across the world.</p>
+	<h4 class="rad-carousel-image-and-text__slide-title">Designing Production-Ready AI Platforms</h4>
+	<p class="rad-carousel-image-and-text__slide-body">Reliable AI systems require scalable infrastructure, orchestration, monitoring, and clearly defined system boundaries.</p>
 	<a href="unicef-ai-strategy.html" target="_self" data-barba-transition="" aria-label="Read more: Equipping UNICEF to harness AI for good" data-cmp-data-layer="{&quot;carouselslide-63a4cdbdb2-cta&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/modules/carouselslide&quot;,&quot;xdm:linkURL&quot;:&quot;/us-en/case-studies/data-ai/unicef-ai-strategy&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;Read more: UNICEF builds a foundation for ethical AI&quot;,&quot;analytics-module-name&quot;:&quot;client story card button&quot;}}" data-cmp-clickable="" class="rad-carousel-image-and-text__slide-cta rad-button rad-button--tertiary">
 		<div class="rad-button__text">Read more</div>
 		<div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact"></div>
@@ -2284,106 +2474,52 @@
 	</div>
 	
 </section></div>
-<div class="floatingcardblock">
-	
-		
-	<div id="floatingcardblock-db5a7076ff" class="rad-awards" data-cmp-data-layer="{&quot;floatingcardblock-db5a7076ff&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/blocks/floatingcardblock&quot;,&quot;analytics-module-name&quot;:&quot;floatingcardblock-1&quot;,&quot;analytics-template-zone&quot;:&quot;block-global-recognition-and-awards&quot;}}">
-			<div class="rad-awards__stage">
-			<h2 class="rad-awards__headline">Global recognition and awards</h2>
+<div class="header teaser rad-component-spacing-top-large rad-component-spacing-bottom-large"><div id="header-archon-difference" class="rad-header alignment-center cta-position-right">
+
+	<div class="rad-header__wrapper">
+		<div class="rad-header__text-container">
+			<h2 class="rad-header__headline">Why Archon Is Different</h2>
+			<div class="rad-header__sub-headline">
+				<p>Building AI systems requires more than models and prototypes.</p>
+				<p>Enterprise environments demand reliable architectures, clear system boundaries, robust monitoring, and disciplined deployment practices.</p>
+				<p>Archon approaches AI as an engineering challenge — integrating architecture, infrastructure, and governance to ensure systems perform reliably in real operational environments.</p>
 			</div>
-			<div class="rad-awards-cards__presenter">
-				<div class="cmp-floating-awards-card">
-    <div id="floatingawardcards-93d774216a" data-cmp-data-layer="{&quot;floatingawardcards-93d774216a&quot;:{&quot;analytics-module-name&quot;:&quot;floatingawardcards-1&quot;}}" class="rad-awards-card rad-awards-card--blue" data-hover-delay="300">
-	<button class="rad-awards-card__toggle">Toggle awards card detail view</button>
-	<div class="rad-awards-card__cover">
-		<div class="rad-awards-card__motion-bg">
-			<lottie-player preserveaspectratio="xMidYMid slice" class="rad-awards-card__lp" aria-hidden="true" src="/content/dam/accenture/final/images/lottie/awards/Accenture_CardIllu_Anim_003_Timed_Alpha_blue.json"></lottie-player>
 		</div>
-		<h3 class="rad-awards-card__title" aria-hidden="true">A Leader in Reinvention​</h3>
-	</div>
-	<div class="rad-awards-card__detail">
-	<div class="rad-awards-card__description">
-      
-      <div class="rad-awards-card__rte"><p>Our Chair and CEO, Julie Sweet, is No. 11 on Fortune’s Most Powerful People in Business. Every day, Julie and our people demonstrate why Accenture is our clients’ reinvention partner of choice.</p>
-</div>
-	</div>  
-       
-		<a href="awards-recognition.html" aria-label="See related awards: Awards &amp; recognition" data-cmp-clickable="" data-cmp-data-layer="{&quot;floatingawardcards-93d774216a-cta&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/about/awards-recognition&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;See related awards: A Leader in Reinvention​&quot;}}" target="_self" data-barba-transition="" class="rad-button rad-button--ghost">
-			<div class="rad-button__text">See related awards</div>
-			<div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact" aria-hidden="true"></div>
-		</a>
-        
 	</div>
 </div>
 
+</div>
+<section id="archon-build-process" aria-label="How Archon Builds AI Systems">
+	<div class="archon-build-process__inner">
+		<h2 class="archon-build-process__title">How Archon Builds AI Systems</h2>
+		<p class="archon-build-process__intro">A structured engineering process ensures AI systems move from concept to reliable enterprise infrastructure.</p>
+			<div class="archon-build-process__timeline-scroll">
+				<div class="archon-build-process__timeline" id="archon-build-process-timeline">
+					<div class="archon-build-process__nodes">
+						<article class="archon-build-process__step">
+							<h3 class="archon-build-process__step-title">Architecture</h3>
+							<p class="archon-build-process__step-body">Define system architecture, infrastructure requirements, and governance controls.</p>
+						</article>
 
-    
-</div>
-<div class="cmp-floating-awards-card">
-    <div id="floatingawardcards-f31e5d9a9a" data-cmp-data-layer="{&quot;floatingawardcards-f31e5d9a9a&quot;:{&quot;analytics-module-name&quot;:&quot;floatingawardcards-2&quot;}}" class="rad-awards-card rad-awards-card--red" data-hover-delay="300">
-	<button class="rad-awards-card__toggle">Toggle awards card detail view</button>
-	<div class="rad-awards-card__cover">
-		<div class="rad-awards-card__motion-bg">
-			<lottie-player preserveaspectratio="xMidYMid slice" class="rad-awards-card__lp" aria-hidden="true" src="/content/dam/accenture/final/images/lottie/awards/Accenture_CardIllu_Anim_002_Timed_Alpha_red.json"></lottie-player>
-		</div>
-		<h3 class="rad-awards-card__title" aria-hidden="true">A Great Place To Work®</h3>
-	</div>
-	<div class="rad-awards-card__detail">
-	<div class="rad-awards-card__description">
-      
-      <div class="rad-awards-card__rte"><p>We are very proud to have earned the No. 4 spot on the Great Place To Work® list of the World’s Best Workplaces™, our highest-ever ranking on this prestigious list.<br>
-<br>
-This recognition is especially meaningful because it is based on feedback from our people worldwide.</p>
-</div>
-	</div>  
-       
-		<a href="awards-recognition.html" aria-label="See related awards: Awards &amp; recognition" data-cmp-clickable="" data-cmp-data-layer="{&quot;floatingawardcards-f31e5d9a9a-cta&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/about/awards-recognition&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;See related awards: A Great Place To Work®&quot;}}" target="_self" data-barba-transition="" class="rad-button rad-button--ghost">
-			<div class="rad-button__text">See related awards</div>
-			<div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact" aria-hidden="true"></div>
-		</a>
-        
-	</div>
-</div>
+						<article class="archon-build-process__step">
+							<h3 class="archon-build-process__step-title">Prototype</h3>
+							<p class="archon-build-process__step-body">Develop targeted prototypes to validate system behavior and integration.</p>
+						</article>
 
+						<article class="archon-build-process__step">
+							<h3 class="archon-build-process__step-title">Deployment</h3>
+							<p class="archon-build-process__step-body">Deploy production-ready AI systems with monitoring, security, and reliability mechanisms.</p>
+						</article>
 
-    
-</div>
-<div class="cmp-floating-awards-card">
-    <div id="floatingawardcards-1da42e566f" data-cmp-data-layer="{&quot;floatingawardcards-1da42e566f&quot;:{&quot;analytics-module-name&quot;:&quot;floatingawardcards-3&quot;}}" class="rad-awards-card rad-awards-card--purple" data-hover-delay="300">
-	<button class="rad-awards-card__toggle">Toggle awards card detail view</button>
-	<div class="rad-awards-card__cover">
-		<div class="rad-awards-card__motion-bg">
-			<lottie-player preserveaspectratio="xMidYMid slice" class="rad-awards-card__lp" aria-hidden="true" src="/content/dam/accenture/final/images/lottie/awards/Accenture_CardIllu_Anim_001_Timed_Alpha_violet.json"></lottie-player>
-		</div>
-		<h3 class="rad-awards-card__title" aria-hidden="true">A Trusted Industry Leader</h3>
-	</div>
-	<div class="rad-awards-card__detail">
-	<div class="rad-awards-card__description">
-      
-      <div class="rad-awards-card__rte"><p>Accenture is a Leader in the 2025 Gartner Magic Quadrant for Public Cloud IT Transformation Services.</p>
-<p>Accenture placed highest on the Ability to Execute axis in the Magic Quadrant report, which assessed a total of 15 PCITS providers.</p>
-</div>
-	</div>  
-       
-		<a href="industry-analyst.html" aria-label="See related awards: Industry Analyst Recognition" data-cmp-clickable="" data-cmp-data-layer="{&quot;floatingawardcards-1da42e566f-cta&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/about/company/industry-analyst&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;See related awards: A Trusted Industry Leader&quot;}}" target="_self" data-barba-transition="" class="rad-button rad-button--ghost">
-			<div class="rad-button__text">See related awards</div>
-			<div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact" aria-hidden="true"></div>
-		</a>
-        
-	</div>
-</div>
-
-
-    
-</div>
-
+						<article class="archon-build-process__step">
+							<h3 class="archon-build-process__step-title">Optimization</h3>
+							<p class="archon-build-process__step-body">Continuously evaluate and improve system performance, workflows, and operational stability.</p>
+						</article>
+				</div>
 			</div>
-		
+		</div>
 	</div>
-
-	
-	
-</div>
+</section>
 <div class="mixedmediatextblock rad-component-spacing-bottom-none">
 
 
@@ -2392,22 +2528,19 @@ This recognition is especially meaningful because it is based on feedback from o
 	
 	<div class="rad-mixed-media-and-text__media">
 		
-		<img class="rad-mixed-media-and-text__primary-media rad-mixed-media-and-text__primary-image" src="https://dynamicmedia.accenture.com/is/image/accenture/A1-A.com-Careers-Module-Image-1?qlt=85&amp;ts=1772142703442&amp;$1024-PNG$&amp;qlt=25&amp;dpr=off" alt=""> 
+		<img class="rad-mixed-media-and-text__primary-media rad-mixed-media-and-text__primary-image" src="/assets/teamwork-nc6XJTxq.avif" alt=""> 
 		
 		
 	</div>
 	<div class="rad-mixed-media-and-text__text">
 		
-		<div class="rad-mixed-media-and-text__label">Careers</div>
-		
-		
-			
-				<h3 class="rad-mixed-media-and-text__title">Build a career that's as exciting as the world we're shaping</h3>
+		<h3 class="rad-mixed-media-and-text__title">"AI adoption is accelerating across every industry.<br>But most initiatives never reach production."</h3>
 			
 		
 		
 		<p class="rad-mixed-media-and-text__description">
-			Grow personally and professionally in a global company that helps you unlock your full potential.</p>
+			The challenge is not the model - it is the system.<br><br>AI only delivers value when it is engineered for scale, governance, and operational reliability.</p>
+		<p class="archon-quote-attribution">Archon Engineering Perspective</p>
 		
 		<a href="careers.html" class="rad-button rad-button--tertiary" data-cmp-clickable="" data-cmp-data-layer="{&quot;mixedmediatextblock-178a5a195b-joinus-cta&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/careers&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;Join us: Build a career that's as exciting as the world we're shaping&quot;,&quot;analytics-module-name&quot;:&quot;mixedmediatextblock-1&quot;}}" target="_self" data-barba-transition="" aria-label="Join us: Work at the heart of change">
 			<div class="rad-button__text">Join us</div>
@@ -2420,121 +2553,6 @@ This recognition is especially meaningful because it is based on feedback from o
     
 
 </div>
-<div class="rad-news rad-spacing-vertical-md rad-component-spacing-top-none"><div id="news-7d3d3e0021" class="rad-news-container" data-placeholder-text="false" data-cmp-delay="5000" data-previous-button-datalayer="{&quot;news-previous-7d3d3e0021&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;previous page-{0}&quot;,&quot;analytics-module-name&quot;:&quot;news-1&quot;,&quot;analytics-template-zone&quot;:&quot;block-accenture-news&quot;}}" data-next-button-datalayer="{&quot;news-next-7d3d3e0021&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;next page-{0}&quot;,&quot;analytics-module-name&quot;:&quot;news-1&quot;,&quot;analytics-template-zone&quot;:&quot;block-accenture-news&quot;}}" data-play-button-datalayer="{&quot;news-play-7d3d3e0021&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;cta&quot;,&quot;analytics-link-name&quot;:&quot;play:Accenture news&quot;,&quot;analytics-module-name&quot;:&quot;news-1&quot;,&quot;analytics-template-zone&quot;:&quot;block-accenture-news&quot;}}" data-pause-button-datalayer="{&quot;news-pause-7d3d3e0021&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;cta&quot;,&quot;analytics-link-name&quot;:&quot;pause:Accenture news&quot;,&quot;analytics-module-name&quot;:&quot;news-1&quot;,&quot;analytics-template-zone&quot;:&quot;block-accenture-news&quot;}}" data-carousel-indicator-datalayer="{&quot;news-carousel-indicator-7d3d3e0021&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Accenture news&quot;,&quot;analytics-module-name&quot;:&quot;news-1&quot;,&quot;analytics-template-zone&quot;:&quot;block-accenture-news&quot;}}" data-cmp-data-layer="{&quot;news-7d3d3e0021&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/blocks/news&quot;,&quot;analytics-module-name&quot;:&quot;news-1&quot;,&quot;analytics-template-zone&quot;:&quot;block-accenture-news&quot;}}">
-
-	<div class="rad-news-header">
-		Accenture news
-	</div>
-	<button class="rad-icon-button rad-icon-button--grey rad-news-play-pause rad-news-play-pause__play rad-news-play-pause--disabled">
-		<div class="rad-icon-button__text">Play</div>
-		<div class="rad-icon rad-icon--compact rad-icon__play-default" aria-hidden="true"></div>
-	</button>
-	<button class="rad-icon-button rad-icon-button--grey rad-news-play-pause rad-news-play-pause__pause">
-		<div class="rad-icon-button__text">Pause</div>
-		<div class="rad-icon rad-icon--compact rad-icon__pause-default" aria-hidden="true"></div>
-	</button>
-	<div class="rad-news-carousel rad-news-slideshow" id="news-7d3d3e0021-items" tabindex="-1">
-
-		<div class="rad-news-carousel-cell"><!-- News Card -->
-
-	<a class="rad-news-card" href="https://newsroom.accenture.com/news/2026/accenture-and-mistral-ai-accelerate-enterprise-reinvention-with-scalable-ai-that-delivers-strategic-autonomy-for-customers" target="_self" rel=" ">
-		
-			<p class="rad-news-eyebrow">February 26, 2026</p>
-		
-		
-			<h3 class="rad-news-title" data-cmp-clickable="" data-cmp-data-layer="{&quot;news-card-title-b293e4c02d&quot;:{&quot;xdm:linkURL&quot;:&quot;https://newsroom.accenture.com/news/2026/accenture-and-mistral-ai-accelerate-enterprise-reinvention-with-scalable-ai-that-delivers-strategic-autonomy-for-customers&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;Accenture and Mistral AI Accelerate Enterprise Reinvention with Scalable AI that Delivers Strategic Autonomy for Customers&quot;,&quot;analytics-module-name&quot;:&quot;newscard-1&quot;,&quot;analytics-template-zone&quot;:&quot;block-accenture-news&quot;}}"> Accenture and Mistral AI Accelerate Enterprise Reinvention with Scalable AI that Delivers Strategic Autonomy for Customers </h3>
-		
-	</a>
-
-</div>
-<div class="rad-news-carousel-cell"><!-- News Card -->
-
-	<a class="rad-news-card" href="https://newsroom.accenture.com/news/2026/accenture-appoints-rachel-frey-chief-communications-officer" target="_self" rel=" ">
-		
-			<p class="rad-news-eyebrow">February 11, 2026</p>
-		
-		
-			<h3 class="rad-news-title" data-cmp-clickable="" data-cmp-data-layer="{&quot;news-card-title-250a1b907f&quot;:{&quot;xdm:linkURL&quot;:&quot;https://newsroom.accenture.com/news/2026/accenture-appoints-rachel-frey-chief-communications-officer&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;Accenture Appoints Rachel Frey Chief Communications Officer&quot;,&quot;analytics-module-name&quot;:&quot;newscard-2&quot;,&quot;analytics-template-zone&quot;:&quot;block-accenture-news&quot;}}"> Accenture Appoints Rachel Frey Chief Communications Officer </h3>
-		
-	</a>
-
-</div>
-<div class="rad-news-carousel-cell"><!-- News Card -->
-
-	<a class="rad-news-card" href="https://newsroom.accenture.com/news/2026/chris-howarth-appointed-as-ceo-of-avanade-strengthening-alignment-across-accenture-and-microsoft" target="_self" rel=" ">
-		
-			<p class="rad-news-eyebrow">February 3, 2026</p>
-		
-		
-			<h3 class="rad-news-title" data-cmp-clickable="" data-cmp-data-layer="{&quot;news-card-title-2f3a2cf67f&quot;:{&quot;xdm:linkURL&quot;:&quot;https://newsroom.accenture.com/news/2026/chris-howarth-appointed-as-ceo-of-avanade-strengthening-alignment-across-accenture-and-microsoft&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;Chris Howarth Appointed as CEO of Avanade, Strengthening Alignment Across Accenture and Microsoft&quot;,&quot;analytics-module-name&quot;:&quot;newscard-3&quot;,&quot;analytics-template-zone&quot;:&quot;block-accenture-news&quot;}}"> Chris Howarth Appointed as CEO of Avanade, Strengthening Alignment Across Accenture and Microsoft </h3>
-		
-	</a>
-
-</div>
-<div class="rad-news-carousel-cell"><!-- News Card -->
-
-	<a class="rad-news-card" href="https://newsroom.accenture.com/news/2026/sovereign-ai-selects-accenture-and-palantir-to-help-build-next-generation-ai-infrastructure-across-emea" target="_self" rel=" ">
-		
-			<p class="rad-news-eyebrow">January 21, 2026</p>
-		
-		
-			<h3 class="rad-news-title" data-cmp-clickable="" data-cmp-data-layer="{&quot;news-card-title-5476ac7d28&quot;:{&quot;xdm:linkURL&quot;:&quot;https://newsroom.accenture.com/news/2026/sovereign-ai-selects-accenture-and-palantir-to-help-build-next-generation-ai-infrastructure-across-emea&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;Sovereign AI Selects Accenture and Palantir to Help Build Next Generation AI Infrastructure Across EMEA&quot;,&quot;analytics-module-name&quot;:&quot;newscard-4&quot;,&quot;analytics-template-zone&quot;:&quot;block-accenture-news&quot;}}"> Sovereign AI Selects Accenture and Palantir to Help Build Next Generation AI Infrastructure Across EMEA </h3>
-		
-	</a>
-
-</div>
-<div class="rad-news-carousel-cell"><!-- News Card -->
-
-	<a class="rad-news-card" href="https://newsroom.accenture.com/news/2026/accenture-to-acquire-faculty-to-scale-ai-capabilities" target="_self" rel=" ">
-		
-			<p class="rad-news-eyebrow">January 6, 2026</p>
-		
-		
-			<h3 class="rad-news-title" data-cmp-clickable="" data-cmp-data-layer="{&quot;news-card-title-df80a24cf7&quot;:{&quot;xdm:linkURL&quot;:&quot;https://newsroom.accenture.com/news/2026/accenture-to-acquire-faculty-to-scale-ai-capabilities&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;Accenture to Acquire Faculty to Scale AI Capabilities&quot;,&quot;analytics-module-name&quot;:&quot;newscard-5&quot;,&quot;analytics-template-zone&quot;:&quot;block-accenture-news&quot;}}"> Accenture to Acquire Faculty to Scale AI Capabilities </h3>
-		
-	</a>
-
-</div>
-<div class="rad-news-carousel-cell"><!-- News Card -->
-
-	<a class="rad-news-card" href="https://newsroom.accenture.com/news/2025/accenture-reports-first-quarter-fiscal-2026-results" target="_self" rel=" ">
-		
-			<p class="rad-news-eyebrow">December 18, 2025</p>
-		
-		
-			<h3 class="rad-news-title" data-cmp-clickable="" data-cmp-data-layer="{&quot;news-card-title-a834738b9d&quot;:{&quot;xdm:linkURL&quot;:&quot;https://newsroom.accenture.com/news/2025/accenture-reports-first-quarter-fiscal-2026-results&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;Accenture Reports First-Quarter Fiscal 2026 Results&quot;,&quot;analytics-module-name&quot;:&quot;newscard-6&quot;,&quot;analytics-template-zone&quot;:&quot;block-accenture-news&quot;}}"> Accenture Reports First-Quarter Fiscal 2026 Results </h3>
-		
-	</a>
-
-</div>
-<div class="rad-news-carousel-cell"><!-- News Card -->
-
-	<a class="rad-news-card" href="https://newsroom.accenture.com/news/2025/accenture-to-acquire-majority-stake-in-dlb-to-expand-capital-projects-capabilities-for-end-to-end-data-center-development" target="_self" rel=" ">
-		
-			<p class="rad-news-eyebrow">December 16, 2025</p>
-		
-		
-			<h3 class="rad-news-title" data-cmp-clickable="" data-cmp-data-layer="{&quot;news-card-title-82314cec5e&quot;:{&quot;xdm:linkURL&quot;:&quot;https://newsroom.accenture.com/news/2025/accenture-to-acquire-majority-stake-in-dlb-to-expand-capital-projects-capabilities-for-end-to-end-data-center-development&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;Accenture to Acquire Majority Stake in DLB to Expand Capital Projects Capabilities for End-to-End Data Center Development&quot;,&quot;analytics-module-name&quot;:&quot;newscard-7&quot;,&quot;analytics-template-zone&quot;:&quot;block-accenture-news&quot;}}"> Accenture to Acquire Majority Stake in DLB to Expand Capital Projects Capabilities for End-to-End Data Center Development </h3>
-		
-	</a>
-
-</div>
-<div class="rad-news-carousel-cell"><!-- News Card -->
-
-	<a class="rad-news-card" href="https://newsroom.accenture.com/news/2025/accenture-and-anthropic-launch-multi-year-partnership-to-drive-enterprise-ai-innovation-and-value-across-industries" target="_self" rel=" ">
-		
-			<p class="rad-news-eyebrow">December 9, 2025</p>
-		
-		
-			<h3 class="rad-news-title" data-cmp-clickable="" data-cmp-data-layer="{&quot;news-card-title-1b256bca17&quot;:{&quot;xdm:linkURL&quot;:&quot;https://newsroom.accenture.com/news/2025/accenture-and-anthropic-launch-multi-year-partnership-to-drive-enterprise-ai-innovation-and-value-across-industries&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;Accenture and Anthropic Launch Multi-Year Partnership to Drive Enterprise AI Innovation and Value Across Industries&quot;,&quot;analytics-module-name&quot;:&quot;newscard-8&quot;,&quot;analytics-template-zone&quot;:&quot;block-accenture-news&quot;}}"> Accenture and Anthropic Launch Multi-Year Partnership to Drive Enterprise AI Innovation and Value Across Industries </h3>
-		
-	</a>
-
-</div>
-
-	</div>
-	
-</div></div>
 <div class="custom-html"><div>
     <div class="cmp-custom__html__wrapper" id="custom-html-css-js">
     	<div class="html_content" htmlcontent="<style>
@@ -2556,16 +2574,8 @@ This recognition is especially meaningful because it is based on feedback from o
 }
 
 @media (min-width: 768px) {
-.rad-news.rad-spacing-vertical-md.rad-component-spacing-top-none {
-    padding-top: 10vh;
-}
 .mixedmediatextblock.rad-component-spacing-bottom-none {
     padding-bottom: 0;
-}
-}
-@media (min-width: 1200px) {
-.rad-news.rad-spacing-vertical-md.rad-component-spacing-top-none {
-    padding-top: 0.5rem;
 }
 }
 
@@ -2573,6 +2583,39 @@ This recognition is especially meaningful because it is based on feedback from o
 .mixedmediatextblock.rad-component-spacing-bottom-none {
     padding-bottom: 7.5vh;
 }
+}
+
+/* Scoped text sizing and content cleanup for the teamwork quote block only */
+#mixedmediatextblock-178a5a195b .rad-mixed-media-and-text__title {
+    font-size: clamp(2rem, 2.8vw, 3.6rem);
+    line-height: 1.15;
+}
+#mixedmediatextblock-178a5a195b .rad-mixed-media-and-text__description {
+    font-size: clamp(1.4rem, 1.8vw, 2.8rem);
+    line-height: 1.2;
+}
+#mixedmediatextblock-178a5a195b .rad-button {
+    display: none;
+}
+#mixedmediatextblock-178a5a195b .archon-quote-attribution {
+    margin-top: 2rem;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: clamp(1.2rem, 1.4vw, 2rem);
+    line-height: 1.2;
+}
+
+/* Keep updated slider images at consistent original dimensions */
+#carousel-09c18bca55 .cmp-image {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+}
+#carousel-09c18bca55 .cmp-image .cmp-image__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 </style>"></div>
     </div>
@@ -2585,18 +2628,18 @@ This recognition is especially meaningful because it is based on feedback from o
     </div>
 
 </main>
-<footer class="custom-footer">
+<footer class="custom-footer" id="footer">
   <nav class="custom-footer__nav">
     <a href="#">Home</a>
-    <a href="#">Pricing</a>
-    <a href="#">FAQ</a>
-    <a href="#">Changelog</a>
-    <a href="#">License</a>
-    <a href="#">Gumroad</a>
+    <a href="#">Services</a>
+    <a href="#">Insights</a>
     <a href="#">Contact</a>
   </nav>
   <div class="custom-footer__copyright">
-    &copy; 2020 - 2022 Anron. Built with Webflow. All rights reserved.
+    Archon provides advisory and engineering services and does not provide legal, regulatory, or compliance certification services.
+  </div>
+  <div class="custom-footer__copyright">
+    &copy; 2026 Archon Systems. All rights reserved.
   </div>
 </footer>
 
@@ -2689,7 +2732,186 @@ This recognition is especially meaningful because it is based on feedback from o
     
 
         
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        (function () {
+            function initArchonBuildProcessTimeline() {
+                var section = document.getElementById("archon-build-process");
+                var timeline = document.getElementById("archon-build-process-timeline");
+                if (!section || !timeline || timeline.dataset.timelineInitialized === "true") return;
+                timeline.dataset.timelineInitialized = "true";
+
+                var steps = Array.prototype.slice.call(timeline.querySelectorAll(".archon-build-process__step"));
+                var bodies = Array.prototype.slice.call(timeline.querySelectorAll(".archon-build-process__step-body"));
+                if (!steps.length || !bodies.length) return;
+
+                if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                    steps.forEach(function (step, index) {
+                        var body = bodies[index];
+                        step.style.opacity = index === 0 ? "1" : "0.5";
+                        step.style.transform = index === 0 ? "scale(1)" : "scale(0.9)";
+                        step.style.flexGrow = index === 0 ? "3.4" : "1";
+                        step.style.background = index === 0 ? "rgba(161, 0, 255, 0.14)" : "rgba(255, 255, 255, 0.04)";
+                        if (body) {
+                            body.style.opacity = index === 0 ? "1" : "0";
+                            body.style.maxHeight = index === 0 ? "220px" : "0px";
+                            body.style.visibility = index === 0 ? "visible" : "hidden";
+                        }
+                    });
+                    return;
+                }
+
+                if (!window.gsap || !window.ScrollTrigger) return;
+
+                gsap.registerPlugin(ScrollTrigger);
+
+                gsap.set(steps, {
+                    flexGrow: 1,
+                    scale: 0.9,
+                    opacity: 0.5,
+                    x: 0,
+                    backgroundColor: "rgba(255, 255, 255, 0.04)"
+                });
+                gsap.set(bodies, { autoAlpha: 0, maxHeight: 0 });
+
+                var cardsTl = gsap.timeline({
+                    defaults: { overwrite: "auto" },
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top top",
+                        end: "+=320%",
+                        scrub: 0.85,
+                        pin: true,
+                        anticipatePin: 1,
+                        invalidateOnRefresh: true
+                    }
+                });
+
+                function addState(activeIndex, position) {
+                    steps.forEach(function (step, index) {
+                        var xOffset = 0;
+                        if (index < activeIndex) xOffset = -8;
+                        if (index > activeIndex) xOffset = 8;
+
+                        cardsTl.to(step, {
+                            duration: 0.8,
+                            flexGrow: index === activeIndex ? 3.2 : 1,
+                            scale: index === activeIndex ? 1 : 0.9,
+                            opacity: index === activeIndex ? 1 : 0.5,
+                            x: xOffset,
+                            backgroundColor: index === activeIndex ? "rgba(161, 0, 255, 0.14)" : "rgba(255, 255, 255, 0.04)",
+                            ease: "none"
+                        }, position);
+                    });
+
+                    bodies.forEach(function (body, index) {
+                        cardsTl.to(body, {
+                            duration: 0.5,
+                            autoAlpha: index === activeIndex ? 1 : 0,
+                            maxHeight: index === activeIndex ? 220 : 0,
+                            ease: "none"
+                        }, position + 0.1);
+                    });
+                }
+
+                addState(0, 0);
+                addState(1, 1.25);
+                addState(2, 2.5);
+                addState(3, 3.75);
+            }
+
+            window.addEventListener("DOMContentLoaded", initArchonBuildProcessTimeline);
+            window.addEventListener("radTransitionFinished", initArchonBuildProcessTimeline);
+        })();
+    </script>
+    <script type="text/javascript">
+        (function () {
+            function initArchonCultureScrollAnimation() {
+                var block = document.getElementById("mixedmediatextblock-178a5a195b");
+                if (!block || block.dataset.scrollAnimationInitialized === "true") return;
+                block.dataset.scrollAnimationInitialized = "true";
+
+                var media = block.querySelector(".rad-mixed-media-and-text__media");
+                var text = block.querySelector(".rad-mixed-media-and-text__text");
+                var title = block.querySelector(".rad-mixed-media-and-text__title");
+                var description = block.querySelector(".rad-mixed-media-and-text__description");
+                var attribution = block.querySelector(".archon-quote-attribution");
+                if (!media || !text || !title || !description) return;
+
+                if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                    media.style.opacity = "1";
+                    media.style.transform = "none";
+                    text.style.opacity = "1";
+                    text.style.transform = "none";
+                    title.style.opacity = "1";
+                    title.style.transform = "none";
+                    description.style.opacity = "1";
+                    description.style.transform = "none";
+                    if (attribution) {
+                        attribution.style.opacity = "1";
+                        attribution.style.transform = "none";
+                    }
+                    return;
+                }
+
+                if (!window.ScrollMagic || !window.TimelineMax || !window.TweenMax) return;
+
+                TweenMax.set(media, { autoAlpha: 0.55, x: -72, scale: 1.06 });
+                TweenMax.set(text, { autoAlpha: 0.4, x: 72 });
+                TweenMax.set(title, { autoAlpha: 0, y: 26 });
+                TweenMax.set(description, { autoAlpha: 0, y: 26 });
+                if (attribution) TweenMax.set(attribution, { autoAlpha: 0, y: 22 });
+
+                var revealTl = new TimelineMax();
+                revealTl
+                    .to(media, 1, {
+                        autoAlpha: 1,
+                        x: 0,
+                        scale: 1,
+                        ease: Power2.easeOut
+                    }, 0)
+                    .to(text, 1, {
+                        autoAlpha: 1,
+                        x: 0,
+                        ease: Power2.easeOut
+                    }, 0)
+                    .to(title, 0.66, {
+                        autoAlpha: 1,
+                        y: 0,
+                        ease: Power2.easeOut
+                    }, 0.16)
+                    .to(description, 0.66, {
+                        autoAlpha: 1,
+                        y: 0,
+                        ease: Power2.easeOut
+                    }, 0.3);
+
+                if (attribution) {
+                    revealTl.to(attribution, 0.6, {
+                        autoAlpha: 1,
+                        y: 0,
+                        ease: Power2.easeOut
+                    }, 0.44);
+                }
+
+                var controller = window.__archonCultureController || new ScrollMagic.Controller();
+                window.__archonCultureController = controller;
+                new ScrollMagic.Scene({
+                    triggerElement: block,
+                    triggerHook: 0.82,
+                    duration: "110%",
+                    reverse: true,
+                    tweenChanges: true
+                })
+                    .setTween(revealTl)
+                    .addTo(controller);
+            }
+
+            window.addEventListener("DOMContentLoaded", initArchonCultureScrollAnimation);
+            window.addEventListener("radTransitionFinished", initArchonCultureScrollAnimation);
+        })();
+    </script>
 
 </body></html>
 

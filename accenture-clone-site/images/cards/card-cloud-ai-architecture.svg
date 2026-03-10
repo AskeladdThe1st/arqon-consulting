@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 848" role="img" aria-label="Technical line art illustration">
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#d9d9d9" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="848" fill="#f3f3f3"/>
+  <rect width="600" height="848" fill="url(#grid)" opacity="0.6"/>
+  <g fill="none" stroke="#202020" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="490" width="600" height="24"/>
+    <circle cx="180" cy="690" r="110"/>
+    <circle cx="360" cy="640" r="84"/>
+    <circle cx="455" cy="700" r="72"/>
+    <rect x="42" y="415" width="120" height="84" rx="8"/>
+    <path d="M42 445h120M66 414v84M138 414v84"/>
+    <path d="M205 360h155v22H205z"/>
+    <path d="M205 360c-8-42 22-90 67-104m88 104c8-42-22-90-67-104"/>
+    <circle cx="273" cy="255" r="16"/>
+    <circle cx="342" cy="255" r="16"/>
+    <path d="M273 271v43m69-43v43"/>
+    <path d="M242 558h135l30 55H212z"/>
+    <rect x="252" y="530" width="56" height="28" rx="4"/>
+    <path d="M105 635l110 38M90 670h70M275 688l30-48m110 20l75 45"/>
+    <path d="M438 425c36-32 98-24 126 17"/>
+    <path d="M480 394l26-26m28 17l28-11m-68 74h54"/>
+    <path d="M470 484l34 14m32 8l24-25"/>
+    <rect x="14" y="602" width="160" height="80" rx="8"/>
+    <path d="M34 650c20-20 38-16 54 4 14-28 44-23 68 3"/>
+    <path d="M355 572l52-26 30 38-40 28z"/>
+    <path d="M420 548l62 20-16 47-62-20z"/>
+  </g>
+</svg>

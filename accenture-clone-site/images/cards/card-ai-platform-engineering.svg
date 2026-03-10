@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 848" role="img" aria-label="Isometric cube network">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#090819"/>
+      <stop offset="0.45" stop-color="#140e35"/>
+      <stop offset="1" stop-color="#090819"/>
+    </linearGradient>
+    <linearGradient id="f1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a055ff"/>
+      <stop offset="1" stop-color="#5f8dff"/>
+    </linearGradient>
+    <linearGradient id="f2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4ed5"/>
+      <stop offset="1" stop-color="#7d4dff"/>
+    </linearGradient>
+    <linearGradient id="f3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#51d2ff"/>
+      <stop offset="1" stop-color="#695bff"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="600" height="848" fill="url(#bg)"/>
+  <g opacity="0.2">
+    <circle cx="450" cy="380" r="210" fill="#4d2fbe"/>
+    <circle cx="510" cy="640" r="180" fill="#2c6eff"/>
+  </g>
+  <g filter="url(#glow)">
+    <g>
+      <polygon points="430,240 490,270 430,300 370,270" fill="url(#f1)"/>
+      <polygon points="430,300 490,270 490,336 430,366" fill="#5b4bda"/>
+      <polygon points="430,300 370,270 370,336 430,366" fill="#7f36d7"/>
+    </g>
+    <g>
+      <polygon points="500,300 560,330 500,360 440,330" fill="url(#f2)"/>
+      <polygon points="500,360 560,330 560,396 500,426" fill="#7046e0"/>
+      <polygon points="500,360 440,330 440,396 500,426" fill="#8f45df"/>
+    </g>
+    <g>
+      <polygon points="365,320 425,350 365,380 305,350" fill="url(#f3)"/>
+      <polygon points="365,380 425,350 425,416 365,446" fill="#4e66ea"/>
+      <polygon points="365,380 305,350 305,416 365,446" fill="#5c4ed8"/>
+    </g>
+    <g>
+      <polygon points="435,385 495,415 435,445 375,415" fill="url(#f2)"/>
+      <polygon points="435,445 495,415 495,481 435,511" fill="#6a4ee2"/>
+      <polygon points="435,445 375,415 375,481 435,511" fill="#8b3ddd"/>
+    </g>
+    <g>
+      <polygon points="300,400 360,430 300,460 240,430" fill="url(#f1)"/>
+      <polygon points="300,460 360,430 360,496 300,526" fill="#5a5ce6"/>
+      <polygon points="300,460 240,430 240,496 300,526" fill="#7a40d9"/>
+    </g>
+    <g>
+      <polygon points="500,430 560,460 500,490 440,460" fill="url(#f3)"/>
+      <polygon points="500,490 560,460 560,526 500,556" fill="#4c6ee8"/>
+      <polygon points="500,490 440,460 440,526 500,556" fill="#5f56df"/>
+    </g>
+  </g>
+  <g opacity="0.55" fill="#a87dff">
+    <rect x="258" y="610" width="10" height="10"/>
+    <rect x="316" y="585" width="8" height="8"/>
+    <rect x="540" y="360" width="8" height="8"/>
+    <rect x="406" y="548" width="7" height="7"/>
+    <rect x="356" y="244" width="6" height="6"/>
+    <rect x="458" y="224" width="7" height="7"/>
+    <rect x="205" y="463" width="8" height="8"/>
+  </g>
+</svg>
