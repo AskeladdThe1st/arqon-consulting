@@ -18,20 +18,13 @@
       <stop offset="0.35" stop-color="#8be3ff"/>
       <stop offset="1" stop-color="#5ac8ff"/>
     </linearGradient>
-    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="4" result="b"/>
-      <feMerge>
-        <feMergeNode in="b"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
   <rect width="600" height="848" fill="url(#sky)"/>
   <circle cx="490" cy="220" r="62" fill="#ffe7bc" opacity="0.35"/>
   <path d="M0 420 C 110 380, 220 460, 340 420 C 430 390, 520 415, 600 380 L 600 848 L 0 848 Z" fill="url(#terrain1)"/>
   <path d="M0 530 C 130 500, 220 560, 310 540 C 430 515, 500 560, 600 520 L 600 848 L 0 848 Z" fill="url(#terrain2)"/>
   <path d="M0 645 C 90 640, 145 690, 235 670 C 340 646, 430 706, 600 685 L 600 848 L 0 848 Z" fill="#1b2a2f"/>
-  <g filter="url(#glow)" fill="none" stroke-linecap="round">
+  <g fill="none" stroke-linecap="round">
     <path d="M620 360 C 530 360, 500 410, 430 420 C 350 430, 320 475, 245 485 C 160 496, 145 560, 95 595 C 55 622, 40 680, -10 735" stroke="url(#river)" stroke-width="22"/>
     <path d="M620 360 C 530 360, 500 410, 430 420 C 350 430, 320 475, 245 485 C 160 496, 145 560, 95 595 C 55 622, 40 680, -10 735" stroke="#eefcff" stroke-width="8" opacity="0.9"/>
   </g>

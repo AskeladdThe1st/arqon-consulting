@@ -543,3 +543,73 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Performance tuning for the homepage card grid */
+        #block-tilegrid {
+            content-visibility: auto;
+            contain-intrinsic-size: 1400px;
+        }
+
+        #block-tilegrid .rad-content-grid-card {
+            contain: paint;
+        }
+
+        #block-tilegrid .cmp-image__image {
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        /* Keep hover effects, but make compositing cheaper */
+        #block-tilegrid .rad-content-grid-card {
+            will-change: transform;
+            transform: translateZ(0);
+        }
+
+        #block-tilegrid .rad-content-grid-card__front-content,
+        #block-tilegrid .rad-content-grid-card__back-content,
+        #block-tilegrid .rad-content-grid-card__sliding-content {
+            will-change: opacity, transform;
+            backface-visibility: hidden;
+        }
+
+        #block-tilegrid .rad-content-grid-card__sliding-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        #block-tilegrid .rad-content-grid-card__back-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Keep hover-open interaction, but remove heavy blur/widen effects */
+        #block-tilegrid .rad-content-grid-card,
+        #block-tilegrid .rad-content-grid-card__sliding-content,
+        #block-tilegrid .rad-content-grid-card__full-image,
+        #block-tilegrid .rad-content-grid-card__full-video,
+        #block-tilegrid .rad-content-grid-card__close-button {
+            transition-duration: 280ms !important;
+        }
+
+        #block-tilegrid .rad-content-grid-card--open {
+            scale: 1.01 !important;
+        }
+
+        #block-tilegrid .rad-content-grid-card--open .rad-content-grid-card__full-image,
+        #block-tilegrid .rad-content-grid-card--open .rad-content-grid-card__full-video {
+            filter: none !important;
+            width: 100% !important;
+            opacity: 0.42 !important;
+            z-index: 1;
+        }
+
+        #block-tilegrid .rad-content-grid-card--open .rad-button {
+            position: absolute !important;
+            right: 1.5rem !important;
+            left: auto !important;
+            bottom: 0.75rem !important;
+            translate: 0 0 !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            z-index: 4;
+        }

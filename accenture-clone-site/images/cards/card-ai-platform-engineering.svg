@@ -17,20 +17,13 @@
       <stop offset="0" stop-color="#51d2ff"/>
       <stop offset="1" stop-color="#695bff"/>
     </linearGradient>
-    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="5" result="b"/>
-      <feMerge>
-        <feMergeNode in="b"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
   <rect width="600" height="848" fill="url(#bg)"/>
   <g opacity="0.2">
     <circle cx="450" cy="380" r="210" fill="#4d2fbe"/>
     <circle cx="510" cy="640" r="180" fill="#2c6eff"/>
   </g>
-  <g filter="url(#glow)">
+  <g>
     <g>
       <polygon points="430,240 490,270 430,300 370,270" fill="url(#f1)"/>
       <polygon points="430,300 490,270 490,336 430,366" fill="#5b4bda"/>

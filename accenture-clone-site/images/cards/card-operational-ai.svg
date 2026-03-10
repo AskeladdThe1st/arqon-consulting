@@ -13,25 +13,18 @@
       <stop offset="0" stop-color="#ff6ce5"/>
       <stop offset="1" stop-color="#8ab3ff"/>
     </linearGradient>
-    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="6" result="b"/>
-      <feMerge>
-        <feMergeNode in="b"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
   <rect width="600" height="848" fill="url(#bg)"/>
   <g opacity="0.35">
     <circle cx="120" cy="110" r="170" fill="#3d2fd0"/>
     <circle cx="490" cy="720" r="220" fill="#2a4fff"/>
   </g>
-  <g filter="url(#glow)" fill="none" stroke-linecap="round">
+  <g fill="none" stroke-linecap="round">
     <path d="M-20 560 C 80 470, 140 650, 235 550 S 380 480, 460 570 S 590 640, 640 560" stroke="url(#waveA)" stroke-width="12"/>
     <path d="M-20 535 C 90 450, 170 630, 250 535 S 390 460, 470 550 S 590 620, 640 545" stroke="url(#waveB)" stroke-width="10"/>
     <path d="M-20 600 C 70 515, 150 690, 235 600 S 380 520, 470 610 S 580 675, 640 605" stroke="url(#waveA)" stroke-width="9"/>
     <path d="M-20 500 C 70 420, 160 590, 250 500 S 390 420, 470 515 S 590 585, 640 510" stroke="url(#waveB)" stroke-width="8"/>
     <path d="M-20 640 C 65 565, 145 735, 235 640 S 390 560, 475 655 S 585 720, 640 650" stroke="url(#waveA)" stroke-width="8"/>
   </g>
-  <rect width="600" height="848" fill="url(#bg)" opacity="0.22"/>
+  <rect width="600" height="848" fill="url(#bg)" opacity="0.16"/>
 </svg>
