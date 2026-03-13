@@ -1,6 +1,40 @@
 // // Change more - Quick fix - 4/27/2023
 var href_window = window.location.href;
 
+function disableCookieBanner() {
+    var cookieSelectors = [
+        "#onetrust-consent-sdk",
+        "#onetrust-banner-sdk",
+        "#onetrust-pc-sdk",
+        ".onetrust-pc-dark-filter",
+        ".optanon-alert-box-wrapper",
+        ".onetrust-close-btn-handler",
+        ".onetrust-pc-sdk"
+    ];
+
+    if (!document.getElementById("archon-cookie-banner-hide-style")) {
+        $("head").append(
+            "<style id=\"archon-cookie-banner-hide-style\">" +
+            cookieSelectors.join(",") +
+            "{display:none !important;visibility:hidden !important;opacity:0 !important;pointer-events:none !important;}" +
+            "body{overflow:auto !important;}" +
+            "</style>"
+        );
+    }
+
+    try {
+        document.cookie = "OptanonAlertBoxClosed=" + encodeURIComponent(new Date().toISOString()) + "; path=/; max-age=31536000";
+    } catch (e) {}
+
+    cookieSelectors.forEach(function(selector) {
+        $(selector).remove();
+    });
+
+    $("body").removeClass("onetrust-consent-sdk");
+    $("html").css("overflow", "");
+    $("body").css("overflow", "");
+}
+
 function applyArchonNavbarSimplification() {
     var navHrefMap = {
         "Home": "index.html",
@@ -66,7 +100,16 @@ $(function() {
         }
     });
 
+    disableCookieBanner();
     applyArchonNavbarSimplification();
 });
 
 window.addEventListener("radTransitionFinished", applyArchonNavbarSimplification);
+window.addEventListener("radTransitionFinished", disableCookieBanner);
+
+new MutationObserver(function() {
+    disableCookieBanner();
+}).observe(document.documentElement, {
+    childList: true,
+    subtree: true
+});
