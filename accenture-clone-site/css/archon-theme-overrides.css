@@ -1,0 +1,83 @@
+:root {
+  --archon-bg-main: #081423;
+  --archon-bg-alt: #0d1f35;
+  --archon-surface: #132a45;
+  --archon-surface-2: #193657;
+  --archon-text: #f4f8ff;
+  --archon-muted: #c8d5ea;
+  --archon-accent: #3ec5ff;
+  --archon-accent-2: #7ad9ff;
+  --archon-border: rgba(122, 217, 255, 0.28);
+}
+
+html, body {
+  background: radial-gradient(1200px 600px at 10% -5%, #15365f 0%, transparent 60%),
+              radial-gradient(1000px 500px at 95% 0%, #102f52 0%, transparent 55%),
+              linear-gradient(180deg, var(--archon-bg-alt) 0%, var(--archon-bg-main) 55%, #07101b 100%) !important;
+  color: var(--archon-text) !important;
+}
+
+.rad-global-nav,
+.rad-global-nav__wrapper,
+.rad-global-nav__container,
+.custom-footer {
+  background: rgba(8, 20, 35, 0.92) !important;
+  border-color: var(--archon-border) !important;
+  backdrop-filter: blur(8px);
+}
+
+.rad-header,
+.rad-content-grid-card,
+.rad-card,
+.rad-editorial-grid__card,
+.rad-carousel-block,
+.archon-build-process,
+.archon-quote-static-block,
+.rad-mixed-media-and-text {
+  background-color: rgba(19, 42, 69, 0.8) !important;
+  border: 1px solid var(--archon-border) !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.rad-header__headline,
+.rad-carousel-block__title,
+.rad-content-grid-card__title {
+  color: var(--archon-text) !important;
+}
+
+p, li,
+.rad-header__sub-headline,
+.rad-content-grid-card__description,
+.custom-footer__copyright {
+  color: var(--archon-muted) !important;
+}
+
+a,
+.rad-global-nav__menu-items a,
+.rad-global-nav__menu-items button,
+.rad-global-nav__l2-link,
+.custom-footer a {
+  color: var(--archon-accent) !important;
+}
+
+a:hover,
+.rad-global-nav__menu-items a:hover,
+.rad-global-nav__menu-items button:hover,
+.rad-global-nav__l2-link:hover,
+.custom-footer a:hover {
+  color: var(--archon-accent-2) !important;
+}
+
+.rad-button--primary,
+.rad-icon-button--primary,
+.hero_custom__cta__icon,
+.hero_custom__body__border {
+  background: var(--archon-accent) !important;
+  color: #05243a !important;
+}
+
+.rad-button--primary:hover,
+.rad-icon-button--primary:hover,
+.hero_custom__cta:hover .hero_custom__cta__icon {
+  background: var(--archon-accent-2) !important;
+}

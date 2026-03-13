@@ -223,24 +223,33 @@
 			display: none !important;
 		}
 
-		/* ArchonLogo: icon-only default, reveal "rchon" on hover/focus */
+		/* ArchonLogo: show icon + "rchon" wordmark */
 		.ArchonLogo {
 			display: inline-flex;
 			align-items: center;
-			gap: 8px;
+			gap: 0px;
 			text-decoration: none;
+			transform: translateZ(0);
+			transition: transform 220ms ease;
 		}
 
 		.ArchonLogo__icon {
-			width: 26px;
-			height: 26px;
+			width: 28px;
+			height: 28px;
 			display: block;
+			overflow: visible;
+			filter: drop-shadow(0 0 0 rgba(161, 0, 255, 0));
+			transition: filter 240ms ease;
 		}
 
-		.ArchonLogo__icon path {
-			transform: rotate(-90deg);
+		.ArchonLogo__glyph--main {
 			transform-origin: center;
 			transform-box: fill-box;
+			transition: transform 240ms cubic-bezier(0.2, 0.7, 0.2, 1);
+		}
+
+		.ArchonLogo__glyph--cut {
+			transition: opacity 240ms ease;
 		}
 
 		.ArchonLogo__text {
@@ -248,17 +257,30 @@
 			font-weight: 600;
 			letter-spacing: 0.5px;
 			color: #E2E8F0;
-			opacity: 0;
-			transform: translateX(-6px);
-			transition: opacity 250ms ease-out, transform 250ms ease-out;
+			opacity: 1;
+			transform: translateX(0);
 			pointer-events: none;
 			white-space: nowrap;
 		}
 
-		.ArchonLogo:hover .ArchonLogo__text,
-		.ArchonLogo:focus-visible .ArchonLogo__text {
-			opacity: 1;
-			transform: translateX(0);
+		.ArchonLogo:hover,
+		.ArchonLogo:focus-visible {
+			transform: translateY(-1px);
+		}
+
+		.ArchonLogo:hover .ArchonLogo__icon,
+		.ArchonLogo:focus-visible .ArchonLogo__icon {
+			filter: drop-shadow(0 0 8px rgba(161, 0, 255, 0.55));
+		}
+
+		.ArchonLogo:hover .ArchonLogo__glyph--main,
+		.ArchonLogo:focus-visible .ArchonLogo__glyph--main {
+			transform: scale(1.04);
+		}
+
+		.ArchonLogo:hover .ArchonLogo__glyph--cut,
+		.ArchonLogo:focus-visible .ArchonLogo__glyph--cut {
+			opacity: 0.7;
 		}
 	</style>
 	
@@ -473,7 +495,9 @@
   margin-top:28px;
 }
 </style>
-  <link rel="stylesheet" crossorigin href="/assets/index-Ch1jWsJ8.css">
+  <link rel="stylesheet" crossorigin href="/assets/clientlib-rad.lc-4999ccd97a51a617f941ae6003c8f430-lc-DaISf84j.css">
+  <link rel="stylesheet" crossorigin href="/assets/home-page-takeover-COv5Eqf5.css">
+  <link rel="stylesheet" crossorigin href="/assets/front-page-hero-custom-HEelvrB4.css">
 </head>
     <body class="radicalaccenturedesign generic page basicpage " id="page-f3f3debf6f" data-barba="wrapper" data-cmp-data-layer-enabled="">
         <script>
@@ -535,15 +559,23 @@
 				</div>
 
 
-				<div class="rad-global-nav__logo" data-cmp-data-layer="{&quot;globalnav_copy-logo-fcf088ebf9&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;logo&quot;,&quot;analytics-link-name&quot;:&quot;archon logo - header&quot;,&quot;analytics-module-name&quot;:&quot;top nav&quot;}}">
-	<a href="index.html" class="ArchonLogo" id="ArchonLogo" data-cmp-clickable="" aria-label="Archon Home">
-		<svg class="ArchonLogo__icon" role="img" width="26" height="26" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<title>Archon</title>
-			<path d="M0 22.6L17.66 16.03L0 9.13V0L30.24 12.18V19.75L0 32V22.6Z" fill="#A100FF"></path>
-		</svg>
-		<span class="ArchonLogo__text" aria-hidden="true">rchon</span>
-	</a>
-</div>
+	<div class="rad-global-nav__logo" data-cmp-data-layer="{&quot;globalnav_copy-logo-fcf088ebf9&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;logo&quot;,&quot;analytics-link-name&quot;:&quot;archon logo - header&quot;,&quot;analytics-module-name&quot;:&quot;top nav&quot;}}">
+		<a href="index.html" class="ArchonLogo" id="ArchonLogo" data-cmp-clickable="" aria-label="Archon Home">
+			<svg class="ArchonLogo__icon" role="img" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<title>Archon</title>
+				<defs>
+					<linearGradient id="archonGlyphGrad" x1="5" y1="29" x2="27" y2="3" gradientUnits="userSpaceOnUse">
+						<stop offset="0" stop-color="#7A00FF"></stop>
+						<stop offset="0.5" stop-color="#B024FF"></stop>
+						<stop offset="1" stop-color="#E44BFF"></stop>
+					</linearGradient>
+				</defs>
+				<path class="ArchonLogo__glyph--main" d="M3 29L14.8 3h2.6L29 29h-5.5l-2-4.8h-11L8.5 29H3ZM12 19.6h8L16 9.7l-4 9.9Z" fill="url(#archonGlyphGrad)"></path>
+				<path class="ArchonLogo__glyph--cut" d="M20 15h4.5l-3.1 6.8H17L20 15Z" fill="#050505" opacity="0.9"></path>
+			</svg>
+			<span class="ArchonLogo__text" aria-hidden="true">rchon</span>
+		</a>
+	</div>
 
 				<div class="rad-global-nav__primary-nav" role="toolbar">
 					<button class="rad-icon-button rad-icon-button--primary rad-nav-icon-button rad-global-nav__menu-close" type="button" aria-expanded="false" aria-label="close-menu">
@@ -839,13 +871,13 @@
 						
 
 
-						<li id="globalnav_copy-primarynavlinks-item1-92f6c072eb" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item1-92f6c072eb&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/insights-index&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Services&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
-							<a data-cmp-clickable="" class="rad-button rad-button--ghost rad-global-nav__l1--link" href="insights-index.html" target="_self" rel=" ">
+						<li id="globalnav_copy-primarynavlinks-item1-92f6c072eb" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item1-92f6c072eb&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/services&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Services&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
+							<a data-cmp-clickable="" class="rad-button rad-button--ghost rad-global-nav__l1--link" href="/services.html" target="_self" rel=" ">
 								<div class="rad-button__text">Services</div>
 							</a></li>
 					
-						<li id="globalnav_copy-primarynavlinks-item2-f6fc52286f" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item2-f6fc52286f&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Insights&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
-							<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Insights">
+						<li id="globalnav_copy-primarynavlinks-item2-f6fc52286f" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item2-f6fc52286f&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/insights-index&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Insights&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
+							<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Insights" onclick="window.location.href='/insights-index.html'">
 								<div class="rad-button__text">Insights</div>
 								<div class="rad-button__icon-right rad-icon rad-icon__chevron-down rad-icon--compact"></div>
 							</button> <div class="xfpage page basicpage">
@@ -1843,7 +1875,7 @@
             </div>
 			
 				<a href="pulse-of-change.html" class="rad-button rad-button--ghost" tabindex="-1" target="_self" aria-label="Expand: Pulse of Change: January 2025" data-barba-transition="">
-				   <div class="rad-button__text">Learn more →</div>
+					   <div class="rad-button__text">Learn more</div>
 				   <div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact" aria-hidden="true"></div>
 				</a>
 			
@@ -1911,7 +1943,7 @@
             </div>
 			
 				<a href="making-self-funding-supply-chains-real.html" class="rad-button rad-button--ghost" tabindex="-1" target="_self" aria-label="Expand: Making self-funding supply chains real" data-barba-transition="">
-				   <div class="rad-button__text">Learn more →</div>
+					   <div class="rad-button__text">Learn more</div>
 				   <div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact" aria-hidden="true"></div>
 				</a>
 			
@@ -1979,7 +2011,7 @@
             </div>
 			
 				<a href="state-cybersecurity-2025.html" class="rad-button rad-button--ghost" tabindex="-1" target="_self" aria-label="Expand: 4 critical actions to take now to strengthen your cyber defenses" data-barba-transition="">
-				   <div class="rad-button__text">Learn more →</div>
+					   <div class="rad-button__text">Learn more</div>
 				   <div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact" aria-hidden="true"></div>
 				</a>
 			
@@ -2048,7 +2080,7 @@
             </div>
 			
 				<a href="new-rules-platform-strategy-agentic-ai.html" class="rad-button rad-button--ghost" tabindex="-1" target="_self" aria-label="Expand: Rewriting platform strategy for agentic AI" data-barba-transition="">
-				   <div class="rad-button__text">Learn more →</div>
+					   <div class="rad-button__text">Learn more</div>
 				   <div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact" aria-hidden="true"></div>
 				</a>
 			
@@ -2117,7 +2149,7 @@
             </div>
 			
 				<a href="accenture-banking-trends-2026.html" class="rad-button rad-button--ghost" tabindex="-1" target="_self" aria-label="Expand: Top Banking Trends for 2026" data-barba-transition="">
-				   <div class="rad-button__text">Learn more →</div>
+					   <div class="rad-button__text">Learn more</div>
 				   <div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact" aria-hidden="true"></div>
 				</a>
 			
@@ -2186,7 +2218,7 @@
             </div>
 			
 				<a href="sovereign-ai.html" class="rad-button rad-button--ghost" tabindex="-1" target="_self" aria-label="Expand: Sovereign AI: From managing compliance to creating new markets" data-barba-transition="">
-				   <div class="rad-button__text">Learn more →</div>
+					   <div class="rad-button__text">Learn more</div>
 				   <div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact" aria-hidden="true"></div>
 				</a>
 			
@@ -2370,7 +2402,7 @@ AI only delivers value when it is engineered for scale, governance, and operatio
 	<div class="rad-carousel-image-and-text__carousel rad-carousel rad-carousel--custom-controls rad-carousel--only-read-active rad-carousel--autorotate" data-autorotate-duration="10000" id="carousel-09c18bca55-image-and-text__carousel" aria-live="off">
 		<div class="rad-carousel-image-and-text__slide" role="group" aria-roledescription="slide"><div id="carouselslide-69758b9772" data-cmp-data-layer="{&quot;carouselslide-69758b9772&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/modules/carouselslide&quot;,&quot;analytics-module-name&quot;:&quot;carouselslide-2&quot;,&quot;analytics-template-zone&quot;:&quot;block-carousel-poste-italiane-pivots-to-platform-powerhouse&quot;}}" class="cmp-image">
 	
-		<img class="cmp-image__image" src="images/slider/1_slider.jpg" loading="eager" decoding="async" alt="Posteitaliane">
+		<img class="cmp-image__image" src="/assets/1_slider-Di9uEPgL.jpg" loading="eager" decoding="async" alt="Posteitaliane">
 	
 	
 </div>
@@ -2387,7 +2419,7 @@ AI only delivers value when it is engineered for scale, governance, and operatio
 </div>
 <div class="rad-carousel-image-and-text__slide" role="group" aria-roledescription="slide"><div id="carouselslide-8cc8f89b68" data-cmp-data-layer="{&quot;carouselslide-8cc8f89b68&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/modules/carouselslide&quot;,&quot;analytics-module-name&quot;:&quot;carouselslide-3&quot;,&quot;analytics-template-zone&quot;:&quot;block-carousel-bristol-myers-squibb-uses-data-and-insights-to-accelerate-drug-development&quot;}}" class="cmp-image">
 	
-		<img class="cmp-image__image" src="images/slider/2_slider.jpg" loading="eager" decoding="async" alt="">
+		<img class="cmp-image__image" src="/assets/2_slider-DAEGKykY.jpg" loading="eager" decoding="async" alt="">
 	
 	
 </div>
@@ -2404,7 +2436,7 @@ AI only delivers value when it is engineered for scale, governance, and operatio
 </div>
 <div class="rad-carousel-image-and-text__slide" role="group" aria-roledescription="slide"><div id="carouselslide-475cc08852" data-cmp-data-layer="{&quot;carouselslide-475cc08852&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/modules/carouselslide&quot;,&quot;analytics-module-name&quot;:&quot;carouselslide-4&quot;,&quot;analytics-template-zone&quot;:&quot;block-carousel-sumitomo-metal-mining-reimagines-materials-to-drive-global-innovation&quot;}}" class="cmp-image">
 	
-		<img class="cmp-image__image" src="images/slider/3_slider.jpg" loading="eager" decoding="async" alt="">
+		<img class="cmp-image__image" src="/assets/3_slider-zLSx7nCf.jpg" loading="eager" decoding="async" alt="">
 	
 	
 </div>
@@ -2421,7 +2453,7 @@ AI only delivers value when it is engineered for scale, governance, and operatio
 </div>
 <div class="rad-carousel-image-and-text__slide" role="group" aria-roledescription="slide"><div id="carouselslide-63a4cdbdb2" data-cmp-data-layer="{&quot;carouselslide-63a4cdbdb2&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/modules/carouselslide&quot;,&quot;analytics-module-name&quot;:&quot;carouselslide-5&quot;,&quot;analytics-template-zone&quot;:&quot;block-carousel-unicef-builds-a-foundation-for-ethical-ai&quot;}}" class="cmp-image">
 	
-		<img class="cmp-image__image" src="images/slider/4_slider.jpg" loading="eager" decoding="async" alt="">
+		<img class="cmp-image__image" src="/assets/4_slider-huXlzZbt.jpg" loading="eager" decoding="async" alt="">
 	
 	
 </div>
