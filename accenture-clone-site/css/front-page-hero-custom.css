@@ -179,9 +179,13 @@
         }
 
         .hero_custom__body__border {
-            width: 42px;
-            height: 5px;
-            background: var(--Dark-Brand-Primary);
+            width: 72px;
+            height: 2px;
+            border-radius: 999px;
+            background: linear-gradient(90deg,
+                    rgba(243, 198, 35, 0.96) 0%,
+                    rgba(243, 198, 35, 0.55) 45%,
+                    rgba(255, 255, 255, 0.18) 100%);
         }
 
         .hero_custom__body__hero_text {
@@ -209,21 +213,17 @@
         }
 
         .hero_custom__cta__icon {
-            width: 20px;
-            height: 20px;
-            background: var(--Dark-Brand-Primary);
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            border: 1px solid rgba(243, 198, 35, 0.58);
+            border-radius: 999px;
+            background: rgba(243, 198, 35, 0.12);
+            color: #f3c623;
             display: flex;
             justify-content: center;
             align-items: center;
-            fill: currentColor;
-        }
-
-        .hero_custom__cta:hover>.hero_custom__cta__icon {
-            background: var(--Dark-Brand-Secondary);
-        }
-
-        .hero_custom__cta:active>.hero_custom__cta__icon {
-            background: var(--Dark-Brand-Tertiary);
+            transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
         }
 
         .hero_custom__cta:focus-visible {
@@ -237,8 +237,13 @@
         }
 
         .hero_custom__cta__icon>svg {
-            width: 100%;
-            height: 100%;
+            width: 17px;
+            height: 17px;
+            fill: none;
+            stroke: currentColor;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 1.9;
         }
 
         .hero_custom__cta:visited {
@@ -381,9 +386,10 @@
                 line-height: 1.5;
             }
 
-            .hero_custom__cta__icon {
-                width: 24px;
-                height: 24px;
+        .hero_custom__cta__icon {
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
             }
 
             .hero_custom__title {
@@ -429,17 +435,31 @@
         }
 
         .hero_cta_2 {
-            width: 100%;
+            width: auto;
             position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 4px;
         }
 
         .cta_span {
-            float: left;
-            font-weight: bold;
+            float: none;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
+
         .hero_custom__cta__icon{
-            left: 10px;
+            left: 0;
             position: relative;
+        }
+
+        .hero_custom__cta_1:hover .hero_custom__cta__icon,
+        .hero_custom__cta_1:focus-visible .hero_custom__cta__icon {
+            background: rgba(243, 198, 35, 0.2);
+            border-color: rgba(243, 198, 35, 0.88);
+            transform: translateX(2px);
         }
 
         @media (min-width: 768px){
