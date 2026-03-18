@@ -467,6 +467,16 @@
             transform: translateX(2px);
         }
 
+        .rad-header__cta-button .archon-section-cta.hero_custom__cta_1 {
+            display: inline-block;
+            float: none;
+            margin: 0;
+        }
+
+        .rad-header__cta-button .archon-section-cta .hero_cta_2 {
+            margin-top: 0;
+        }
+
         @media (min-width: 768px){
             button.hero_custom__video_button {
                 bottom: 20px;
