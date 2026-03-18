@@ -633,3 +633,52 @@
             visibility: visible !important;
             z-index: 4;
         }
+
+        /* Match homepage card heading colors to each image while keeping contrast */
+        #block-tilegrid .rad-content-grid-card {
+            --archon-card-label-color: #e4eeff;
+            --archon-card-title-color: #ffffff;
+            --archon-card-heading-shadow: 0 10px 24px rgba(0, 0, 0, 0.56);
+        }
+
+        #block-tilegrid .rad-content-grid-card__label {
+            color: var(--archon-card-label-color) !important;
+            text-shadow: var(--archon-card-heading-shadow);
+        }
+
+        #block-tilegrid .rad-content-grid-card__title {
+            color: var(--archon-card-title-color) !important;
+            text-shadow: var(--archon-card-heading-shadow);
+        }
+
+        #research-report-e1abd46e2f {
+            --archon-card-label-color: #f0e6ff;
+            --archon-card-heading-shadow: 0 12px 28px rgba(24, 8, 60, 0.74);
+        }
+
+        #perspective-c8b6354f78 {
+            --archon-card-label-color: #d8ecff;
+            --archon-card-heading-shadow: 0 12px 28px rgba(6, 18, 40, 0.76);
+        }
+
+        #research-report-4fc2287f1d {
+            --archon-card-label-color: #fff0bc;
+            --archon-card-title-color: #fffaf0;
+            --archon-card-heading-shadow: 0 12px 26px rgba(0, 0, 0, 0.72);
+        }
+
+        #research-report-fa550a6d34 {
+            --archon-card-label-color: #e6efff;
+            --archon-card-heading-shadow: 0 12px 28px rgba(5, 8, 16, 0.78);
+        }
+
+        #research-report-577df658d9 {
+            --archon-card-label-color: #d7e8ff;
+            --archon-card-heading-shadow: 0 14px 30px rgba(11, 6, 42, 0.8);
+        }
+
+        #research-report-0e4c8cbe31 {
+            --archon-card-label-color: #f0d7ff;
+            --archon-card-title-color: #fff7ff;
+            --archon-card-heading-shadow: 0 14px 30px rgba(26, 6, 46, 0.8);
+        }
