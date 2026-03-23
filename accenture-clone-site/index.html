@@ -2485,24 +2485,83 @@
         text-transform: uppercase;
         z-index: 1;
     }
+
+    #archon-horizontal-demo .archon-horizontal-demo__copy {
+        max-width: min(78vw, 1100px);
+        padding: 0 6vw;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+    }
+
+    #archon-horizontal-demo .archon-horizontal-demo__eyebrow {
+        color: rgba(255, 255, 255, 0.78);
+        display: block;
+        font-family: "Oswald", sans-serif;
+        font-size: clamp(0.9rem, 1.2vw, 1.15rem);
+        letter-spacing: 0.4em;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    #archon-horizontal-demo .archon-horizontal-demo__body {
+        color: rgba(255, 255, 255, 0.88);
+        font-size: clamp(1rem, 1.5vw, 1.35rem);
+        line-height: 1.6;
+        margin: 1.5rem auto 0;
+        max-width: 720px;
+        position: relative;
+        z-index: 1;
+    }
+
+    @media (max-width: 767px) {
+        #archon-horizontal-demo .heading {
+            font-size: 15vw;
+            letter-spacing: 0.28em;
+        }
+
+        #archon-horizontal-demo .archon-horizontal-demo__copy {
+            padding: 0 8vw;
+        }
+
+        #archon-horizontal-demo .archon-horizontal-demo__body {
+            font-size: 1rem;
+        }
+    }
     </style>
 
     <section id="archon-horizontal-demo" aria-label="Horizontal Scroll Demo">
         <div id="archon-horizontal-demo-container">
             <section class="horizontal-section">
-                <h1 class="heading">Horizontal Scroll</h1>
+                <div class="archon-horizontal-demo__copy">
+                    <span class="archon-horizontal-demo__eyebrow">Archon Systems</span>
+                    <h2 class="heading">Engineering AI For Production</h2>
+                    <p class="archon-horizontal-demo__body">Archon builds AI systems that move beyond prototypes into secure, scalable, and reliable enterprise environments.</p>
+                </div>
             </section>
 
             <section class="horizontal-section">
-                <h1 class="heading">01</h1>
+                <div class="archon-horizontal-demo__copy">
+                    <span class="archon-horizontal-demo__eyebrow">Architecture</span>
+                    <h2 class="heading">Cloud &amp; AI Architecture</h2>
+                    <p class="archon-horizontal-demo__body">System design, infrastructure planning, governance controls, and integration boundaries built for long-term scale.</p>
+                </div>
             </section>
 
             <section class="horizontal-section">
-                <h1 class="heading">02</h1>
+                <div class="archon-horizontal-demo__copy">
+                    <span class="archon-horizontal-demo__eyebrow">Deployment</span>
+                    <h2 class="heading">Operational Deployment</h2>
+                    <p class="archon-horizontal-demo__body">Production-ready workflows with observability, monitoring, security, and reliability mechanisms across the stack.</p>
+                </div>
             </section>
 
             <section class="horizontal-section">
-                <h1 class="heading">03</h1>
+                <div class="archon-horizontal-demo__copy">
+                    <span class="archon-horizontal-demo__eyebrow">Optimization</span>
+                    <h2 class="heading">Enterprise Reliability</h2>
+                    <p class="archon-horizontal-demo__body">Continuous evaluation, system tuning, and disciplined operations that keep AI platforms stable in real environments.</p>
+                </div>
             </section>
         </div>
     </section>
@@ -2722,8 +2781,7 @@
                         trigger: "#archon-horizontal-demo-container",
                         pin: true,
                         pinSpacing: true,
-                        scrub: 1,
-                        snap: 1 / (horizontalSections.length - 1),
+                        scrub: 0.8,
                         refreshPriority: 1,
                         anticipatePin: 1,
                         invalidateOnRefresh: true,
@@ -2736,34 +2794,6 @@
 
             window.addEventListener("load", initArchonHorizontalDemo);
             window.addEventListener("radTransitionFinished", initArchonHorizontalDemo);
-        })();
-    </script>
-    <script type="text/javascript">
-        (function () {
-            if (!window.ScrollTrigger) return;
-
-            var refreshTimer = null;
-
-            function requestScrollTriggerRefresh(delay) {
-                window.clearTimeout(refreshTimer);
-                refreshTimer = window.setTimeout(function () {
-                    if (window.ScrollTrigger) {
-                        window.ScrollTrigger.refresh();
-                    }
-                }, typeof delay === "number" ? delay : 120);
-            }
-
-            window.addEventListener("load", function () {
-                requestScrollTriggerRefresh(0);
-            });
-
-            window.addEventListener("resize", function () {
-                requestScrollTriggerRefresh(120);
-            });
-
-            window.addEventListener("radTransitionFinished", function () {
-                requestScrollTriggerRefresh(150);
-            });
         })();
     </script>
 </body></html>
