@@ -108,6 +108,10 @@ a {
   max-width: none;
 }
 
+.contact-botcheck {
+  display: none !important;
+}
+
 .contact-form__section {
   margin: 0 0 32px;
   padding: 0;
@@ -198,6 +202,10 @@ a {
 
 .contact-form__actions {
   margin-top: 34px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
 }
 
 .contact-submit {
@@ -219,6 +227,25 @@ a {
   background: #ffd451;
   color: #050505;
   border-color: #ffd451;
+}
+
+.contact-form__result {
+  min-height: 1.5rem;
+  color: var(--contact-page-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contact-form__result[data-state="pending"] {
+  color: var(--contact-page-text);
+}
+
+.contact-form__result[data-state="success"] {
+  color: var(--contact-page-accent);
+}
+
+.contact-form__result[data-state="error"] {
+  color: #ffb0a6;
 }
 
 .contact-side {

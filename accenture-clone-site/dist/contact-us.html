@@ -95,7 +95,11 @@
                 <p>Required fields are marked with an asterisk (*).</p>
               </div>
 
-              <form class="contact-form" onsubmit="event.preventDefault()" aria-label="Contact form">
+              <form class="contact-form" id="contactForm" method="POST" aria-label="Contact form">
+                <input type="hidden" name="access_key" value="889a1371-bb15-4d92-bfeb-a5ca581c19f4" />
+                <input type="hidden" name="subject" value="New Archon Contact Inquiry" />
+                <input type="hidden" name="from_name" value="Archon Contact Page" />
+                <input type="checkbox" name="botcheck" class="contact-botcheck" tabindex="-1" autocomplete="off" />
                 <fieldset class="contact-form__section">
                   <legend>Inquiry type*</legend>
                   <div class="contact-form__topics">
@@ -162,6 +166,7 @@
 
                 <div class="contact-form__actions">
                   <button class="contact-submit" type="submit">Send message</button>
+                  <div class="contact-form__result" id="contactFormResult" aria-live="polite"></div>
                 </div>
               </form>
             </div>
@@ -199,5 +204,54 @@
         &copy; 2026 Archon Systems. All rights reserved.
       </div>
     </footer>
+    <script>
+      (() => {
+        const form = document.getElementById("contactForm");
+        const result = document.getElementById("contactFormResult");
+
+        if (!form || !result) return;
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          const formData = new FormData(form);
+          const accessKey = formData.get("access_key");
+
+          if (!accessKey || String(accessKey).includes("YOUR_WEB3FORMS_ACCESS_KEY")) {
+            result.textContent = "Add your Web3Forms access key to enable submissions.";
+            result.dataset.state = "error";
+            return;
+          }
+
+          result.textContent = "Sending...";
+          result.dataset.state = "pending";
+
+          try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+              },
+              body: JSON.stringify(Object.fromEntries(formData))
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+              result.textContent = data.message || "Message sent successfully.";
+              result.dataset.state = "success";
+              form.reset();
+            } else {
+              result.textContent = data.message || "Something went wrong. Please try again.";
+              result.dataset.state = "error";
+            }
+          } catch (error) {
+            result.textContent = "Something went wrong. Please try again.";
+            result.dataset.state = "error";
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
