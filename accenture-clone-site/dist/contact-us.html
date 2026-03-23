@@ -8,7 +8,7 @@
       name="description"
       content="Get in touch with Archon about advisory, engineering, AI, and transformation work."
     />
-    <link rel="canonical" href="/assets/contact-us-BSPoXzm5.html" />
+    <link rel="canonical" href="/contact-us.html" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Contact Archon" />
     <meta
@@ -23,8 +23,8 @@
       content="Get in touch with Archon about advisory, engineering, AI, and transformation work."
     />
     <meta name="twitter:image" content="/assets/cloud-DnpMggat.png" />
-    <link rel="stylesheet" crossorigin href="/assets/contact-us-COy5VCo7.css">
-    <link rel="stylesheet" crossorigin href="/assets/archon-chrome-DmlDoBrt.css">
+    <link rel="stylesheet" href="/css/contact-page.css" />
+    <link rel="stylesheet" href="/css/archon-chrome.css" />
   </head>
   <body>
     <header class="site-header">
@@ -74,107 +74,120 @@
       <section class="contact-main">
         <div class="site-shell contact-shell">
           <header class="contact-header">
-            <h1>Contact Us</h1>
+            <div class="contact-header__grid">
+              <div class="contact-header__main">
+                <span class="contact-header__kicker">Contact</span>
+                <h1>Start a conversation with Archon.</h1>
+              </div>
+              <div class="contact-header__aside">
+                <p class="contact-header__lead">
+                  For advisory, AI engineering, platform modernization, or a general business inquiry,
+                  send a note and we will route it to the right team.
+                </p>
+              </div>
+            </div>
           </header>
 
           <div class="contact-layout">
             <div class="contact-form-column">
               <div class="contact-intro">
                 <p>
-                  Thank you for your interest in Archon. Please fill out the form below to ask a
-                  question or start a conversation with our team.
+                  Use the form below to tell us what you are working on, where you need support,
+                  and the best way to reach you.
                 </p>
                 <p>
-                  Please note: while we appreciate your questions, we are unable to respond to all
-                  inquiries.
+                  We review each inquiry directly and follow up on the requests that match our work.
                 </p>
                 <p>Required fields are marked with an asterisk (*).</p>
               </div>
 
               <form class="contact-form" onsubmit="event.preventDefault()" aria-label="Contact form">
                 <fieldset class="contact-form__section">
-                  <legend>I have a question about:*</legend>
+                  <legend>Inquiry type*</legend>
                   <div class="contact-form__topics">
                     <label class="contact-topic">
-                      <input type="radio" name="inquiry_type" value="member" checked />
-                      <span>General business inquiries</span>
+                      <input type="radio" name="inquiry_type" value="general" checked />
+                      <span>General</span>
                     </label>
                     <label class="contact-topic">
-                      <input type="radio" name="inquiry_type" value="services" />
-                      <span>Consulting services</span>
+                      <input type="radio" name="inquiry_type" value="advisory" />
+                      <span>Advisory</span>
+                    </label>
+                    <label class="contact-topic">
+                      <input type="radio" name="inquiry_type" value="engineering" />
+                      <span>Engineering</span>
                     </label>
                     <label class="contact-topic">
                       <input type="radio" name="inquiry_type" value="media" />
-                      <span>Media inquiries</span>
+                      <span>Media</span>
                     </label>
                     <label class="contact-topic">
                       <input type="radio" name="inquiry_type" value="careers" />
-                      <span>Careers at Archon</span>
-                    </label>
-                    <label class="contact-topic">
-                      <input type="radio" name="inquiry_type" value="other" />
-                      <span>Other business inquiries</span>
+                      <span>Careers</span>
                     </label>
                   </div>
                 </fieldset>
 
                 <div class="contact-form__fields">
-                  <label class="contact-field contact-field--full">
-                    <span>Name*</span>
-                    <input type="text" name="name" autocomplete="name" required />
+                  <label class="contact-field">
+                    <span>First name*</span>
+                    <input type="text" name="first_name" autocomplete="given-name" required />
                   </label>
 
-                  <label class="contact-field contact-field--full">
-                    <span>Email*</span>
+                  <label class="contact-field">
+                    <span>Last name*</span>
+                    <input type="text" name="last_name" autocomplete="family-name" required />
+                  </label>
+
+                  <label class="contact-field">
+                    <span>Work email*</span>
                     <input type="email" name="email" autocomplete="email" required />
                   </label>
 
-                  <label class="contact-field contact-field--full">
-                    <span>Company or organization</span>
+                  <label class="contact-field">
+                    <span>Organization</span>
                     <input type="text" name="company" autocomplete="organization" />
                   </label>
 
-                  <label class="contact-field contact-field--full">
-                    <span>Title</span>
+                  <label class="contact-field">
+                    <span>Role</span>
                     <input type="text" name="title" autocomplete="organization-title" />
                   </label>
 
-                  <label class="contact-field contact-field--full">
-                    <span>Subject*</span>
+                  <label class="contact-field">
+                    <span>Topic*</span>
                     <input type="text" name="subject" required />
                   </label>
 
                   <label class="contact-field contact-field--full">
-                    <span>Message*</span>
-                    <textarea name="message" rows="6" required></textarea>
+                    <span>How can we help?*</span>
+                    <textarea
+                      name="message"
+                      rows="7"
+                      required
+                      placeholder="A short summary of the challenge, scope, and timing is enough to start."
+                    ></textarea>
                   </label>
                 </div>
 
                 <div class="contact-form__actions">
-                  <button class="contact-submit" type="submit">Submit</button>
+                  <button class="contact-submit" type="submit">Send message</button>
                 </div>
               </form>
             </div>
 
             <aside class="contact-side" aria-label="Additional contact information">
-              <section class="contact-info-block">
-                <h2>Media inquiries</h2>
+              <section class="contact-note">
+                <h2>Before you send</h2>
                 <p>
-                  Visit our <a href="/insights-index.html">insights page</a> to review current
-                  thinking and use this contact route for interview requests or external media
-                  outreach.
+                  The most useful inquiries include the business context, the current technical
+                  constraint, and the timeline you are working against.
+                </p>
+                <p>
+                  You can also review our <a href="/services.html">services</a> or recent
+                  <a href="/insights-index.html">insights</a> for a quick sense of fit.
                 </p>
               </section>
-
-              <section class="contact-info-block">
-                <h2>Capability discussions</h2>
-                <p>
-                  For advisory, AI, cloud, operations, and transformation conversations, review our
-                  <a href="/services.html">services page</a> and send the relevant project context
-                  in the form.
-                </p>
-              </section>
-
             </aside>
           </div>
         </div>
