@@ -1339,14 +1339,25 @@
     #archon-build-process {
         background: #000;
         color: #fff;
+        display: flex;
+        min-height: 100vh;
         overflow-x: clip;
         position: relative;
+        isolation: isolate;
+        z-index: 3;
     }
 
     #archon-build-process .archon-build-process__inner {
+        box-sizing: border-box;
+        display: flex;
+        flex: 1 0 auto;
+        flex-direction: column;
+        justify-content: center;
         margin: 0 auto;
         max-width: 1280px;
+        min-height: 100vh;
         padding: 84px var(--rad-spacing-sm) 64px;
+        width: 100%;
     }
 
     #archon-build-process .archon-build-process__title {
@@ -2412,7 +2423,11 @@
 
     #archon-horizontal-demo {
         background: #000;
+        min-height: 100vh;
         overflow-x: hidden;
+        isolation: isolate;
+        position: relative;
+        z-index: 2;
     }
 
     #archon-horizontal-demo-container {
@@ -2631,6 +2646,8 @@
                         end: "+=320%",
                         scrub: 0.85,
                         pin: true,
+                        pinSpacing: true,
+                        refreshPriority: 2,
                         anticipatePin: 1,
                         invalidateOnRefresh: true
                     }
@@ -2668,10 +2685,9 @@
                 addState(2, 2.5);
                 addState(3, 3.75);
 
-                ScrollTrigger.refresh();
             }
 
-            window.addEventListener("DOMContentLoaded", initArchonBuildProcessTimeline);
+            window.addEventListener("load", initArchonBuildProcessTimeline);
             window.addEventListener("radTransitionFinished", initArchonBuildProcessTimeline);
         })();
     </script>
@@ -2694,8 +2710,10 @@
                     scrollTrigger: {
                         trigger: "#archon-horizontal-demo-container",
                         pin: true,
+                        pinSpacing: true,
                         scrub: 1,
                         snap: 1 / (horizontalSections.length - 1),
+                        refreshPriority: 1,
                         anticipatePin: 1,
                         invalidateOnRefresh: true,
                         end: function () {
@@ -2703,11 +2721,9 @@
                         }
                     }
                 });
-
-                ScrollTrigger.refresh();
             }
 
-            window.addEventListener("DOMContentLoaded", initArchonHorizontalDemo);
+            window.addEventListener("load", initArchonHorizontalDemo);
             window.addEventListener("radTransitionFinished", initArchonHorizontalDemo);
         })();
     </script>
@@ -2728,7 +2744,6 @@
 
             window.addEventListener("load", function () {
                 requestScrollTriggerRefresh(0);
-                requestScrollTriggerRefresh(250);
             });
 
             window.addEventListener("resize", function () {
@@ -2738,27 +2753,6 @@
             window.addEventListener("radTransitionFinished", function () {
                 requestScrollTriggerRefresh(150);
             });
-
-            if (document.fonts && document.fonts.ready) {
-                document.fonts.ready.then(function () {
-                    requestScrollTriggerRefresh(0);
-                });
-            }
-
-            Array.prototype.forEach.call(document.images || [], function (img) {
-                if (img.complete) return;
-
-                img.addEventListener("load", function () {
-                    requestScrollTriggerRefresh(50);
-                }, { once: true });
-
-                img.addEventListener("error", function () {
-                    requestScrollTriggerRefresh(50);
-                }, { once: true });
-            });
-
-            requestScrollTriggerRefresh(600);
-            requestScrollTriggerRefresh(1600);
         })();
     </script>
 </body></html>
