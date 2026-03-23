@@ -86,14 +86,14 @@ a {
 
 .contact-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.7fr);
-  gap: clamp(36px, 5vw, 84px);
+  grid-template-columns: minmax(0, 1.46fr) minmax(260px, 0.66fr);
+  gap: 52px;
   align-items: start;
 }
 
 .contact-intro {
   max-width: 42rem;
-  margin-bottom: 34px;
+  margin-bottom: 22px;
   color: var(--contact-page-muted);
   font-size: 1rem;
   line-height: 1.8;
@@ -105,6 +105,7 @@ a {
 
 .contact-form {
   padding-top: 0;
+  max-width: none;
 }
 
 .contact-form__section {
@@ -221,11 +222,13 @@ a {
 }
 
 .contact-side {
-  padding-top: 5.9rem;
+  padding-top: 4px;
 }
 
 .contact-note {
-  max-width: 25rem;
+  margin: 0;
+  padding: 24px 26px 26px;
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .contact-note h2 {
@@ -257,14 +260,11 @@ a {
 
   .contact-layout {
     grid-template-columns: 1fr;
-  }
-
-  .contact-layout {
-    gap: 48px;
+    gap: 32px;
   }
 
   .contact-side {
-    max-width: 36rem;
+    max-width: 40rem;
     padding-top: 0;
   }
 }
