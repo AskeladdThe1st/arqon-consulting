@@ -26,7 +26,7 @@
       content="Archon designs and deploys structured AI and cloud systems that move beyond experimentation."
     >
     <meta itemprop="image" content="/images/hero/cloud.png">
-    <link rel="canonical" href="/assets/index-_WVIsOHN.html">
+    <link rel="canonical" href="/assets/index-D8WqtaLY.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Archon | AI Transformation, Engineered">
     <meta
@@ -2666,6 +2666,8 @@
                 addState(1, 1.25);
                 addState(2, 2.5);
                 addState(3, 3.75);
+
+                ScrollTrigger.refresh();
             }
 
             window.addEventListener("DOMContentLoaded", initArchonBuildProcessTimeline);
@@ -2693,15 +2695,69 @@
                         pin: true,
                         scrub: 1,
                         snap: 1 / (horizontalSections.length - 1),
+                        anticipatePin: 1,
+                        invalidateOnRefresh: true,
                         end: function () {
                             return "+=" + document.querySelector("#archon-horizontal-demo-container").offsetWidth;
                         }
                     }
                 });
+
+                ScrollTrigger.refresh();
             }
 
             window.addEventListener("DOMContentLoaded", initArchonHorizontalDemo);
             window.addEventListener("radTransitionFinished", initArchonHorizontalDemo);
+        })();
+    </script>
+    <script type="text/javascript">
+        (function () {
+            if (!window.ScrollTrigger) return;
+
+            var refreshTimer = null;
+
+            function requestScrollTriggerRefresh(delay) {
+                window.clearTimeout(refreshTimer);
+                refreshTimer = window.setTimeout(function () {
+                    if (window.ScrollTrigger) {
+                        window.ScrollTrigger.refresh();
+                    }
+                }, typeof delay === "number" ? delay : 120);
+            }
+
+            window.addEventListener("load", function () {
+                requestScrollTriggerRefresh(0);
+                requestScrollTriggerRefresh(250);
+            });
+
+            window.addEventListener("resize", function () {
+                requestScrollTriggerRefresh(120);
+            });
+
+            window.addEventListener("radTransitionFinished", function () {
+                requestScrollTriggerRefresh(150);
+            });
+
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(function () {
+                    requestScrollTriggerRefresh(0);
+                });
+            }
+
+            Array.prototype.forEach.call(document.images || [], function (img) {
+                if (img.complete) return;
+
+                img.addEventListener("load", function () {
+                    requestScrollTriggerRefresh(50);
+                }, { once: true });
+
+                img.addEventListener("error", function () {
+                    requestScrollTriggerRefresh(50);
+                }, { once: true });
+            });
+
+            requestScrollTriggerRefresh(600);
+            requestScrollTriggerRefresh(1600);
         })();
     </script>
 </body></html>
