@@ -12,7 +12,7 @@
   --contact-page-text: #f4f5f8;
   --contact-page-muted: #b7bfca;
   --contact-page-border: rgba(255, 255, 255, 0.1);
-  --contact-page-border-strong: rgba(243, 198, 35, 0.58);
+  --contact-page-border-strong: #f3c623;
   --contact-page-accent: #f3c623;
   --contact-page-accent-soft: rgba(243, 198, 35, 0.12);
 }
@@ -38,10 +38,7 @@ a {
 }
 
 .contact-page {
-  background:
-    radial-gradient(circle at 18% 0, var(--contact-page-accent-soft), transparent 24%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.012), rgba(255, 255, 255, 0)),
-    var(--contact-page-bg);
+  background: var(--contact-page-bg);
 }
 
 .contact-main {
@@ -54,13 +51,11 @@ a {
 
 .contact-header {
   margin-bottom: 48px;
+  max-width: 46rem;
 }
 
 .contact-header__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
-  gap: 56px;
-  align-items: start;
+  display: block;
 }
 
 .contact-header__main,
@@ -83,21 +78,10 @@ a {
   margin: 0;
   font-family: "GT Sectra", serif;
   font-size: clamp(3rem, 5vw, 4.8rem);
-  line-height: 0.98;
+  line-height: 1.04;
   letter-spacing: -0.035em;
   text-wrap: balance;
-}
-
-.contact-header__lead {
-  margin: 0;
-  color: var(--contact-page-muted);
-  font-size: 1.02rem;
-  line-height: 1.8;
-  max-width: 28rem;
-}
-
-.contact-header__aside {
-  padding-top: 3.8rem;
+  max-width: 14ch;
 }
 
 .contact-layout {
@@ -271,7 +255,6 @@ a {
     width: min(100vw - 48px, 1200px);
   }
 
-  .contact-header__grid,
   .contact-layout {
     grid-template-columns: 1fr;
   }
@@ -302,10 +285,6 @@ a {
 
   .contact-header__grid {
     gap: 22px;
-  }
-
-  .contact-header__aside {
-    padding-top: 0;
   }
 
   .contact-form__fields {
