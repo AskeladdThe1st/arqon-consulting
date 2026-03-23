@@ -446,20 +446,35 @@
         .cta_span {
             float: none;
             font-weight: 600;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.09em;
             text-transform: uppercase;
+            line-height: 1;
         }
 
         .hero_custom__cta__icon{
             left: 0;
             position: relative;
+            background: #F3C623 !important;
+            border-color: #F3C623 !important;
+            color: #111 !important;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
         }
 
         .hero_custom__cta_1:hover .hero_custom__cta__icon,
         .hero_custom__cta_1:focus-visible .hero_custom__cta__icon {
-            background: rgba(243, 198, 35, 0.2);
-            border-color: rgba(243, 198, 35, 0.88);
+            background: #ffe072 !important;
+            border-color: #ffe072 !important;
             transform: translateX(2px);
+        }
+
+        .rad-header__cta-button .archon-section-cta.hero_custom__cta_1 {
+            display: inline-block;
+            float: none;
+            margin: 0;
+        }
+
+        .rad-header__cta-button .archon-section-cta .hero_cta_2 {
+            margin-top: 0;
         }
 
         #carousel-09c18bca55 .archon-carousel-cta.hero_custom__cta_1 {
