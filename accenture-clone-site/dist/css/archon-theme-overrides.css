@@ -5,9 +5,9 @@
   --archon-surface-2: #193657;
   --archon-text: #f4f8ff;
   --archon-muted: #c8d5ea;
-  --archon-accent: #3ec5ff;
-  --archon-accent-2: #7ad9ff;
-  --archon-border: rgba(122, 217, 255, 0.28);
+  --archon-accent: #f3c623;
+  --archon-accent-2: #ffe072;
+  --archon-border: rgba(243, 198, 35, 0.28);
 }
 
 html, body {

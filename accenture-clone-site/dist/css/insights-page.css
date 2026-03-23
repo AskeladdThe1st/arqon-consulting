@@ -255,8 +255,8 @@ img {
 }
 
 .insights-button--ghost:hover {
-  border-color: rgba(207, 135, 255, 0.3);
-  color: var(--insights-accent-soft);
+  border-color: rgba(243, 198, 35, 0.42);
+  color: var(--insights-accent);
 }
 
 .insights-hero__media {
@@ -384,7 +384,16 @@ img {
 
 .insights-mini-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(207, 135, 255, 0.3);
+  border-color: rgba(243, 198, 35, 0.42);
+}
+
+.insights-mini-card--static {
+  cursor: default;
+}
+
+.insights-mini-card--static:hover {
+  transform: none;
+  border-color: var(--insights-border);
 }
 
 .insights-mini-card__art {
@@ -413,7 +422,11 @@ img {
 
 .insights-inline-link:hover,
 .insights-mini-card:hover h3 {
-  color: var(--insights-accent-soft);
+  color: var(--insights-accent);
+}
+
+.insights-mini-card--static:hover h3 {
+  color: var(--insights-text);
 }
 
 @media (max-width: 1024px) {
