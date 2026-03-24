@@ -116,9 +116,7 @@ a {
   position: relative;
   overflow: hidden;
   min-height: 355px;
-  background:
-    radial-gradient(circle at 52% 44%, rgba(243, 198, 35, 0.18), rgba(243, 198, 35, 0) 18%),
-    linear-gradient(135deg, #020202 0%, #080808 24%, #101010 52%, #17120a 76%, #050505 100%);
+  background: #000000;
 }
 
 .capabilities-hero__inner {
@@ -130,6 +128,19 @@ a {
   padding: 0 0 38px;
 }
 
+.capabilities-hero__content {
+  max-width: 760px;
+}
+
+.capabilities-hero__eyebrow {
+  margin: 0 0 14px;
+  color: var(--accent-gold);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
 .capabilities-hero h1 {
   margin: 0;
   color: #ffffff;
@@ -139,28 +150,35 @@ a {
   letter-spacing: -0.04em;
 }
 
+.capabilities-hero__deck {
+  margin: 18px 0 0;
+  max-width: 680px;
+  color: var(--page-muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
 .capabilities-hero__background {
   position: absolute;
   inset: 0;
 }
 
-.capabilities-hero__video,
+.capabilities-hero__image,
 .capabilities-hero__overlay {
   position: absolute;
   inset: 0;
 }
 
-.capabilities-hero__video {
+.capabilities-hero__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.72;
+  object-position: center;
+  opacity: 0.66;
 }
 
 .capabilities-hero__overlay {
-  background:
-    radial-gradient(circle at 68% 38%, rgba(243, 198, 35, 0.18), transparent 26%),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.48) 38%, rgba(0, 0, 0, 0.56) 100%);
+  background: rgba(0, 0, 0, 0.46);
 }
 
 .capabilities-grid-section {
@@ -253,6 +271,14 @@ a {
 }
 
 @media (max-width: 980px) {
+  .capabilities-hero h1 {
+    font-size: clamp(3rem, 12vw, 4.4rem);
+  }
+
+  .capabilities-hero__deck {
+    font-size: 1rem;
+  }
+
   .capabilities-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 28px 34px;
