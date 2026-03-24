@@ -1340,7 +1340,7 @@
         background: #000;
         color: #fff;
         display: flex;
-        min-height: 100vh;
+        min-height: auto;
         overflow-x: clip;
         position: relative;
         isolation: isolate;
@@ -1355,7 +1355,7 @@
         justify-content: center;
         margin: 0 auto;
         max-width: 1280px;
-        min-height: 100vh;
+        min-height: auto;
         padding: 84px var(--rad-spacing-sm) 64px;
         width: 100%;
     }
@@ -1433,7 +1433,6 @@
         overflow: hidden;
         visibility: hidden;
     }
-
     @media (max-width: 768px) {
         #archon-build-process .archon-build-process__inner {
             padding: 96px var(--rad-spacing-sm) 84px;
@@ -2424,7 +2423,7 @@
     #archon-horizontal-demo {
         background: #000;
         margin-top: clamp(2rem, 4vw, 3.5rem);
-        min-height: 100vh;
+        min-height: auto;
         overflow-x: hidden;
         isolation: isolate;
         position: relative;
@@ -2436,43 +2435,43 @@
         flex-wrap: nowrap;
         height: 100vh;
         width: 400%;
+        will-change: transform;
+        transform: translate3d(0, 0, 0);
     }
 
     #archon-horizontal-demo .horizontal-section {
         align-items: flex-end;
         background-color: #000;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
         display: flex;
         height: 100vh;
         justify-content: flex-start;
+        overflow: hidden;
         padding: clamp(1.5rem, 3.2vw, 3.25rem);
         position: relative;
         width: 100vw;
+        backface-visibility: hidden;
+        contain: paint;
     }
 
     #archon-horizontal-demo .horizontal-section::before {
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.64));
         content: "";
         inset: 0;
+        pointer-events: none;
         position: absolute;
     }
 
-    #archon-horizontal-demo .horizontal-section:nth-child(1) {
-        background-image: url("https://images.unsplash.com/photo-1501594907352-04cda38ebc29");
-    }
-
-    #archon-horizontal-demo .horizontal-section:nth-child(2) {
-        background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba");
-    }
-
-    #archon-horizontal-demo .horizontal-section:nth-child(3) {
-        background-image: url("https://images.unsplash.com/photo-1557683316-973673baf926");
-    }
-
-    #archon-horizontal-demo .horizontal-section:nth-child(4) {
-        background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+    #archon-horizontal-demo .archon-horizontal-demo__image {
+        display: block;
+        height: 100%;
+        inset: 0;
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        transform: translateZ(0);
+        user-select: none;
+        width: 100%;
+        z-index: 0;
     }
 
     #archon-horizontal-demo .archon-horizontal-demo__copy {
@@ -2585,18 +2584,14 @@
         text-transform: uppercase;
     }
 
-    @media (max-width: 1024px) {
+        @media (max-width: 1024px) {
         #archon-horizontal-demo-container {
-            display: block;
-            height: auto;
-            width: 100%;
+            grid-template-columns: 1fr;
         }
 
         #archon-horizontal-demo .horizontal-section {
-            height: auto;
             min-height: 72vh;
             padding: 1rem;
-            width: 100%;
         }
 
         #archon-horizontal-demo .heading {
@@ -2630,6 +2625,7 @@
     <section id="archon-horizontal-demo" aria-label="Horizontal Scroll Demo">
         <div id="archon-horizontal-demo-container">
             <section class="horizontal-section">
+                <img class="archon-horizontal-demo__image" src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1600&q=80" alt="" loading="eager" decoding="async" fetchpriority="high">
                 <div class="archon-horizontal-demo__copy">
                     <span class="archon-horizontal-demo__eyebrow">Advisory Engagement</span>
                     <h2 class="heading">AI Strategy &amp; Roadmap</h2>
@@ -2647,6 +2643,7 @@
             </section>
 
             <section class="horizontal-section">
+                <img class="archon-horizontal-demo__image" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80" alt="" loading="eager" decoding="async">
                 <div class="archon-horizontal-demo__copy">
                     <span class="archon-horizontal-demo__eyebrow">Architecture</span>
                     <h2 class="heading">Platform &amp; Data Foundation</h2>
@@ -2664,6 +2661,7 @@
             </section>
 
             <section class="horizontal-section">
+                <img class="archon-horizontal-demo__image" src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80" alt="" loading="eager" decoding="async">
                 <div class="archon-horizontal-demo__copy">
                     <span class="archon-horizontal-demo__eyebrow">Delivery</span>
                     <h2 class="heading">Pilot to Production Execution</h2>
@@ -2681,6 +2679,7 @@
             </section>
 
             <section class="horizontal-section">
+                <img class="archon-horizontal-demo__image" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="" loading="eager" decoding="async">
                 <div class="archon-horizontal-demo__copy">
                     <span class="archon-horizontal-demo__eyebrow">Operations</span>
                     <h2 class="heading">Reliability &amp; Performance</h2>
@@ -2911,7 +2910,7 @@
     </script>
     <script type="text/javascript">
         (function () {
-            function initArchonHorizontalDemo() {
+                                    function initArchonHorizontalDemo() {
                 var container = document.getElementById("archon-horizontal-demo-container");
                 if (!container || container.dataset.gsapInitialized === "true") return;
                 if (!window.gsap || !window.ScrollTrigger) return;
@@ -2921,21 +2920,25 @@
 
                 gsap.registerPlugin(ScrollTrigger);
 
-                var horizontalSections = gsap.utils.toArray("#archon-horizontal-demo .horizontal-section");
+                var totalPanels = container.querySelectorAll(".horizontal-section").length;
+                gsap.set(container, { force3D: true, xPercent: 0, willChange: "transform" });
 
-                gsap.to(horizontalSections, {
-                    xPercent: -100 * (horizontalSections.length - 1),
+                gsap.to(container, {
+                    xPercent: -100 * (totalPanels - 1) / totalPanels,
                     ease: "none",
+                    force3D: true,
+                    lazy: false,
                     scrollTrigger: {
-                        trigger: "#archon-horizontal-demo-container",
+                        trigger: "#archon-horizontal-demo",
                         pin: true,
                         pinSpacing: true,
-                        scrub: 0.45,
+                        scrub: 0.5,
                         refreshPriority: 1,
                         anticipatePin: 1,
-                        invalidateOnRefresh: true,
+                        fastScrollEnd: true,
+                        invalidateOnRefresh: false,
                         end: function () {
-                            return "+=" + document.querySelector("#archon-horizontal-demo-container").offsetWidth;
+                            return "+=" + container.offsetWidth;
                         }
                     }
                 });
