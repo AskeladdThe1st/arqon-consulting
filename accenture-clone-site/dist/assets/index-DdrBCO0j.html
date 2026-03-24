@@ -707,7 +707,7 @@
 				</li>
 			
 				<li>
-					<a class="rad-global-nav__l2-link" href="integrated-reporting.html" aria-label="360° Value Report" data-cmp-data-layer="{&quot;globalnavlinklist1-item5-7f6dc0a2ed&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/about/company/integrated-reporting&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;who we are:360° value report&quot;,&quot;analytics-module-name&quot;:&quot;secondary nav&quot;}}" target="_self" rel=" " data-cmp-clickable="" data-barba-transition="">360° Value Report 
+					<a class="rad-global-nav__l2-link" href="integrated-reporting.html" aria-label="360 Value Report" data-cmp-data-layer="{&quot;globalnavlinklist1-item5-7f6dc0a2ed&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/about/company/integrated-reporting&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;who we are:360 value report&quot;,&quot;analytics-module-name&quot;:&quot;secondary nav&quot;}}" target="_self" rel=" " data-cmp-clickable="" data-barba-transition="">360 Value Report 
 					</a>
 				</li>
 			</ul>
@@ -1542,7 +1542,7 @@
                 </svg>
             </span>
             <h3>Regulated Industries</h3>
-            <p>Finance • Healthcare • Public Sector</p>
+            <p>Finance - Healthcare - Public Sector</p>
         </article>
         <article class="archon-credibility-band__item">
             <span class="archon-credibility-band__icon" aria-hidden="true">
@@ -1592,9 +1592,9 @@
      
           
           		
-   <div class="rad-content-grid-card rad-content-grid-card--research-report-dark" id="research-report-e1abd46e2f" data-cta-title="Expand" data-card-title="Pulse of Change: What’s top of mind for today’s leaders" data-cta-link="/us-en/insights/pulse-of-change" data-content-type="researchReport" data-analytics-asset-id="card-e1abd46e2f" data-cs-override-id="card-e1abd46e2f">
+   <div class="rad-content-grid-card rad-content-grid-card--research-report-dark" id="research-report-e1abd46e2f" data-cta-title="Expand" data-card-title="Pulse of Change: What's top of mind for today's leaders" data-cta-link="/us-en/insights/pulse-of-change" data-content-type="researchReport" data-analytics-asset-id="card-e1abd46e2f" data-cs-override-id="card-e1abd46e2f">
       <!-- DEV NOTE: aria-label text is copied from __label and __title below -->
-      <button class="rad-content-grid-card__front-toggle" aria-expanded="false" aria-controls="research-report-e1abd46e2f" aria-label="Research Report: Pulse of Change: What’s top of mind for today’s leaders"></button>
+      <button class="rad-content-grid-card__front-toggle" aria-expanded="false" aria-controls="research-report-e1abd46e2f" aria-label="Research Report: Pulse of Change: What's top of mind for today's leaders"></button>
       <!-- DEV NOTE: aria-label text is copied from __content and rad-button--tertiary-dynamic below -->
       <a target="_self" href="pulse-of-change.html" class="rad-content-grid-card__cta-cover" tabindex="-1" aria-label="Pulse of Change: September 2025 Expand" data-barba-transition=""></a>
       <button disabled="" class="rad-icon-button rad-content-grid-card__close-button" tabindex="-1" aria-hidden="true">
@@ -2252,7 +2252,7 @@
 			<div class="rad-header__sub-headline">
 				<p>Building AI systems requires more than models and prototypes.</p>
 				<p>Enterprise environments demand reliable architectures, clear system boundaries, robust monitoring, and disciplined deployment practices.</p>
-				<p>Archon approaches AI as an engineering challenge — integrating architecture, infrastructure, and governance to ensure systems perform reliably in real operational environments.</p>
+				<p>Archon approaches AI as an engineering challenge - integrating architecture, infrastructure, and governance to ensure systems perform reliably in real operational environments.</p>
 			</div>
 		</div>
 	</div>
@@ -2539,10 +2539,11 @@
 
     #archon-horizontal-demo .archon-horizontal-demo__list li::before {
         color: #f8cf41;
-        content: "•";
+        content: "-";
         flex: 0 0 auto;
         font-size: 1.05rem;
         line-height: 1.2;
+        margin-right: 0.1rem;
     }
 
     #archon-horizontal-demo .archon-horizontal-demo__footer {
@@ -2584,9 +2585,18 @@
         text-transform: uppercase;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
+        #archon-horizontal-demo-container {
+            display: block;
+            height: auto;
+            width: 100%;
+        }
+
         #archon-horizontal-demo .horizontal-section {
+            height: auto;
+            min-height: 72vh;
             padding: 1rem;
+            width: 100%;
         }
 
         #archon-horizontal-demo .heading {
@@ -2805,6 +2815,22 @@
                 var bodies = Array.prototype.slice.call(timeline.querySelectorAll(".archon-build-process__step-body"));
                 if (!steps.length || !bodies.length) return;
 
+                if (window.matchMedia && window.matchMedia("(max-width: 1024px)").matches) {
+                    steps.forEach(function (step, index) {
+                        var body = bodies[index];
+                        step.style.opacity = "1";
+                        step.style.transform = "none";
+                        step.style.flexGrow = "1";
+                        step.style.background = index === 0 ? "rgba(243, 198, 35, 0.16)" : "rgba(255, 255, 255, 0.04)";
+                        if (body) {
+                            body.style.opacity = "1";
+                            body.style.maxHeight = "none";
+                            body.style.visibility = "visible";
+                        }
+                    });
+                    return;
+                }
+
                 if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
                     steps.forEach(function (step, index) {
                         var body = bodies[index];
@@ -2889,6 +2915,7 @@
                 var container = document.getElementById("archon-horizontal-demo-container");
                 if (!container || container.dataset.gsapInitialized === "true") return;
                 if (!window.gsap || !window.ScrollTrigger) return;
+                if (window.matchMedia && window.matchMedia("(max-width: 1024px), (prefers-reduced-motion: reduce)").matches) return;
 
                 container.dataset.gsapInitialized = "true";
 
@@ -2903,7 +2930,7 @@
                         trigger: "#archon-horizontal-demo-container",
                         pin: true,
                         pinSpacing: true,
-                        scrub: 0.8,
+                        scrub: 0.45,
                         refreshPriority: 1,
                         anticipatePin: 1,
                         invalidateOnRefresh: true,
