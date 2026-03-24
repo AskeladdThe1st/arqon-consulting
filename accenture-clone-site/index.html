@@ -2439,20 +2439,21 @@
     }
 
     #archon-horizontal-demo .horizontal-section {
-        align-items: center;
+        align-items: flex-end;
         background-color: #000;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
         height: 100vh;
-        justify-content: center;
+        justify-content: flex-start;
+        padding: clamp(1.5rem, 3.2vw, 3.25rem);
         position: relative;
         width: 100vw;
     }
 
     #archon-horizontal-demo .horizontal-section::before {
-        background: rgba(0, 0, 0, 0.28);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.64));
         content: "";
         inset: 0;
         position: absolute;
@@ -2474,58 +2475,144 @@
         background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
     }
 
-    #archon-horizontal-demo .heading {
-        color: #fff;
-        font-family: "Oswald", sans-serif;
-        font-size: 8vw;
-        font-weight: 300;
-        letter-spacing: 1vw;
-        margin: 0;
-        position: relative;
-        text-transform: uppercase;
-        z-index: 1;
-    }
-
     #archon-horizontal-demo .archon-horizontal-demo__copy {
-        max-width: min(78vw, 1100px);
-        padding: 0 6vw;
+        background: linear-gradient(180deg, rgba(10, 10, 10, 0.56), rgba(10, 10, 10, 0.72));
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        max-width: min(34rem, calc(100vw - 3rem));
+        padding: clamp(1.35rem, 2vw, 1.9rem);
         position: relative;
-        text-align: center;
+        text-align: left;
         z-index: 1;
     }
 
     #archon-horizontal-demo .archon-horizontal-demo__eyebrow {
-        color: rgba(255, 255, 255, 0.78);
+        color: rgba(255, 255, 255, 0.76);
         display: block;
         font-family: "Oswald", sans-serif;
-        font-size: clamp(0.9rem, 1.2vw, 1.15rem);
-        letter-spacing: 0.4em;
-        margin-bottom: 1rem;
+        font-size: clamp(0.82rem, 1vw, 0.98rem);
+        letter-spacing: 0.22em;
+        margin-bottom: 0.85rem;
         text-transform: uppercase;
+    }
+
+    #archon-horizontal-demo .heading {
+        color: #fff;
+        font-family: "Oswald", sans-serif;
+        font-size: clamp(2.7rem, 4.9vw, 5rem);
+        font-weight: 300;
+        letter-spacing: 0.09em;
+        line-height: 0.94;
+        margin: 0;
+        max-width: 9ch;
+        position: relative;
+        text-transform: uppercase;
+        z-index: 1;
     }
 
     #archon-horizontal-demo .archon-horizontal-demo__body {
         color: rgba(255, 255, 255, 0.88);
-        font-size: clamp(1rem, 1.5vw, 1.35rem);
-        line-height: 1.6;
-        margin: 1.5rem auto 0;
-        max-width: 720px;
+        font-size: clamp(1rem, 1.2vw, 1.08rem);
+        line-height: 1.65;
+        margin: 1rem 0 0;
+        max-width: 31rem;
         position: relative;
         z-index: 1;
     }
 
+    #archon-horizontal-demo .archon-horizontal-demo__list {
+        display: grid;
+        gap: 0.7rem;
+        list-style: none;
+        margin: 1.2rem 0 0;
+        padding: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    #archon-horizontal-demo .archon-horizontal-demo__list li {
+        color: rgba(255, 255, 255, 0.92);
+        display: flex;
+        font-size: 0.98rem;
+        gap: 0.7rem;
+        line-height: 1.45;
+    }
+
+    #archon-horizontal-demo .archon-horizontal-demo__list li::before {
+        color: #f8cf41;
+        content: "•";
+        flex: 0 0 auto;
+        font-size: 1.05rem;
+        line-height: 1.2;
+    }
+
+    #archon-horizontal-demo .archon-horizontal-demo__footer {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+        margin-top: 1.35rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    #archon-horizontal-demo .archon-horizontal-demo__cta {
+        background: #f8cf41;
+        border: 1px solid #f8cf41;
+        color: #090909;
+        display: inline-flex;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        padding: 0.85rem 1.15rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    #archon-horizontal-demo .archon-horizontal-demo__cta:hover {
+        background: #ffda59;
+        border-color: #ffda59;
+        color: #090909;
+    }
+
+    #archon-horizontal-demo .archon-horizontal-demo__tag {
+        border: 1px solid rgba(248, 207, 65, 0.45);
+        color: #f6d96d;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        padding: 0.78rem 0.95rem;
+        text-transform: uppercase;
+    }
+
     @media (max-width: 767px) {
+        #archon-horizontal-demo .horizontal-section {
+            padding: 1rem;
+        }
+
         #archon-horizontal-demo .heading {
-            font-size: 15vw;
-            letter-spacing: 0.28em;
+            font-size: clamp(2.2rem, 10.5vw, 3.35rem);
+            letter-spacing: 0.07em;
+            line-height: 0.98;
         }
 
         #archon-horizontal-demo .archon-horizontal-demo__copy {
-            padding: 0 8vw;
+            max-width: calc(100vw - 2rem);
+            padding: 1.15rem 1rem;
         }
 
-        #archon-horizontal-demo .archon-horizontal-demo__body {
-            font-size: 1rem;
+        #archon-horizontal-demo .archon-horizontal-demo__body,
+        #archon-horizontal-demo .archon-horizontal-demo__list li {
+            font-size: 0.95rem;
+        }
+
+        #archon-horizontal-demo .archon-horizontal-demo__footer {
+            align-items: stretch;
+            flex-direction: column;
+        }
+
+        #archon-horizontal-demo .archon-horizontal-demo__cta,
+        #archon-horizontal-demo .archon-horizontal-demo__tag {
+            width: 100%;
         }
     }
     </style>
@@ -2534,38 +2621,73 @@
         <div id="archon-horizontal-demo-container">
             <section class="horizontal-section">
                 <div class="archon-horizontal-demo__copy">
-                    <span class="archon-horizontal-demo__eyebrow">Archon Systems</span>
-                    <h2 class="heading">Engineering AI For Production</h2>
-                    <p class="archon-horizontal-demo__body">Archon builds AI systems that move beyond prototypes into secure, scalable, and reliable enterprise environments.</p>
+                    <span class="archon-horizontal-demo__eyebrow">Advisory Engagement</span>
+                    <h2 class="heading">AI Strategy &amp; Roadmap</h2>
+                    <p class="archon-horizontal-demo__body">Turn executive ambition into a scoped program with the right use cases, governance priorities, and delivery path.</p>
+                    <ul class="archon-horizontal-demo__list">
+                        <li>Prioritized use cases tied to business value</li>
+                        <li>Decision-ready roadmap for architecture, risk, and delivery</li>
+                        <li>Executive alignment on where to invest first</li>
+                    </ul>
+                    <div class="archon-horizontal-demo__footer">
+                        <a class="archon-horizontal-demo__cta" href="/contact-us.html">Start a conversation</a>
+                        <span class="archon-horizontal-demo__tag">Discovery + planning</span>
+                    </div>
                 </div>
             </section>
 
             <section class="horizontal-section">
                 <div class="archon-horizontal-demo__copy">
                     <span class="archon-horizontal-demo__eyebrow">Architecture</span>
-                    <h2 class="heading">Cloud &amp; AI Architecture</h2>
-                    <p class="archon-horizontal-demo__body">System design, infrastructure planning, governance controls, and integration boundaries built for long-term scale.</p>
+                    <h2 class="heading">Platform &amp; Data Foundation</h2>
+                    <p class="archon-horizontal-demo__body">Design the cloud, data, and integration backbone required to support secure enterprise AI adoption.</p>
+                    <ul class="archon-horizontal-demo__list">
+                        <li>Reference architecture for data, models, and applications</li>
+                        <li>Security, governance, and boundary design from day one</li>
+                        <li>Clear operating model for internal and vendor teams</li>
+                    </ul>
+                    <div class="archon-horizontal-demo__footer">
+                        <a class="archon-horizontal-demo__cta" href="/services.html">View services</a>
+                        <span class="archon-horizontal-demo__tag">Architecture + governance</span>
+                    </div>
                 </div>
             </section>
 
             <section class="horizontal-section">
                 <div class="archon-horizontal-demo__copy">
-                    <span class="archon-horizontal-demo__eyebrow">Deployment</span>
-                    <h2 class="heading">Operational Deployment</h2>
-                    <p class="archon-horizontal-demo__body">Production-ready workflows with observability, monitoring, security, and reliability mechanisms across the stack.</p>
+                    <span class="archon-horizontal-demo__eyebrow">Delivery</span>
+                    <h2 class="heading">Pilot to Production Execution</h2>
+                    <p class="archon-horizontal-demo__body">Move beyond demos with implementation support, production controls, and delivery discipline across the stack.</p>
+                    <ul class="archon-horizontal-demo__list">
+                        <li>Build plans that connect prototypes to real business workflows</li>
+                        <li>Monitoring, testing, and deployment controls for launch readiness</li>
+                        <li>Practical support for internal teams during rollout</li>
+                    </ul>
+                    <div class="archon-horizontal-demo__footer">
+                        <a class="archon-horizontal-demo__cta" href="/contact-us.html">Discuss your build</a>
+                        <span class="archon-horizontal-demo__tag">Implementation support</span>
+                    </div>
                 </div>
             </section>
 
             <section class="horizontal-section">
                 <div class="archon-horizontal-demo__copy">
-                    <span class="archon-horizontal-demo__eyebrow">Optimization</span>
-                    <h2 class="heading">Enterprise Reliability</h2>
-                    <p class="archon-horizontal-demo__body">Continuous evaluation, system tuning, and disciplined operations that keep AI platforms stable in real environments.</p>
+                    <span class="archon-horizontal-demo__eyebrow">Operations</span>
+                    <h2 class="heading">Reliability &amp; Performance</h2>
+                    <p class="archon-horizontal-demo__body">Keep AI systems stable after launch with the operating cadence, observability, and optimization needed for long-term value.</p>
+                    <ul class="archon-horizontal-demo__list">
+                        <li>Service health, model quality, and workflow visibility</li>
+                        <li>Continuous tuning for cost, latency, and reliability</li>
+                        <li>Structured handoff into a sustainable operating rhythm</li>
+                    </ul>
+                    <div class="archon-horizontal-demo__footer">
+                        <a class="archon-horizontal-demo__cta" href="/insights-index.html">Explore insights</a>
+                        <span class="archon-horizontal-demo__tag">Operate + optimize</span>
+                    </div>
                 </div>
             </section>
         </div>
     </section>
-
 </main>
 <footer class="custom-footer" id="footer">
   <nav class="custom-footer__nav">

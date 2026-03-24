@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Archon</title>
+    <meta
+      name="description"
+      content="Get in touch with Archon about advisory, engineering, AI, and transformation work."
+    />
+    <link rel="canonical" href="/contact-us.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contact Archon" />
+    <meta
+      property="og:description"
+      content="Get in touch with Archon about advisory, engineering, AI, and transformation work."
+    />
+    <meta property="og:image" content="/images/hero/cloud.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact Archon" />
+    <meta
+      name="twitter:description"
+      content="Get in touch with Archon about advisory, engineering, AI, and transformation work."
+    />
+    <meta name="twitter:image" content="/images/hero/cloud.png" />
+    <link rel="stylesheet" href="css/contact-page.css" />
+    <link rel="stylesheet" href="css/archon-chrome.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-shell site-header__inner">
+        <a href="/index.html" class="ArchonLogo" aria-label="Archon Home">
+          <svg
+            class="ArchonLogo__icon"
+            role="img"
+            width="28"
+            height="28"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="archonContactGlyphGrad" x1="4" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#B88400"></stop>
+                <stop offset="1" stop-color="#FFE072"></stop>
+              </linearGradient>
+            </defs>
+            <path
+              class="ArchonLogo__glyph--main"
+              d="M3 29L14.8 3h2.6L29 29h-5.5l-2-4.8h-11L8.5 29H3ZM12 19.6h8L16 9.7l-4 9.9Z"
+              fill="url(#archonContactGlyphGrad)"
+            ></path>
+            <path
+              class="ArchonLogo__glyph--cut"
+              d="M20 15h4.5l-3.1 6.8H17L20 15Z"
+              fill="#050505"
+              opacity="0.9"
+            ></path>
+          </svg>
+          <span class="ArchonLogo__text" aria-hidden="true">rchon</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="/index.html">Home</a>
+          <a href="/services.html">Services</a>
+          <a href="/insights-index.html">Insights</a>
+          <a href="/contact-us.html" aria-current="page">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="contact-page">
+      <section class="contact-main">
+        <div class="site-shell contact-shell">
+          <header class="contact-header">
+            <div class="contact-header__grid">
+              <div class="contact-header__main">
+                <span class="contact-header__kicker">Contact</span>
+                <h1>Start a conversation with Archon.</h1>
+              </div>
+            </div>
+          </header>
+
+          <div class="contact-layout">
+            <div class="contact-form-column">
+              <div class="contact-intro">
+                <p>
+                  Use the form below to tell us what you are working on, where you need support,
+                  and the best way to reach you.
+                </p>
+                <p>
+                  We review each inquiry directly and follow up on the requests that match our work.
+                </p>
+                <p>Required fields are marked with an asterisk (*).</p>
+              </div>
+
+              <form class="contact-form" id="contactForm" method="POST" aria-label="Contact form">
+                <input type="hidden" name="access_key" value="889a1371-bb15-4d92-bfeb-a5ca581c19f4" />
+                <input type="hidden" name="subject" value="New Archon Contact Inquiry" />
+                <input type="hidden" name="from_name" value="Archon Contact Page" />
+                <input type="checkbox" name="botcheck" class="contact-botcheck" tabindex="-1" autocomplete="off" />
+                <fieldset class="contact-form__section">
+                  <legend>Inquiry type*</legend>
+                  <div class="contact-form__topics">
+                    <label class="contact-topic">
+                      <input type="radio" name="inquiry_type" value="general" checked />
+                      <span>General</span>
+                    </label>
+                    <label class="contact-topic">
+                      <input type="radio" name="inquiry_type" value="advisory" />
+                      <span>Advisory</span>
+                    </label>
+                    <label class="contact-topic">
+                      <input type="radio" name="inquiry_type" value="engineering" />
+                      <span>Engineering</span>
+                    </label>
+                    <label class="contact-topic">
+                      <input type="radio" name="inquiry_type" value="media" />
+                      <span>Media</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="contact-form__fields">
+                  <label class="contact-field">
+                    <span>First name*</span>
+                    <input type="text" name="first_name" autocomplete="given-name" required />
+                  </label>
+
+                  <label class="contact-field">
+                    <span>Last name*</span>
+                    <input type="text" name="last_name" autocomplete="family-name" required />
+                  </label>
+
+                  <label class="contact-field">
+                    <span>Work email*</span>
+                    <input type="email" name="email" autocomplete="email" required />
+                  </label>
+
+                  <label class="contact-field">
+                    <span>Organization</span>
+                    <input type="text" name="company" autocomplete="organization" />
+                  </label>
+
+                  <label class="contact-field">
+                    <span>Role</span>
+                    <input type="text" name="title" autocomplete="organization-title" />
+                  </label>
+
+                  <label class="contact-field">
+                    <span>Topic*</span>
+                    <input type="text" name="subject" required />
+                  </label>
+
+                  <label class="contact-field contact-field--full">
+                    <span>How can we help?*</span>
+                    <textarea
+                      name="message"
+                      rows="7"
+                      required
+                      placeholder="A short summary of the challenge, scope, and timing is enough to start."
+                    ></textarea>
+                  </label>
+                </div>
+
+                <div class="contact-form__actions">
+                  <button class="contact-submit" type="submit">Send message</button>
+                  <div class="contact-form__result" id="contactFormResult" aria-live="polite"></div>
+                </div>
+              </form>
+            </div>
+
+            <aside class="contact-side" aria-label="Additional contact information">
+              <section class="contact-note">
+                <h2>Before you send</h2>
+                <p>
+                  The most useful inquiries include the business context, the current technical
+                  constraint, and the timeline you are working against.
+                </p>
+                <p>
+                  You can also review our <a href="/services.html">services</a> or recent
+                  <a href="/insights-index.html">insights</a> for a quick sense of fit.
+                </p>
+              </section>
+            </aside>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="custom-footer" id="footer">
+      <nav class="custom-footer__nav">
+        <a href="/index.html">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/insights-index.html">Insights</a>
+        <a href="/contact-us.html">Contact</a>
+      </nav>
+      <div class="custom-footer__copyright">
+        Archon provides advisory and engineering services and does not provide legal, regulatory, or compliance certification services.
+      </div>
+      <div class="custom-footer__copyright">
+        &copy; 2026 Archon Systems. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      (() => {
+        const form = document.getElementById("contactForm");
+        const result = document.getElementById("contactFormResult");
+
+        if (!form || !result) return;
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          const formData = new FormData(form);
+          const accessKey = formData.get("access_key");
+
+          if (!accessKey || String(accessKey).includes("YOUR_WEB3FORMS_ACCESS_KEY")) {
+            result.textContent = "Add your Web3Forms access key to enable submissions.";
+            result.dataset.state = "error";
+            return;
+          }
+
+          result.textContent = "Sending...";
+          result.dataset.state = "pending";
+
+          try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+              },
+              body: JSON.stringify(Object.fromEntries(formData))
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+              result.textContent = data.message || "Message sent successfully.";
+              result.dataset.state = "success";
+              form.reset();
+            } else {
+              result.textContent = data.message || "Something went wrong. Please try again.";
+              result.dataset.state = "error";
+            }
+          } catch (error) {
+            result.textContent = "Something went wrong. Please try again.";
+            result.dataset.state = "error";
+          }
+        });
+      })();
+    </script>
+      <script src="js/site-link-guard.js"></script>
+  </body>
+</html>
