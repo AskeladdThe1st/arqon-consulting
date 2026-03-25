@@ -1,14 +1,19 @@
-const { cpSync, existsSync, readdirSync, rmSync } = require("fs");
+const { cpSync, existsSync, rmSync } = require("fs");
 const { resolve } = require("path");
 const { defineConfig } = require("vite");
 
 const rootDir = __dirname;
 const staticDirs = ["css", "fonts", "images", "js"];
 
+const pageInputs = [
+  "index.html",
+  "services.html",
+  "insights-index.html",
+  "contact-us.html",
+];
+
 const input = Object.fromEntries(
-  readdirSync(rootDir, { withFileTypes: true })
-    .filter((entry) => entry.isFile() && entry.name.endsWith(".html"))
-    .map((entry) => [entry.name.replace(/\.html$/, ""), resolve(rootDir, entry.name)])
+  pageInputs.map((pageName) => [pageName.replace(/\.html$/, ""), resolve(rootDir, pageName)])
 );
 
 module.exports = defineConfig({

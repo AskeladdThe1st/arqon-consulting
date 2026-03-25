@@ -97,31 +97,17 @@
 	
 
 	
-		<style>
-			#onetrust-consent-sdk,
-			#onetrust-banner-sdk,
-			.ot-sdk-container,
-			.otPlaceholder {
-				display: none !important;
-			}
+	<style>
+		#onetrust-consent-sdk,
+		#onetrust-banner-sdk,
+		.ot-sdk-container,
+		.otPlaceholder {
+			display: none !important;
+		}
 
-			/* Prevent the legacy Accenture nav chrome from flashing on first paint. */
-			#globalnav-b9f5a008bb .rad-global-nav__utility-nav,
-			#globalnav-b9f5a008bb .rad-global-nav__mobile-footer,
-			#globalnav-b9f5a008bb .rad-global-nav__menu-item-content,
-			#globalnav-b9f5a008bb .rad-global-nav__submenu,
-			#globalnav-b9f5a008bb .rad-submenu__cta-wrapper,
-			#globalnav-b9f5a008bb .menu-item-content__back-button,
-			#globalnav-b9f5a008bb .xfpage,
-			#globalnav-b9f5a008bb .rad-button__icon-right,
-			#globalnav-b9f5a008bb #rad-global-nav__current-country,
-			#globalnav-b9f5a008bb .rad-global-nav__language-options {
-				display: none !important;
-			}
-
-			/* ArchonLogo: show icon + "rchon" wordmark */
-			.ArchonLogo {
-				display: inline-flex;
+		/* ArchonLogo: show icon + "rchon" wordmark */
+		.ArchonLogo {
+			display: inline-flex;
 			align-items: center;
 			gap: 0px;
 			text-decoration: none;
@@ -363,7 +349,7 @@
 					</button>
 					<ul class="rad-global-nav__menu-items">
 						<li id="globalnav_copy-primarynavlinks-item0-428684c05f" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item0-428684c05f&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Home&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
-								<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="false" aria-label="Home" onclick="window.location.href='/index.html'">
+							<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Home">
 								<div class="rad-button__text">Home</div>
 								<div class="rad-button__icon-right rad-icon rad-icon__chevron-down rad-icon--compact"></div>
 							</button> <div class="xfpage page basicpage">
@@ -656,7 +642,7 @@
 							</a></li>
 					
 						<li id="globalnav_copy-primarynavlinks-item2-f6fc52286f" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item2-f6fc52286f&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/insights-index&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Insights&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
-								<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="false" aria-label="Insights" onclick="window.location.href='/insights-index.html'">
+							<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Insights" onclick="window.location.href='/insights-index.html'">
 								<div class="rad-button__text">Insights</div>
 								<div class="rad-button__icon-right rad-icon rad-icon__chevron-down rad-icon--compact"></div>
 							</button> <div class="xfpage page basicpage">
@@ -832,7 +818,7 @@
 						
 					
 						<li id="globalnav_copy-primarynavlinks-item3-fee1e9f7d3" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item3-fee1e9f7d3&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Contact&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
-								<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="false" aria-label="Contact" onclick="window.location.href='/contact-us.html'">
+							<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Contact">
 								<div class="rad-button__text">Contact</div>
 								<div class="rad-button__icon-right rad-icon rad-icon__chevron-down rad-icon--compact"></div>
 							</button> <div class="xfpage page basicpage">
@@ -1435,32 +1421,72 @@
         white-space: nowrap;
     }
 
-    #archon-build-process .archon-build-process__step-body {
-        color: #c9c9c9;
-        font-size: clamp(0.95rem, 1.25vw, 1.05rem);
-        line-height: 1.52;
+	    #archon-build-process .archon-build-process__step-body {
+	        color: #c9c9c9;
+	        font-size: clamp(0.95rem, 1.25vw, 1.05rem);
+	        line-height: 1.52;
         margin: 18px 0 0;
         max-height: 0;
         max-width: 440px;
         opacity: 0;
-        overflow: hidden;
-        visibility: hidden;
-    }
-    @media (max-width: 768px) {
-        #archon-build-process .archon-build-process__inner {
-            padding: 96px var(--rad-spacing-sm) 84px;
-        }
+	        overflow: hidden;
+	        visibility: hidden;
+	    }
 
-        #archon-build-process .archon-build-process__nodes {
-            overflow-x: auto;
-            padding-bottom: 4px;
-        }
+	    @media (max-width: 1199px) {
+	        #archon-build-process {
+	            display: block;
+	            min-height: auto;
+	        }
 
-        #archon-build-process .archon-build-process__step {
-            min-height: 190px;
-            min-width: 38vw;
-        }
-    }
+	        #archon-build-process .archon-build-process__inner {
+	            justify-content: flex-start;
+	            min-height: 0;
+	            padding: 64px var(--rad-spacing-sm) 56px;
+	        }
+
+	        #archon-build-process .archon-build-process__intro {
+	            margin-bottom: 36px;
+	        }
+
+	        #archon-build-process .archon-build-process__nodes {
+	            display: grid;
+	            grid-template-columns: repeat(2, minmax(0, 1fr));
+	            gap: 16px;
+	        }
+
+	        #archon-build-process .archon-build-process__step {
+	            min-height: 0;
+	            opacity: 1;
+	            padding: 24px 22px;
+	            transform: none;
+	            will-change: auto;
+	        }
+
+	        #archon-build-process .archon-build-process__step-body {
+	            max-height: none;
+	            opacity: 1;
+	            visibility: visible;
+	        }
+	    }
+
+	    @media (max-width: 768px) {
+	        #archon-build-process .archon-build-process__inner {
+	            padding: 96px var(--rad-spacing-sm) 84px;
+	        }
+
+	        #archon-build-process .archon-build-process__nodes {
+	            grid-template-columns: 1fr;
+	        }
+
+	        #archon-build-process .archon-build-process__step {
+	            min-height: 190px;
+	        }
+
+	        #archon-build-process .archon-build-process__step-title {
+	            white-space: normal;
+	        }
+	    }
 
     #hero_custom .hero_custom__body {
         grid-column: 2;
@@ -2408,6 +2434,23 @@
     }
 }
 
+@media (max-width: 479px) {
+    #mixedmediatextblock-178a5a195b.archon-quote-static-block {
+        gap: 1.25rem;
+    }
+    #mixedmediatextblock-178a5a195b .archon-quote-static-block__title {
+        font-size: clamp(1.75rem, 10vw, 2.35rem);
+    }
+    #mixedmediatextblock-178a5a195b .archon-quote-static-block__description {
+        font-size: clamp(1.1rem, 6vw, 1.6rem);
+        margin-top: 1.25rem;
+    }
+    #mixedmediatextblock-178a5a195b .archon-quote-attribution {
+        margin-top: 1.25rem;
+        font-size: 1rem;
+    }
+}
+
 /* Keep updated slider images at consistent original dimensions */
 #carousel-09c18bca55 .cmp-image {
     aspect-ratio: 3 / 2;
@@ -2603,43 +2646,65 @@
         text-transform: uppercase;
     }
 
-        @media (max-width: 1024px) {
-        #archon-horizontal-demo-container {
-            grid-template-columns: 1fr;
-        }
+	    @media (max-width: 1024px) {
+	        #archon-horizontal-demo {
+	            margin-top: 1.5rem;
+	        }
 
-        #archon-horizontal-demo .horizontal-section {
-            min-height: 72vh;
-            padding: 1rem;
-        }
+	        #archon-horizontal-demo-container {
+	            display: block;
+	            height: auto;
+	            transform: none !important;
+	            width: 100%;
+	            will-change: auto;
+	        }
 
-        #archon-horizontal-demo .heading {
-            font-size: clamp(2.05rem, 9vw, 3.1rem);
-            letter-spacing: -0.02em;
-            line-height: 1.02;
-        }
+	        #archon-horizontal-demo .horizontal-section {
+	            align-items: flex-end;
+	            height: auto;
+	            min-height: 72svh;
+	            padding: 1rem;
+	            width: 100%;
+	        }
 
-        #archon-horizontal-demo .archon-horizontal-demo__copy {
-            max-width: calc(100vw - 2rem);
-            padding: 1.15rem 1rem;
-        }
+	        #archon-horizontal-demo .heading {
+	            font-size: clamp(2.05rem, 9vw, 3.1rem);
+	            letter-spacing: -0.02em;
+	            line-height: 1.02;
+	        }
 
-        #archon-horizontal-demo .archon-horizontal-demo__body,
-        #archon-horizontal-demo .archon-horizontal-demo__list li {
-            font-size: 0.95rem;
-        }
+	        #archon-horizontal-demo .archon-horizontal-demo__copy {
+	            max-width: calc(100vw - 2rem);
+	            padding: 1.15rem 1rem;
+	        }
 
-        #archon-horizontal-demo .archon-horizontal-demo__footer {
-            align-items: stretch;
-            flex-direction: column;
-        }
+	        #archon-horizontal-demo .archon-horizontal-demo__body,
+	        #archon-horizontal-demo .archon-horizontal-demo__list li {
+	            font-size: 0.95rem;
+	        }
 
-        #archon-horizontal-demo .archon-horizontal-demo__cta,
-        #archon-horizontal-demo .archon-horizontal-demo__tag {
-            width: 100%;
-        }
-    }
-    </style>
+	        #archon-horizontal-demo .archon-horizontal-demo__footer {
+	            align-items: stretch;
+	            flex-direction: column;
+	        }
+
+	        #archon-horizontal-demo .archon-horizontal-demo__cta,
+	        #archon-horizontal-demo .archon-horizontal-demo__tag {
+	            width: 100%;
+	        }
+	    }
+
+	    @media (max-width: 640px) {
+	        #archon-horizontal-demo .horizontal-section {
+	            min-height: 34rem;
+	            padding: 0.875rem;
+	        }
+
+	        #archon-horizontal-demo .archon-horizontal-demo__copy {
+	            max-width: none;
+	        }
+	    }
+	    </style>
 
     <script>
         window.archonHorizontalDemoImages = [
@@ -2824,170 +2889,316 @@
     
 
         
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        (function () {
-            function initArchonBuildProcessTimeline() {
-                var section = document.getElementById("archon-build-process");
-                var timeline = document.getElementById("archon-build-process-timeline");
-                if (!section || !timeline || timeline.dataset.timelineInitialized === "true") return;
-                timeline.dataset.timelineInitialized = "true";
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" type="text/javascript"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" type="text/javascript"></script>
+	    <script type="text/javascript">
+	        (function () {
+	            var buildProcessTimeline = null;
+	            var buildProcessRevealAnimations = [];
+	            var horizontalDemoTween = null;
+	            var horizontalDemoRevealAnimations = [];
+	            var refreshHandle = null;
 
-                if (!window.gsap || !window.ScrollTrigger) return;
+	            function queueScrollTriggerRefresh() {
+	                if (!window.ScrollTrigger) return;
+	                if (refreshHandle) {
+	                    window.clearTimeout(refreshHandle);
+	                }
 
-                gsap.registerPlugin(ScrollTrigger);
+	                refreshHandle = window.setTimeout(function () {
+	                    refreshHandle = null;
+	                    window.ScrollTrigger.refresh();
+	                }, 120);
+	            }
 
-                var steps = Array.prototype.slice.call(timeline.querySelectorAll(".archon-build-process__step"));
-                var bodies = Array.prototype.slice.call(timeline.querySelectorAll(".archon-build-process__step-body"));
-                if (!steps.length || !bodies.length) return;
+	            function applyArchonHorizontalDemoImages() {
+	                var imageUrls = Array.isArray(window.archonHorizontalDemoImages) ? window.archonHorizontalDemoImages : [];
+	                var imageNodes = document.querySelectorAll("#archon-horizontal-demo .archon-horizontal-demo__image");
 
-                if (window.matchMedia && window.matchMedia("(max-width: 1024px)").matches) {
-                    steps.forEach(function (step, index) {
-                        var body = bodies[index];
-                        step.style.opacity = "1";
-                        step.style.transform = "none";
-                        step.style.flexGrow = "1";
-                        step.style.background = index === 0 ? "rgba(243, 198, 35, 0.16)" : "rgba(255, 255, 255, 0.04)";
-                        if (body) {
-                            body.style.opacity = "1";
-                            body.style.maxHeight = "none";
-                            body.style.visibility = "visible";
-                        }
-                    });
-                    return;
-                }
-
-                if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-                    steps.forEach(function (step, index) {
-                        var body = bodies[index];
-                        step.style.opacity = index === 0 ? "1" : "0.5";
-                        step.style.transform = index === 0 ? "scale(1)" : "scale(0.9)";
-                        step.style.flexGrow = index === 0 ? "3.4" : "1";
-                        step.style.background = index === 0 ? "rgba(243, 198, 35, 0.16)" : "rgba(255, 255, 255, 0.04)";
-                        if (body) {
-                            body.style.opacity = index === 0 ? "1" : "0";
-                            body.style.maxHeight = index === 0 ? "220px" : "0px";
-                            body.style.visibility = index === 0 ? "visible" : "hidden";
-                        }
-                    });
-                    return;
-                }
-
-                gsap.set(steps, {
-                    flexGrow: 1,
-                    scale: 0.9,
-                    opacity: 0.5,
-                    x: 0,
-                    backgroundColor: "rgba(255, 255, 255, 0.04)"
-                });
-                gsap.set(bodies, { autoAlpha: 0, maxHeight: 0 });
-
-                var cardsTl = gsap.timeline({
-                    defaults: { overwrite: "auto" },
-                    scrollTrigger: {
-                        trigger: section,
-                        start: "top top",
-                        end: "+=320%",
-                        scrub: 0.85,
-                        pin: true,
-                        pinSpacing: true,
-                        refreshPriority: 2,
-                        anticipatePin: 1,
-                        invalidateOnRefresh: true
-                    }
-                });
-
-                function addState(activeIndex, position) {
-                    steps.forEach(function (step, index) {
-                        var xOffset = 0;
-                        if (index < activeIndex) xOffset = -8;
-                        if (index > activeIndex) xOffset = 8;
-
-                        cardsTl.to(step, {
-                            duration: 0.8,
-                            flexGrow: index === activeIndex ? 3.2 : 1,
-                            scale: index === activeIndex ? 1 : 0.9,
-                            opacity: index === activeIndex ? 1 : 0.5,
-                            x: xOffset,
-                            backgroundColor: index === activeIndex ? "rgba(243, 198, 35, 0.16)" : "rgba(255, 255, 255, 0.04)",
-                            ease: "none"
-                        }, position);
-                    });
-
-                    bodies.forEach(function (body, index) {
-                        cardsTl.to(body, {
-                            duration: 0.5,
-                            autoAlpha: index === activeIndex ? 1 : 0,
-                            maxHeight: index === activeIndex ? 220 : 0,
-                            ease: "none"
-                        }, position + 0.1);
-                    });
-                }
-
-                addState(0, 0);
-                addState(1, 1.25);
-                addState(2, 2.5);
-                addState(3, 3.75);
-
-            }
-
-            window.addEventListener("load", initArchonBuildProcessTimeline);
-            window.addEventListener("radTransitionFinished", initArchonBuildProcessTimeline);
-        })();
-    </script>
-    <script type="text/javascript">
-        (function () {
-                                    function applyArchonHorizontalDemoImages() {
-                var imageUrls = Array.isArray(window.archonHorizontalDemoImages) ? window.archonHorizontalDemoImages : [];
-                var imageNodes = document.querySelectorAll("#archon-horizontal-demo .archon-horizontal-demo__image");
-
-                imageNodes.forEach(function (node) {
-                    var index = Number(node.getAttribute("data-archon-image-index"));
+	                imageNodes.forEach(function (node) {
+	                    var index = Number(node.getAttribute("data-archon-image-index"));
                     var imageUrl = imageUrls[index];
                     if (!imageUrl) return;
                     if (node.getAttribute("src") !== imageUrl) {
                         node.setAttribute("src", imageUrl);
-                    }
-                });
-            }
+	                    }
+	                });
+	            }
 
-            function initArchonHorizontalDemo() {
-                var container = document.getElementById("archon-horizontal-demo-container");
-                if (!container || container.dataset.gsapInitialized === "true") return;
-                if (!window.gsap || !window.ScrollTrigger) return;
-                if (window.matchMedia && window.matchMedia("(max-width: 1024px), (prefers-reduced-motion: reduce)").matches) return;
+	            function resetBuildProcess(steps, bodies) {
+	                if (!window.gsap) return;
 
-                applyArchonHorizontalDemoImages();
-                container.dataset.gsapInitialized = "true";
+	                if (buildProcessTimeline) {
+	                    buildProcessTimeline.scrollTrigger.kill();
+	                    buildProcessTimeline.kill();
+	                    buildProcessTimeline = null;
+	                }
 
-                gsap.registerPlugin(ScrollTrigger);
+	                buildProcessRevealAnimations.forEach(function (animation) {
+	                    if (animation.scrollTrigger) {
+	                        animation.scrollTrigger.kill();
+	                    }
+	                    animation.kill();
+	                });
+	                buildProcessRevealAnimations = [];
 
-                var totalPanels = container.querySelectorAll(".horizontal-section").length;
-                gsap.set(container, { force3D: true, xPercent: 0, willChange: "transform" });
+	                gsap.set(steps, {
+	                    clearProps: "flex-grow,transform,opacity,x,y,background-color,visibility"
+	                });
+	                gsap.set(bodies, {
+	                    clearProps: "opacity,visibility,max-height,y"
+	                });
+	            }
 
-                gsap.to(container, {
-                    xPercent: -100 * (totalPanels - 1) / totalPanels,
-                    ease: "none",
-                    force3D: true,
-                    lazy: false,
-                    scrollTrigger: {
-                        trigger: "#archon-horizontal-demo",
-                        start: "top top",
-                        pin: true,
-                        pinSpacing: true,
-                        scrub: 0.85,
-                        refreshPriority: 1,
-                        anticipatePin: 0,
-                        fastScrollEnd: false,
-                        invalidateOnRefresh: false,
-                        end: function () {
-                            var travelDistance = Math.max(container.scrollWidth - window.innerWidth, 0);
-                            return "+=" + Math.max(travelDistance * 1.7, window.innerWidth * 2.5);
-                        }
-                    }
-                });
-            }
+	            function initArchonBuildProcessTimeline() {
+	                var section = document.getElementById("archon-build-process");
+	                var timeline = document.getElementById("archon-build-process-timeline");
+	                var pinTarget = section ? section.querySelector(".archon-build-process__inner") : null;
+	                var desktopMedia = window.matchMedia("(min-width: 1025px) and (min-height: 720px) and (prefers-reduced-motion: no-preference)");
+
+	                if (!section || !timeline || !pinTarget) return;
+	                if (!window.gsap || !window.ScrollTrigger) return;
+
+	                gsap.registerPlugin(ScrollTrigger);
+
+	                var steps = Array.prototype.slice.call(timeline.querySelectorAll(".archon-build-process__step"));
+	                var bodies = Array.prototype.slice.call(timeline.querySelectorAll(".archon-build-process__step-body"));
+	                if (!steps.length || !bodies.length) return;
+
+	                resetBuildProcess(steps, bodies);
+
+	                if (!desktopMedia.matches) {
+	                    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+	                        return;
+	                    }
+
+	                    buildProcessRevealAnimations.push(gsap.fromTo(
+	                        steps,
+	                        {
+	                            autoAlpha: 0,
+	                            y: 36,
+	                            scale: 0.96
+	                        },
+	                        {
+	                            autoAlpha: 1,
+	                            y: 0,
+	                            scale: 1,
+	                            duration: 0.7,
+	                            stagger: 0.14,
+	                            ease: "power2.out",
+	                            overwrite: true,
+	                            scrollTrigger: {
+	                                id: "archon-build-process-reveal",
+	                                trigger: timeline,
+	                                start: "top 78%",
+	                                once: true,
+	                                invalidateOnRefresh: true
+	                            }
+	                        }
+	                    ));
+	                    return;
+	                }
+
+	                function applyDesktopBuildProcessBaseState() {
+	                    gsap.set(steps, {
+	                        flexGrow: 1,
+	                        scale: 0.92,
+	                        opacity: 0.46,
+	                        x: 0,
+	                        backgroundColor: "rgba(255, 255, 255, 0.04)"
+	                    });
+	                    gsap.set(bodies, {
+	                        autoAlpha: 0,
+	                        maxHeight: 0
+	                    });
+	                }
+
+	                applyDesktopBuildProcessBaseState();
+
+	                buildProcessTimeline = gsap.timeline({
+	                    defaults: { overwrite: "auto" },
+	                    scrollTrigger: {
+	                        id: "archon-build-process-trigger",
+	                        trigger: section,
+	                        pin: pinTarget,
+	                        start: "top top",
+	                        end: function () {
+	                            return "+=" + Math.round(window.innerHeight * Math.max(steps.length, 4));
+	                        },
+	                        scrub: 0.55,
+	                        pinSpacing: true,
+	                        refreshPriority: 2,
+	                        anticipatePin: 0,
+	                        invalidateOnRefresh: true,
+	                        fastScrollEnd: true,
+	                        onRefreshInit: applyDesktopBuildProcessBaseState
+	                    }
+	                });
+
+	                function addState(activeIndex, position) {
+	                    steps.forEach(function (step, index) {
+	                        var xOffset = 0;
+	                        if (index < activeIndex) xOffset = -8;
+	                        if (index > activeIndex) xOffset = 8;
+
+	                        buildProcessTimeline.to(step, {
+	                            duration: 0.9,
+	                            flexGrow: index === activeIndex ? 3 : 1,
+	                            scale: index === activeIndex ? 1 : 0.92,
+	                            opacity: index === activeIndex ? 1 : 0.46,
+	                            x: xOffset,
+	                            backgroundColor: index === activeIndex ? "rgba(243, 198, 35, 0.16)" : "rgba(255, 255, 255, 0.04)",
+	                            ease: "none"
+	                        }, position);
+	                    });
+
+	                    bodies.forEach(function (body, index) {
+	                        buildProcessTimeline.to(body, {
+	                            duration: 0.45,
+	                            autoAlpha: index === activeIndex ? 1 : 0,
+	                            maxHeight: index === activeIndex ? 220 : 0,
+	                            ease: "none"
+	                        }, position + 0.1);
+	                    });
+	                }
+
+	                addState(0, 0);
+	                addState(1, 1);
+	                addState(2, 2);
+	                addState(3, 3);
+	                buildProcessTimeline.to({}, { duration: 0.35 }, 3.2);
+	            }
+
+	            function resetHorizontalDemo() {
+	                if (horizontalDemoTween) {
+	                    horizontalDemoTween.scrollTrigger.kill();
+	                    horizontalDemoTween.kill();
+	                    horizontalDemoTween = null;
+	                }
+
+	                horizontalDemoRevealAnimations.forEach(function (animation) {
+	                    if (animation.scrollTrigger) {
+	                        animation.scrollTrigger.kill();
+	                    }
+	                    animation.kill();
+	                });
+	                horizontalDemoRevealAnimations = [];
+
+	                if (window.gsap) {
+	                    gsap.set("#archon-horizontal-demo-container", {
+	                        clearProps: "transform,will-change"
+	                    });
+	                    gsap.set("#archon-horizontal-demo .horizontal-section", {
+	                        clearProps: "opacity,visibility,transform"
+	                    });
+	                    gsap.set("#archon-horizontal-demo .archon-horizontal-demo__copy", {
+	                        clearProps: "opacity,visibility,transform"
+	                    });
+	                    gsap.set("#archon-horizontal-demo .archon-horizontal-demo__image", {
+	                        clearProps: "opacity,visibility,transform"
+	                    });
+	                }
+	            }
+
+	            function initArchonHorizontalDemo() {
+	                var container = document.getElementById("archon-horizontal-demo-container");
+	                var panels;
+
+	                if (!container) return;
+	                if (!window.gsap || !window.ScrollTrigger) return;
+
+	                panels = container.querySelectorAll(".horizontal-section");
+	                if (!panels.length) return;
+
+	                applyArchonHorizontalDemoImages();
+	                resetHorizontalDemo();
+
+	                if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+	                if (window.matchMedia && window.matchMedia("(max-width: 1024px)").matches) {
+	                    panels.forEach(function (panel, index) {
+	                        var copy = panel.querySelector(".archon-horizontal-demo__copy");
+	                        var image = panel.querySelector(".archon-horizontal-demo__image");
+
+	                        if (image) {
+	                            horizontalDemoRevealAnimations.push(gsap.fromTo(
+	                                image,
+	                                {
+	                                    autoAlpha: 0.3,
+	                                    scale: 1.08
+	                                },
+	                                {
+	                                    autoAlpha: 1,
+	                                    scale: 1,
+	                                    duration: 0.9,
+	                                    ease: "power2.out",
+	                                    overwrite: true,
+	                                    scrollTrigger: {
+	                                        id: "archon-horizontal-image-" + index,
+	                                        trigger: panel,
+	                                        start: "top 82%",
+	                                        once: true,
+	                                        invalidateOnRefresh: true
+	                                    }
+	                                }
+	                            ));
+	                        }
+
+	                        if (copy) {
+	                            horizontalDemoRevealAnimations.push(gsap.fromTo(
+	                                copy,
+	                                {
+	                                    autoAlpha: 0,
+	                                    y: 42
+	                                },
+	                                {
+	                                    autoAlpha: 1,
+	                                    y: 0,
+	                                    duration: 0.7,
+	                                    ease: "power2.out",
+	                                    overwrite: true,
+	                                    scrollTrigger: {
+	                                        id: "archon-horizontal-copy-" + index,
+	                                        trigger: panel,
+	                                        start: "top 78%",
+	                                        once: true,
+	                                        invalidateOnRefresh: true
+	                                    }
+	                                }
+	                            ));
+	                        }
+	                    });
+	                    return;
+	                }
+
+	                gsap.registerPlugin(ScrollTrigger);
+
+	                var totalPanels = panels.length;
+	                gsap.set(container, { force3D: true, xPercent: 0, willChange: "transform" });
+
+	                horizontalDemoTween = gsap.to(container, {
+	                    xPercent: -100 * (totalPanels - 1) / totalPanels,
+	                    ease: "none",
+	                    force3D: true,
+	                    lazy: false,
+	                    scrollTrigger: {
+	                        id: "archon-horizontal-demo-trigger",
+	                        trigger: "#archon-horizontal-demo",
+	                        start: "top top",
+	                        pin: true,
+	                        pinSpacing: true,
+	                        scrub: 0.75,
+	                        refreshPriority: 1,
+	                        anticipatePin: 0,
+	                        fastScrollEnd: true,
+	                        invalidateOnRefresh: true,
+	                        end: function () {
+	                            var travelDistance = Math.max(container.scrollWidth - window.innerWidth, 0);
+	                            return "+=" + Math.max(travelDistance * 1.15, window.innerWidth * 2.4);
+	                        }
+	                    }
+	                });
+	            }
 
             (function warmArchonHorizontalDemoImages() {
                 var imageUrls = Array.isArray(window.archonHorizontalDemoImages) ? window.archonHorizontalDemoImages : [];
@@ -2996,15 +3207,30 @@
                     if (!url) return;
                     var img = new Image();
                     img.decoding = "async";
-                    img.src = url;
-                });
-            })();
+	                    img.src = url;
+	                });
+	            })();
 
-            window.addEventListener("DOMContentLoaded", applyArchonHorizontalDemoImages);
-            window.addEventListener("load", initArchonHorizontalDemo);
-            window.addEventListener("radTransitionFinished", initArchonHorizontalDemo);
-        })();
-    </script>
+	            function initArchonHomeAnimations() {
+	                initArchonBuildProcessTimeline();
+	                initArchonHorizontalDemo();
+	                queueScrollTriggerRefresh();
+	            }
+
+	            window.addEventListener("DOMContentLoaded", function () {
+	                applyArchonHorizontalDemoImages();
+	                initArchonHomeAnimations();
+	            });
+	            window.addEventListener("load", initArchonHomeAnimations);
+	            window.addEventListener("resize", initArchonHomeAnimations, { passive: true });
+	            window.addEventListener("orientationchange", initArchonHomeAnimations);
+	            window.addEventListener("radTransitionFinished", initArchonHomeAnimations);
+
+	            if (document.fonts && document.fonts.ready) {
+	                document.fonts.ready.then(initArchonHomeAnimations);
+	            }
+	        })();
+	    </script>
     <script src="js/site-link-guard.js"></script>
   </body></html>
 
