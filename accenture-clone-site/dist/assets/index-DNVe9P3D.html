@@ -81,13 +81,19 @@
 
 	
 	
-	<link rel="preload" as="font" type="font/woff2" crossorigin="" href="/etc.clientlibs/cio-sites/clientlibs/clientlib-rad/resources/fonts/graphik-medium-web.woff2">
+		<link rel="preload" as="font" type="font/woff2" crossorigin="" href="/etc.clientlibs/cio-sites/clientlibs/clientlib-rad/resources/fonts/graphik-medium-web.woff2">
 
-	<link rel="preload" as="font" type="font/woff2" crossorigin="" href="/etc.clientlibs/cio-sites/clientlibs/clientlib-rad/resources/fonts/graphik-regular-web.woff2">
+		<link rel="preload" as="font" type="font/woff2" crossorigin="" href="/etc.clientlibs/cio-sites/clientlibs/clientlib-rad/resources/fonts/graphik-regular-web.woff2">
+		<link rel="preconnect" href="https://images.pexels.com" crossorigin="">
+		<link rel="preconnect" href="https://images.unsplash.com" crossorigin="">
+		<link rel="preload" as="image" href="https://images.pexels.com/photos/6285258/pexels-photo-6285258.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=627&amp;w=1200">
+		<link rel="preload" as="image" href="https://images.pexels.com/photos/17489163/pexels-photo-17489163.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=627&amp;w=1200">
+		<link rel="preload" as="image" href="https://images.pexels.com/photos/26985180/pexels-photo-26985180.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=627&amp;w=1200">
+		<link rel="preload" as="image" href="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1600&amp;q=80">
 
-    <script>
-        window.adobeDataLayer = window.adobeDataLayer || [];
-    </script>
+	    <script>
+	        window.adobeDataLayer = window.adobeDataLayer || [];
+	    </script>
 	
 
 	
@@ -1187,7 +1193,7 @@
         color: #fff;
         display: flex;
         min-height: 100vh;
-        overflow-x: clip;
+        overflow: hidden;
         position: relative;
         isolation: isolate;
         z-index: 3;
@@ -1255,7 +1261,6 @@
         padding: 28px 24px;
         transform: scale(0.9);
         transform-origin: center center;
-        will-change: transform, opacity, flex-grow;
     }
 
     #archon-build-process .archon-build-process__step-title {
@@ -2530,8 +2535,6 @@
         padding: clamp(1.5rem, 3.2vw, 3.25rem);
         position: relative;
         width: 100vw;
-        backface-visibility: hidden;
-        contain: paint;
     }
 
     #archon-horizontal-demo .horizontal-section::before {
@@ -2549,7 +2552,6 @@
         object-fit: cover;
         object-position: center;
         position: absolute;
-        transform: translateZ(0);
         user-select: none;
         width: 100%;
         z-index: 0;
@@ -2711,19 +2713,10 @@
     }
     </style>
 
-    <script>
-        window.archonHorizontalDemoImages = [
-            "https://images.pexels.com/photos/6285258/pexels-photo-6285258.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
-            "https://images.pexels.com/photos/17489163/pexels-photo-17489163.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
-            "https://images.pexels.com/photos/26985180/pexels-photo-26985180.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
-            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80"
-        ];
-    </script>
     <section id="archon-horizontal-demo" aria-label="Horizontal Scroll Demo">
         <div id="archon-horizontal-demo-container">
-            <!-- Edit window.archonHorizontalDemoImages above to change slider visuals. -->
             <section class="horizontal-section">
-                <img class="archon-horizontal-demo__image" data-archon-image-index="0" alt="" loading="eager" decoding="async" fetchpriority="high">
+                <img class="archon-horizontal-demo__image" src="https://images.pexels.com/photos/6285258/pexels-photo-6285258.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="" loading="eager" decoding="async" fetchpriority="high">
                 <div class="archon-horizontal-demo__copy">
                     <span class="archon-horizontal-demo__eyebrow">Advisory Engagement</span>
                     <h2 class="heading">AI Strategy &amp; Roadmap</h2>
@@ -2741,7 +2734,7 @@
             </section>
 
             <section class="horizontal-section">
-                <img class="archon-horizontal-demo__image" data-archon-image-index="1" alt="" loading="eager" decoding="async">
+                <img class="archon-horizontal-demo__image" src="https://images.pexels.com/photos/17489163/pexels-photo-17489163.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="" loading="eager" decoding="async" fetchpriority="high">
                 <div class="archon-horizontal-demo__copy">
                     <span class="archon-horizontal-demo__eyebrow">Architecture</span>
                     <h2 class="heading">Platform &amp; Data Foundation</h2>
@@ -2759,7 +2752,7 @@
             </section>
 
             <section class="horizontal-section">
-                <img class="archon-horizontal-demo__image" data-archon-image-index="2" alt="" loading="eager" decoding="async">
+                <img class="archon-horizontal-demo__image" src="https://images.pexels.com/photos/26985180/pexels-photo-26985180.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="" loading="eager" decoding="async" fetchpriority="high">
                 <div class="archon-horizontal-demo__copy">
                     <span class="archon-horizontal-demo__eyebrow">Delivery</span>
                     <h2 class="heading">Pilot to Production Execution</h2>
@@ -2777,7 +2770,7 @@
             </section>
 
             <section class="horizontal-section">
-                <img class="archon-horizontal-demo__image" data-archon-image-index="3" alt="" loading="eager" decoding="async">
+                <img class="archon-horizontal-demo__image" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="" loading="eager" decoding="async" fetchpriority="high">
                 <div class="archon-horizontal-demo__copy">
                     <span class="archon-horizontal-demo__eyebrow">Operations</span>
                     <h2 class="heading">Reliability &amp; Performance</h2>
@@ -2961,6 +2954,7 @@
                         end: "+=320%",
                         scrub: 0.85,
                         pin: true,
+                        pinReparent: true,
                         pinSpacing: true,
                         refreshPriority: 2,
                         anticipatePin: 1,
@@ -3006,51 +3000,36 @@
             window.addEventListener("radTransitionFinished", initArchonBuildProcessTimeline);
         })();
     </script>
-    <script type="text/javascript">
-        (function () {
-                                    function applyArchonHorizontalDemoImages() {
-                var imageUrls = Array.isArray(window.archonHorizontalDemoImages) ? window.archonHorizontalDemoImages : [];
-                var imageNodes = document.querySelectorAll("#archon-horizontal-demo .archon-horizontal-demo__image");
-
-                imageNodes.forEach(function (node) {
-                    var index = Number(node.getAttribute("data-archon-image-index"));
-                    var imageUrl = imageUrls[index];
-                    if (!imageUrl) return;
-                    if (node.getAttribute("src") !== imageUrl) {
-                        node.setAttribute("src", imageUrl);
-                    }
-                });
-            }
-
+	    <script type="text/javascript">
+	        (function () {
             function initArchonHorizontalDemo() {
                 var container = document.getElementById("archon-horizontal-demo-container");
                 if (!container || container.dataset.gsapInitialized === "true") return;
-                if (!window.gsap || !window.ScrollTrigger) return;
-                if (window.matchMedia && window.matchMedia("(max-width: 1024px), (prefers-reduced-motion: reduce)").matches) return;
+	                if (!window.gsap || !window.ScrollTrigger) return;
+	                if (window.matchMedia && window.matchMedia("(max-width: 1024px), (prefers-reduced-motion: reduce)").matches) return;
 
-                applyArchonHorizontalDemoImages();
-                container.dataset.gsapInitialized = "true";
+	                container.dataset.gsapInitialized = "true";
 
-                gsap.registerPlugin(ScrollTrigger);
+	                gsap.registerPlugin(ScrollTrigger);
 
                 var totalPanels = container.querySelectorAll(".horizontal-section").length;
-                gsap.set(container, { force3D: true, xPercent: 0, willChange: "transform" });
+                gsap.set(container, { xPercent: 0 });
 
-                gsap.to(container, {
+                var horizontalTween = gsap.to(container, {
                     xPercent: -100 * (totalPanels - 1) / totalPanels,
                     ease: "none",
-                    force3D: true,
                     lazy: false,
                     scrollTrigger: {
                         trigger: "#archon-horizontal-demo",
                         start: "top top",
                         pin: true,
+                        pinType: "fixed",
                         pinSpacing: true,
                         scrub: 0.85,
                         refreshPriority: 1,
-                        anticipatePin: 0,
+                        anticipatePin: 1,
                         fastScrollEnd: false,
-                        invalidateOnRefresh: false,
+                        invalidateOnRefresh: true,
                         end: function () {
                             var travelDistance = Math.max(container.scrollWidth - window.innerWidth, 0);
                             return "+=" + Math.max(travelDistance * 1.7, window.innerWidth * 2.5);
@@ -3058,22 +3037,9 @@
                     }
                 });
             }
-
-            (function warmArchonHorizontalDemoImages() {
-                var imageUrls = Array.isArray(window.archonHorizontalDemoImages) ? window.archonHorizontalDemoImages : [];
-
-                imageUrls.forEach(function (url) {
-                    if (!url) return;
-                    var img = new Image();
-                    img.decoding = "async";
-                    img.src = url;
-                });
-            })();
-
-            window.addEventListener("DOMContentLoaded", applyArchonHorizontalDemoImages);
-            window.addEventListener("load", initArchonHorizontalDemo);
-            window.addEventListener("radTransitionFinished", initArchonHorizontalDemo);
-	        })();
+	            window.addEventListener("load", initArchonHorizontalDemo);
+	            window.addEventListener("radTransitionFinished", initArchonHorizontalDemo);
+		        })();
 	    </script>
 	    <script type="text/javascript">
 	        (function () {
