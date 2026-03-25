@@ -426,8 +426,9 @@
             text-decoration: none;
             color: #fff;
             position: relative;
-            float: left;
-            margin: 10px;
+            float: none;
+            margin: 0;
+            align-self: flex-start;
         }
 
         a.hero_custom__cta_1:hover, a.hero_custom__cta_1:visited, a.hero_custom__cta_1:focus {
@@ -440,7 +441,7 @@
             display: inline-flex;
             align-items: center;
             gap: 14px;
-            margin-top: 4px;
+            margin-top: 0;
         }
 
         .cta_span {
