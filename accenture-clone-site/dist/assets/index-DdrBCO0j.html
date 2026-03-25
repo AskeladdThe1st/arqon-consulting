@@ -87,7 +87,7 @@
 
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
     <link rel="dns-prefetch" href="https://images.unsplash.com">
-    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1600&q=80" imagesrcset="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1600&q=80 1600w" imagesizes="100vw">
+    <link rel="preload" as="image" href="/images/hero/mountainsbrotha.png">
     <link rel="preload" as="image" href="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80" imagesrcset="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80 1600w" imagesizes="100vw">
 
 
@@ -2635,8 +2635,9 @@
 
     <section id="archon-horizontal-demo" aria-label="Horizontal Scroll Demo">
         <div id="archon-horizontal-demo-container">
+            <!-- Edit the 4 image src paths below to change slider visuals. Prefer local /images/... files for better performance. -->
             <section class="horizontal-section">
-                <img class="archon-horizontal-demo__image" src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1600&q=80" alt="" loading="eager" decoding="async" fetchpriority="high">
+                <img class="archon-horizontal-demo__image" src="/images/hero/mountainsbrotha.png" alt="" loading="eager" decoding="async" fetchpriority="high">
                 <div class="archon-horizontal-demo__copy">
                     <span class="archon-horizontal-demo__eyebrow">Advisory Engagement</span>
                     <h2 class="heading">AI Strategy &amp; Roadmap</h2>
@@ -2941,15 +2942,17 @@
                     lazy: false,
                     scrollTrigger: {
                         trigger: "#archon-horizontal-demo",
+                        start: "top top",
                         pin: true,
                         pinSpacing: true,
-                        scrub: 0.5,
+                        scrub: 0.85,
                         refreshPriority: 1,
-                        anticipatePin: 1,
-                        fastScrollEnd: true,
+                        anticipatePin: 0,
+                        fastScrollEnd: false,
                         invalidateOnRefresh: false,
                         end: function () {
-                            return "+=" + Math.max(container.scrollWidth - window.innerWidth, 0);
+                            var travelDistance = Math.max(container.scrollWidth - window.innerWidth, 0);
+                            return "+=" + Math.max(travelDistance * 1.7, window.innerWidth * 2.5);
                         }
                     }
                 });
@@ -2957,7 +2960,7 @@
 
             (function warmArchonHorizontalDemoImages() {
                 var imageUrls = [
-                    "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1600&q=80",
+                    "/images/hero/mountainsbrotha.png",
                     "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80",
                     "https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80",
                     "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80"

@@ -84,6 +84,7 @@
 	<link rel="preload" as="font" type="font/woff2" crossorigin="" href="/etc.clientlibs/cio-sites/clientlibs/clientlib-rad/resources/fonts/graphik-medium-web.woff2">
 
 	<link rel="preload" as="font" type="font/woff2" crossorigin="" href="/etc.clientlibs/cio-sites/clientlibs/clientlib-rad/resources/fonts/graphik-regular-web.woff2">
+    <link rel="preload" as="image" href="/images/hero/mountainsbrotha.png">
 
 
     <script>
@@ -2630,8 +2631,9 @@
 
     <section id="archon-horizontal-demo" aria-label="Horizontal Scroll Demo">
         <div id="archon-horizontal-demo-container">
+            <!-- Edit the 4 image src paths below to change slider visuals. Prefer local /images/... files for better performance. -->
             <section class="horizontal-section">
-                <img class="archon-horizontal-demo__image" src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1600&q=80" alt="" loading="eager" decoding="async" fetchpriority="high">
+                <img class="archon-horizontal-demo__image" src="/images/hero/mountainsbrotha.png" alt="" loading="eager" decoding="async" fetchpriority="high">
                 <div class="archon-horizontal-demo__copy">
                     <span class="archon-horizontal-demo__eyebrow">Advisory Engagement</span>
                     <h2 class="heading">AI Strategy &amp; Roadmap</h2>
@@ -2936,15 +2938,17 @@
                     lazy: false,
                     scrollTrigger: {
                         trigger: "#archon-horizontal-demo",
+                        start: "top top",
                         pin: true,
                         pinSpacing: true,
-                        scrub: 0.5,
+                        scrub: 0.85,
                         refreshPriority: 1,
-                        anticipatePin: 1,
-                        fastScrollEnd: true,
+                        anticipatePin: 0,
+                        fastScrollEnd: false,
                         invalidateOnRefresh: false,
                         end: function () {
-                            return "+=" + container.offsetWidth;
+                            var travelDistance = Math.max(container.scrollWidth - window.innerWidth, 0);
+                            return "+=" + Math.max(travelDistance * 1.7, window.innerWidth * 2.5);
                         }
                     }
                 });
