@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en-US"><head>
+﻿<!DOCTYPE html><html lang="en-US"><head>
     <meta charset="UTF-8">
     
     
@@ -84,11 +84,7 @@
 	<link rel="preload" as="font" type="font/woff2" crossorigin="" href="/etc.clientlibs/cio-sites/clientlibs/clientlib-rad/resources/fonts/graphik-medium-web.woff2">
 
 	<link rel="preload" as="font" type="font/woff2" crossorigin="" href="/etc.clientlibs/cio-sites/clientlibs/clientlib-rad/resources/fonts/graphik-regular-web.woff2">
-
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-    <link rel="dns-prefetch" href="https://images.unsplash.com">
     <link rel="preload" as="image" href="/images/hero/mountainsbrotha.png">
-    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80" imagesrcset="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80 1600w" imagesizes="100vw">
 
 
     <script>
@@ -2637,7 +2633,7 @@
         <div id="archon-horizontal-demo-container">
             <!-- Edit the 4 image src paths below to change slider visuals. Prefer local /images/... files for better performance. -->
             <section class="horizontal-section">
-                <img class="archon-horizontal-demo__image" src="/images/hero/mountainsbrotha.png" alt="" loading="eager" decoding="async" fetchpriority="high">
+                <img class="archon-horizontal-demo__image" src="/images/hero/platform-ai-datafoundations.png" alt="" loading="eager" decoding="async" fetchpriority="high">
                 <div class="archon-horizontal-demo__copy">
                     <span class="archon-horizontal-demo__eyebrow">Advisory Engagement</span>
                     <h2 class="heading">AI Strategy &amp; Roadmap</h2>
@@ -2958,24 +2954,10 @@
                 });
             }
 
-            (function warmArchonHorizontalDemoImages() {
-                var imageUrls = [
-                    "/images/hero/mountainsbrotha.png",
-                    "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80",
-                    "https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80",
-                    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80"
-                ];
-
-                imageUrls.forEach(function (url) {
-                    var img = new Image();
-                    img.decoding = "async";
-                    img.src = url;
-                });
-            })();
-
             window.addEventListener("load", initArchonHorizontalDemo);
             window.addEventListener("radTransitionFinished", initArchonHorizontalDemo);
         })();
     </script>
-</body></html>
+    <script src="js/site-link-guard.js"></script>
+  </body></html>
 
