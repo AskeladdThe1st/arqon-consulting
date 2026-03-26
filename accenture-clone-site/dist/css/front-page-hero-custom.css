@@ -793,6 +793,28 @@
             text-shadow: var(--archon-card-heading-shadow);
         }
 
+        #block-tilegrid .rad-content-grid-card,
+        #block-tilegrid .rad-content-grid-card__sliding-content,
+        #block-tilegrid .rad-content-grid-card__back-content {
+            border: 0 !important;
+            box-shadow: none !important;
+        }
+
+        #block-tilegrid .rad-content-grid-card:focus-within,
+        #block-tilegrid .rad-content-grid-card.rad-content-grid-card--open {
+            outline: 2px solid #f3c623 !important;
+            outline-offset: 8px !important;
+            box-shadow: none !important;
+        }
+
+        #block-tilegrid .rad-content-grid-card__cta-cover:focus-visible ~ * .rad-button,
+        #block-tilegrid .rad-content-grid-card__front-toggle:focus-visible,
+        #block-tilegrid .rad-content-grid-card__close-button:focus-visible {
+            outline: 2px solid #f3c623 !important;
+            outline-offset: 8px !important;
+            box-shadow: none !important;
+        }
+
         #research-report-e1abd46e2f {
             --archon-card-label-color: #f0e6ff;
             --archon-card-heading-shadow: 0 12px 28px rgba(24, 8, 60, 0.74);

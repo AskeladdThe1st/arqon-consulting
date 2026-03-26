@@ -28,6 +28,18 @@
   --archon-nav-icon: #f4f8ff;
 }
 
+::selection {
+  background: rgba(243, 198, 35, 0.92);
+  color: #050505;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: rgba(243, 198, 35, 0.92);
+  color: #050505;
+  text-shadow: none;
+}
+
 .site-header {
   position: sticky;
   top: 0;
