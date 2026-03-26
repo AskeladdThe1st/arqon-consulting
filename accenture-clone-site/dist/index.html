@@ -26,7 +26,7 @@
       content="Archon designs and deploys structured AI and cloud systems that move beyond experimentation."
     >
     <meta itemprop="image" content="/images/hero/cloud.png">
-    <link rel="canonical" href="/assets/index-0fAPZCLz.html">
+    <link rel="canonical" href="/assets/index-Gh67Q3cp.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Archon | AI Transformation, Engineered">
     <meta
@@ -289,7 +289,7 @@
   margin-top:28px;
 }
 </style>
-  <link rel="stylesheet" crossorigin href="/assets/index-KJ8F8r8L.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-m0bstooa.css">
   <link rel="stylesheet" crossorigin href="/assets/archon-chrome-CxU125Gh.css">
 </head>
     <body class="radicalaccenturedesign generic page basicpage " id="page-f3f3debf6f" data-barba="wrapper" data-cmp-data-layer-enabled="">
@@ -3478,116 +3478,38 @@
 	    </script>
 		    <script type="text/javascript">
 		        (function () {
-		            function initArchonCardGridReveal() {
+		            function initArchonCardGridInteractions() {
 		                var grid = document.getElementById("block-tilegrid");
-		                if (!grid || grid.dataset.archonCardGridReady === "true") return;
+		                if (!grid || grid.dataset.archonCardGridInteractionsReady === "true") return;
 
-		                var cards = Array.prototype.slice.call(grid.querySelectorAll(".rad-content-grid-card"));
-		                if (!cards.length) return;
-		                grid.dataset.archonCardGridReady = "true";
-
-		                function setExpanded(card, expanded) {
-		                    var toggle = card.querySelector(".rad-content-grid-card__front-toggle");
-		                    var closeButton = card.querySelector(".rad-content-grid-card__close-button");
-		                    var actionLink = card.querySelector(".rad-content-grid-card__back-content .rad-button");
-		                    var coverLink = card.querySelector(".rad-content-grid-card__cta-cover");
-
-		                    card.classList.toggle("rad-content-grid-card--open", expanded);
-
-		                    if (toggle) {
-		                        toggle.disabled = expanded;
-		                        toggle.tabIndex = expanded ? -1 : 0;
-		                        toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
-		                        toggle.setAttribute("aria-hidden", expanded ? "true" : "false");
-		                    }
-
-		                    if (closeButton) {
-		                        closeButton.disabled = !expanded;
-		                        closeButton.tabIndex = expanded ? 0 : -1;
-		                        closeButton.setAttribute("aria-hidden", expanded ? "false" : "true");
-		                    }
-
-		                    if (actionLink) {
-		                        actionLink.tabIndex = expanded ? 0 : -1;
-		                    }
-
-		                    if (coverLink) {
-		                        coverLink.tabIndex = -1;
-		                        coverLink.style.pointerEvents = expanded ? "none" : "";
-		                    }
+		                if (typeof window.initContentGridCards === "function") {
+		                    window.initContentGridCards(grid);
 		                }
 
-		                function closeOthers(activeCard) {
-		                    cards.forEach(function (card) {
-		                        if (card !== activeCard) {
-		                            setExpanded(card, false);
-		                        }
-		                    });
-		                }
+		                grid.dataset.archonCardGridInteractionsReady = "true";
+		                grid.addEventListener("click", function (event) {
+		                    var closeButton = event.target.closest(".rad-content-grid-card__close-button");
+		                    var card;
+		                    var toggle;
 
-		                cards.forEach(function (card) {
-		                    var toggle = card.querySelector(".rad-content-grid-card__front-toggle");
-		                    var closeButton = card.querySelector(".rad-content-grid-card__close-button");
+		                    if (!closeButton) return;
 
-		                    setExpanded(card, false);
+		                    card = closeButton.closest(".rad-content-grid-card");
+		                    toggle = card && card.querySelector(".rad-content-grid-card__front-toggle");
 
-		                    card.addEventListener("pointerenter", function (event) {
-		                        if (event.pointerType !== "mouse") return;
-		                        closeOthers(card);
-		                        setExpanded(card, true);
-		                    });
+		                    if (!card || !toggle || !card.classList.contains("rad-content-grid-card--open")) return;
 
-		                    card.addEventListener("pointerleave", function (event) {
-		                        if (event.pointerType !== "mouse") return;
-		                        if (!card.contains(document.activeElement)) {
-		                            setExpanded(card, false);
-		                        }
-		                    });
-
-		                    card.addEventListener("focusin", function () {
-		                        closeOthers(card);
-		                        setExpanded(card, true);
-		                    });
-
-		                    card.addEventListener("focusout", function () {
-		                        window.setTimeout(function () {
-		                            if (!card.contains(document.activeElement)) {
-		                                setExpanded(card, false);
-		                            }
-		                        }, 0);
-		                    });
-
-		                    card.addEventListener("keydown", function (event) {
-		                        if (event.key !== "Escape") return;
-		                        setExpanded(card, false);
-		                        if (toggle) {
-		                            toggle.focus();
-		                        }
-		                    });
-
-		                    if (toggle) {
-		                        toggle.addEventListener("click", function (event) {
-		                            event.preventDefault();
-		                            var nextState = !card.classList.contains("rad-content-grid-card--open");
-		                            closeOthers(nextState ? card : null);
-		                            setExpanded(card, nextState);
-		                        });
-		                    }
-
-		                    if (closeButton) {
-		                        closeButton.addEventListener("click", function (event) {
-		                            event.preventDefault();
-		                            setExpanded(card, false);
-		                            if (toggle) {
-		                                toggle.focus();
-		                            }
-		                        });
-		                    }
+		                    event.preventDefault();
+		                    event.stopPropagation();
+		                    toggle.click();
+		                    window.setTimeout(function () {
+		                        toggle.focus();
+		                    }, 0);
 		                });
 		            }
 
-		            window.addEventListener("load", initArchonCardGridReveal);
-		            window.addEventListener("radTransitionFinished", initArchonCardGridReveal);
+		            window.addEventListener("load", initArchonCardGridInteractions);
+		            window.addEventListener("radTransitionFinished", initArchonCardGridInteractions);
 		        })();
 		    </script>
 		    <script type="text/javascript">
