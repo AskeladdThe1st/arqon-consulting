@@ -1,6 +1,8 @@
 (function ($) {
     "use strict";
 
+    var hasJQuery = typeof $ === "function";
+
     var localHrefMap = {
         "/us-en": "/index.html",
         "/us-en/": "/index.html",
@@ -13,6 +15,10 @@
     };
 
     function disableCookieBanner() {
+        if (!hasJQuery) {
+            return;
+        }
+
         var cookieSelectors = [
             "#onetrust-consent-sdk",
             "#onetrust-banner-sdk",
@@ -56,6 +62,10 @@
     }
 
     function rewriteKnownLinks() {
+        if (!hasJQuery) {
+            return;
+        }
+
         $("a[href]").each(function () {
             var link = $(this);
             var href = link.attr("href");
@@ -73,6 +83,10 @@
     }
 
     function applyArchonNavbarSimplification() {
+        if (!hasJQuery) {
+            return;
+        }
+
         var navHrefMap = {
             "Home": "/index.html",
             "Services": "/services.html",
@@ -123,6 +137,10 @@
     }
 
     function applyAccessibilityPolish() {
+        if (!hasJQuery) {
+            return;
+        }
+
         $(".rad-card img").attr("alt", "");
 
         $(".rad-awards-card__rte a[target*='blank']").each(function () {
@@ -133,7 +151,175 @@
         });
     }
 
+    function initArchonMobileNav() {
+        var navRoot = document.querySelector(".rad-global-nav");
+        var openButton;
+        var closeButton;
+        var primaryNav;
+
+        if (!navRoot || navRoot.dataset.archonNavBound === "true") {
+            return;
+        }
+
+        openButton = navRoot.querySelector(".rad-global-nav__menu-open");
+        closeButton = navRoot.querySelector(".rad-global-nav__menu-close");
+        primaryNav = navRoot.querySelector(".rad-global-nav__primary-nav");
+
+        if (!openButton || !closeButton || !primaryNav) {
+            return;
+        }
+
+        function setMenuState(isOpen) {
+            primaryNav.classList.toggle("is-open", isOpen);
+            navRoot.classList.toggle("archon-nav-open", isOpen);
+            document.documentElement.classList.toggle("archon-nav-lock", isOpen);
+            document.body.classList.toggle("archon-nav-lock", isOpen);
+            openButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            closeButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        openButton.addEventListener("click", function (event) {
+            if (window.innerWidth > 1023) {
+                return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+            setMenuState(true);
+        });
+
+        closeButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            setMenuState(false);
+        });
+
+        primaryNav.addEventListener("click", function (event) {
+            if (window.innerWidth > 1023) {
+                return;
+            }
+
+            if (event.target.closest(".rad-global-nav__menu-close")) {
+                return;
+            }
+
+            if (event.target.closest(".rad-global-nav__menu-items a")) {
+                setMenuState(false);
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                setMenuState(false);
+            }
+        });
+
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 1023) {
+                setMenuState(false);
+            }
+        });
+
+        navRoot.dataset.archonNavBound = "true";
+    }
+
+    function initSimpleHeaderMobileNav() {
+        var header = document.querySelector(".site-header");
+        var headerInner;
+        var nav;
+        var openButton;
+        var mobileNav;
+        var closeButton;
+        var linksWrap;
+
+        if (!header || header.dataset.archonSimpleNavBound === "true") {
+            return;
+        }
+
+        headerInner = header.querySelector(".site-header__inner");
+        nav = header.querySelector(".site-nav");
+
+        if (!headerInner || !nav) {
+            return;
+        }
+
+        openButton = document.createElement("button");
+        openButton.type = "button";
+        openButton.className = "site-header__menu-open";
+        openButton.setAttribute("aria-label", "Open menu");
+        openButton.setAttribute("aria-expanded", "false");
+        openButton.innerHTML = '<span class="site-header__menu-icon"><span></span></span>';
+
+        mobileNav = document.createElement("div");
+        mobileNav.className = "site-header__mobile-nav";
+        mobileNav.setAttribute("aria-hidden", "true");
+
+        closeButton = document.createElement("button");
+        closeButton.type = "button";
+        closeButton.className = "site-header__menu-close";
+        closeButton.setAttribute("aria-label", "Close menu");
+        closeButton.setAttribute("aria-expanded", "false");
+        closeButton.innerHTML = '<span class="site-header__menu-close-icon"></span>';
+
+        linksWrap = document.createElement("nav");
+        linksWrap.className = "site-header__mobile-nav-links";
+        linksWrap.setAttribute("aria-label", "Mobile navigation");
+        linksWrap.innerHTML = nav.innerHTML;
+
+        mobileNav.appendChild(closeButton);
+        mobileNav.appendChild(linksWrap);
+        headerInner.insertBefore(openButton, headerInner.firstChild);
+        header.appendChild(mobileNav);
+
+        function setSimpleMenuState(isOpen) {
+            header.classList.toggle("is-open", isOpen);
+            document.documentElement.classList.toggle("archon-simple-nav-lock", isOpen);
+            document.body.classList.toggle("archon-simple-nav-lock", isOpen);
+            openButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            closeButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            mobileNav.setAttribute("aria-hidden", isOpen ? "false" : "true");
+        }
+
+        openButton.addEventListener("click", function (event) {
+            if (window.innerWidth > 1023) {
+                return;
+            }
+
+            event.preventDefault();
+            setSimpleMenuState(true);
+        });
+
+        closeButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            setSimpleMenuState(false);
+        });
+
+        linksWrap.addEventListener("click", function (event) {
+            if (event.target.closest("a")) {
+                setSimpleMenuState(false);
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                setSimpleMenuState(false);
+            }
+        });
+
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 1023) {
+                setSimpleMenuState(false);
+            }
+        });
+
+        header.dataset.archonSimpleNavBound = "true";
+    }
+
     function handleHashScroll() {
+        if (!hasJQuery) {
+            return;
+        }
+
         var href = window.location.href;
         if (href.indexOf("#") === -1) {
             return;
@@ -157,20 +343,28 @@
         rewriteKnownLinks();
         applyArchonNavbarSimplification();
         applyAccessibilityPolish();
+        initArchonMobileNav();
+        initSimpleHeaderMobileNav();
     }
 
-    $(function () {
-        initArchonSiteFixes();
-    });
+    if (hasJQuery) {
+        $(function () {
+            initArchonSiteFixes();
+        });
 
-    $(window).on("load", handleHashScroll);
+        $(window).on("load", handleHashScroll);
+
+        new MutationObserver(function () {
+            disableCookieBanner();
+            rewriteKnownLinks();
+        }).observe(document.documentElement, {
+            childList: true,
+            subtree: true
+        });
+    } else {
+        document.addEventListener("DOMContentLoaded", initArchonSiteFixes);
+        window.addEventListener("load", handleHashScroll);
+    }
+
     window.addEventListener("radTransitionFinished", initArchonSiteFixes);
-
-    new MutationObserver(function () {
-        disableCookieBanner();
-        rewriteKnownLinks();
-    }).observe(document.documentElement, {
-        childList: true,
-        subtree: true
-    });
 })(window.jQuery);

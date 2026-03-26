@@ -701,43 +701,78 @@
 
         @media (max-width: 900px) {
             .archon-credibility-band {
-                padding: 18px 0 14px;
+                padding: 16px 0 12px;
             }
 
-            .archon-credibility-band__inner {
-                width: min(1440px, calc(100% - 32px));
-                display: flex;
-                flex-wrap: wrap;
-                gap: 14px 16px;
-            }
-
-            .archon-credibility-band__item {
-                flex: 0 0 calc((100% - 32px) / 3);
-                max-width: calc((100% - 32px) / 3);
-                min-height: 112px;
-                padding: 6px 16px 6px 14px;
-            }
-
-            .archon-credibility-band__item:nth-child(4),
-            .archon-credibility-band__item:nth-child(5) {
-                flex-basis: calc((100% - 16px) / 2);
-                max-width: calc((100% - 16px) / 2);
-            }
-        }
-
-        @media (max-width: 640px) {
             .archon-credibility-band__inner {
                 width: min(1440px, calc(100% - 24px));
                 display: grid;
-                grid-template-columns: 1fr;
-                gap: 12px;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px 14px;
             }
 
             .archon-credibility-band__item {
                 flex: none;
                 max-width: none;
                 min-height: 0;
-                padding: 4px 16px 4px 14px;
+                padding: 8px 12px 8px 12px;
+                gap: 6px;
+            }
+
+            .archon-credibility-band__item:nth-child(5) {
+                grid-column: 1 / -1;
+            }
+
+            .archon-credibility-band__item h3 {
+                font-size: 16px;
+                line-height: 1.08;
+            }
+
+            .archon-credibility-band__item p {
+                font-size: 11px;
+                line-height: 1.32;
+            }
+
+            .archon-credibility-band__icon {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .archon-credibility-band__inner {
+                width: min(1440px, calc(100% - 20px));
+            }
+
+            .archon-credibility-band__item {
+                padding: 8px 10px 8px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .archon-credibility-band {
+                padding: 14px 0 10px;
+            }
+
+            .archon-credibility-band__inner {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .archon-credibility-band__item {
+                padding: 8px 10px 8px 12px;
+            }
+
+            .archon-credibility-band__item:nth-child(5) {
+                grid-column: auto;
+            }
+
+            .archon-credibility-band__item h3 {
+                font-size: 15px;
+            }
+
+            .archon-credibility-band__item p {
+                font-size: 10.5px;
             }
         }
 
