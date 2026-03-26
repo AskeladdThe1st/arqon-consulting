@@ -1474,15 +1474,10 @@
             gap: 9px;
         }
 
-        #hero_custom .hero_custom__body__hero_text h2 {
-            margin: 0;
-            font-size: clamp(0.98rem, 1.8vw, 1.12rem);
-            line-height: 1.28;
-        }
-
+        #hero_custom .hero_custom__body__hero_text h2,
         #hero_custom .hero_custom__body__hero_text__title {
-            font-size: clamp(0.78rem, 1.25vw, 0.9rem);
-            line-height: 1.38;
+            font-size: clamp(0.98rem, 1.8vw, 1.02rem);
+            line-height: 1.34;
         }
 
         #hero_custom .hero_custom__body__hero_text__title br {
@@ -1559,15 +1554,10 @@
             gap: 8px;
         }
 
-        #hero_custom .hero_custom__body__hero_text h2 {
-            margin: 0;
-            font-size: clamp(1.02rem, 2.35vw, 1.12rem);
-            line-height: 1.3;
-        }
-
+        #hero_custom .hero_custom__body__hero_text h2,
         #hero_custom .hero_custom__body__hero_text__title {
-            font-size: clamp(0.9rem, 2vw, 0.98rem);
-            line-height: 1.42;
+            font-size: clamp(1rem, 2.15vw, 1.05rem);
+            line-height: 1.36;
         }
 
         #hero_custom .hero_custom__body__hero_text__title br {
@@ -1646,15 +1636,10 @@
             gap: 9px;
         }
 
-        #hero_custom .hero_custom__body__hero_text h2 {
-            margin: 0;
-            font-size: clamp(1rem, 4.2vw, 1.1rem);
-            line-height: 1.32;
-        }
-
+        #hero_custom .hero_custom__body__hero_text h2,
         #hero_custom .hero_custom__body__hero_text__title {
-            font-size: clamp(0.9rem, 3.55vw, 0.98rem);
-            line-height: 1.44;
+            font-size: clamp(1rem, 3.85vw, 1.06rem);
+            line-height: 1.36;
         }
 
         #hero_custom .hero_custom__body__hero_text__title br {
@@ -3484,10 +3469,57 @@
 		        (function () {
 		            function initArchonCardGridInteractions() {
 		                var grid = document.getElementById("block-tilegrid");
+		                var slider;
+		                var viewport;
+		                var cardsContainer;
+		                var scrollTarget;
+
 		                if (!grid || grid.dataset.archonCardGridInteractionsReady === "true") return;
 
 		                if (typeof window.initContentGridCards === "function") {
 		                    window.initContentGridCards(grid);
+		                }
+
+		                slider = grid.querySelector(".rad-card-grid__slider");
+		                viewport = grid.querySelector(".rad-card-grid__cards-viewport");
+		                cardsContainer = grid.querySelector(".rad-card-grid__cards-container");
+		                scrollTarget = viewport && viewport.scrollWidth > viewport.clientWidth + 2 ? viewport : cardsContainer;
+
+		                function updateSliderVisual() {
+		                    var max = Number(slider.max) || 1;
+		                    var value = Number(slider.value) || 0;
+		                    var progress = max <= 0 ? 0 : (value / max) * 100;
+		                    slider.style.setProperty("--archon-slider-progress", progress + "%");
+		                }
+
+		                function syncSliderBounds() {
+		                    var maxScroll;
+
+		                    if (!slider || !scrollTarget) return;
+
+		                    maxScroll = Math.max(0, scrollTarget.scrollWidth - scrollTarget.clientWidth);
+		                    slider.min = "0";
+		                    slider.max = String(maxScroll || 1);
+		                    slider.value = String(Math.min(maxScroll, Math.max(0, scrollTarget.scrollLeft)));
+		                    slider.disabled = maxScroll <= 1;
+		                    updateSliderVisual();
+		                }
+
+		                if (slider && scrollTarget) {
+		                    syncSliderBounds();
+
+		                    slider.addEventListener("input", function () {
+		                        scrollTarget.scrollLeft = Number(slider.value) || 0;
+		                        updateSliderVisual();
+		                    });
+
+		                    scrollTarget.addEventListener("scroll", function () {
+		                        slider.value = String(Math.max(0, scrollTarget.scrollLeft));
+		                        updateSliderVisual();
+		                    }, { passive: true });
+
+		                    window.addEventListener("resize", syncSliderBounds);
+		                    window.setTimeout(syncSliderBounds, 60);
 		                }
 
 		                grid.dataset.archonCardGridInteractionsReady = "true";
