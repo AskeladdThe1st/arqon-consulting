@@ -1687,25 +1687,38 @@
         }
 
         .archon-credibility-band .archon-credibility-band__inner {
-            width: min(1440px, calc(100% - 24px)) !important;
-            display: grid !important;
-            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            grid-auto-flow: row !important;
+            width: min(42rem, calc(100% - 24px)) !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
             gap: 14px 16px !important;
             align-items: stretch !important;
         }
 
         .archon-credibility-band .archon-credibility-band__item {
-            width: auto !important;
-            flex: none !important;
-            max-width: none !important;
-            min-height: 0 !important;
+            width: calc(50% - 8px) !important;
+            flex: 0 1 calc(50% - 8px) !important;
+            max-width: calc(50% - 8px) !important;
+            min-height: 108px !important;
+            position: relative !important;
+            border-left: 0 !important;
             padding: 10px 14px !important;
             gap: 7px !important;
         }
 
+        .archon-credibility-band .archon-credibility-band__item::before {
+            content: "" !important;
+            position: absolute !important;
+            left: 0 !important;
+            top: 0 !important;
+            width: 1px !important;
+            height: 76px !important;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.08)) !important;
+        }
+
         .archon-credibility-band .archon-credibility-band__item:nth-child(5) {
-            grid-column: 1 / -1 !important;
+            width: calc(50% - 8px) !important;
+            max-width: calc(50% - 8px) !important;
         }
 
         .archon-credibility-band .archon-credibility-band__item h3 {
@@ -1730,17 +1743,28 @@
         }
 
         .archon-credibility-band .archon-credibility-band__inner {
-            width: min(1440px, calc(100% - 20px)) !important;
-            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            width: min(34rem, calc(100% - 20px)) !important;
             gap: 10px 12px !important;
         }
 
         .archon-credibility-band .archon-credibility-band__item {
+            position: relative !important;
+            border-left: 0 !important;
+            width: calc(50% - 6px) !important;
+            flex: 0 1 calc(50% - 6px) !important;
+            max-width: calc(50% - 6px) !important;
+            min-height: 94px !important;
             padding: 8px 10px 8px 10px !important;
         }
 
+        .archon-credibility-band .archon-credibility-band__item::before {
+            height: 66px !important;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.08)) !important;
+        }
+
         .archon-credibility-band .archon-credibility-band__item:nth-child(5) {
-            grid-column: 1 / -1 !important;
+            width: calc(50% - 6px) !important;
+            max-width: calc(50% - 6px) !important;
         }
 
         .archon-credibility-band .archon-credibility-band__item h3 {
@@ -1761,11 +1785,15 @@
 
     @media (max-width: 390px) {
         .archon-credibility-band .archon-credibility-band__inner {
-            grid-template-columns: 1fr !important;
+            display: flex !important;
+            flex-direction: column !important;
         }
 
+        .archon-credibility-band .archon-credibility-band__item,
         .archon-credibility-band .archon-credibility-band__item:nth-child(5) {
-            grid-column: auto !important;
+            width: auto !important;
+            flex: 1 1 auto !important;
+            max-width: none !important;
         }
     }
 
