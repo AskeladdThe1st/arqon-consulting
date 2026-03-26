@@ -20,6 +20,12 @@
   --archon-footer-text: #a8b0bc;
   --archon-footer-muted: #7e8794;
   --archon-accent: #f3c623;
+  --archon-accent-strong: #ffe072;
+  --archon-accent-ink: #050505;
+  --archon-nav-surface: rgba(16, 31, 52, 0.92);
+  --archon-nav-surface-strong: rgba(12, 24, 40, 0.97);
+  --archon-nav-border: rgba(243, 198, 35, 0.22);
+  --archon-nav-icon: #f4f8ff;
 }
 
 .site-header {
@@ -125,6 +131,74 @@
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
   color: #ffffff;
+}
+
+.rad-global-nav__menu-open {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  min-height: 42px !important;
+  border-radius: 0 !important;
+  border: 2px solid rgba(243, 198, 35, 0.78) !important;
+  background: rgba(5, 5, 5, 0.94) !important;
+  color: var(--archon-accent) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+  transition: background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.rad-global-nav__menu-open:hover,
+.rad-global-nav__menu-open:focus-visible {
+  background: rgba(12, 12, 12, 0.98) !important;
+  color: var(--archon-accent-strong) !important;
+  border-color: rgba(255, 224, 114, 0.96) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.34);
+}
+
+.rad-global-nav__menu-open .rad-icon__menu {
+  display: block;
+  width: 18px;
+  height: 14px;
+  color: inherit;
+  font-size: 0 !important;
+  background-image:
+    linear-gradient(currentColor, currentColor),
+    linear-gradient(currentColor, currentColor),
+    linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 100% 2px, 100% 2px, 100% 2px;
+  background-position: 50% 0, 50% 50%, 50% 100%;
+}
+
+.rad-global-nav__menu-open .rad-icon__menu::before,
+.rad-global-nav__menu-open .rad-icon__menu::after {
+  content: none !important;
+}
+
+.rad-global-nav__wrapper,
+.rad-global-nav__container {
+  background: transparent !important;
+}
+
+.rad-global-nav__primary-nav {
+  background: #000000 !important;
+}
+
+.rad-global-nav__menu-close {
+  color: var(--archon-accent) !important;
+}
+
+@media (max-width: 1023px) {
+  .rad-global-nav,
+  .rad-global-nav__wrapper,
+  .rad-global-nav__container {
+    background: #000000 !important;
+  }
+
+  .rad-global-nav__primary-nav {
+    background: #000000 !important;
+    border-left: 1px solid rgba(243, 198, 35, 0.22);
+  }
 }
 
 .custom-footer {

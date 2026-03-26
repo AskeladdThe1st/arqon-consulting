@@ -26,7 +26,7 @@
       content="Archon designs and deploys structured AI and cloud systems that move beyond experimentation."
     >
     <meta itemprop="image" content="/images/hero/cloud.png">
-    <link rel="canonical" href="/assets/index-DE2IDffx.html">
+    <link rel="canonical" href="/assets/index-CjzbAz5j.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Archon | AI Transformation, Engineered">
     <meta
@@ -225,7 +225,7 @@
 
     
         
-            
+            
             
             
         
@@ -290,6 +290,7 @@
 }
 </style>
   <link rel="stylesheet" crossorigin href="/assets/index-B6-l12U-.css">
+  <link rel="stylesheet" crossorigin href="/assets/archon-chrome-DdZ1djnR.css">
 </head>
     <body class="radicalaccenturedesign generic page basicpage " id="page-f3f3debf6f" data-barba="wrapper" data-cmp-data-layer-enabled="">
         
@@ -1280,19 +1281,78 @@
         overflow: hidden;
         visibility: hidden;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
+        #archon-build-process {
+            min-height: auto;
+            overflow: visible;
+        }
+
         #archon-build-process .archon-build-process__inner {
-            padding: 96px var(--rad-spacing-sm) 84px;
+            justify-content: flex-start;
+            min-height: auto;
+            padding: 96px var(--rad-spacing-sm) 72px;
+        }
+
+        #archon-build-process .archon-build-process__timeline-scroll,
+        #archon-build-process .archon-build-process__timeline {
+            overflow: visible;
         }
 
         #archon-build-process .archon-build-process__nodes {
-            overflow-x: auto;
-            padding-bottom: 4px;
+            flex-direction: column;
+            gap: 16px;
+            overflow: visible;
+            padding-bottom: 0;
         }
 
         #archon-build-process .archon-build-process__step {
-            min-height: 190px;
-            min-width: 38vw;
+            min-height: 184px;
+            opacity: 1;
+            padding: 24px 20px;
+            transform: none;
+            width: 100%;
+        }
+
+        #archon-build-process .archon-build-process__step-title {
+            font-size: 1.6rem;
+            line-height: 1.15;
+            white-space: normal;
+        }
+
+        #archon-build-process .archon-build-process__step-body {
+            display: block;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-top: 14px;
+            max-height: none;
+            max-width: none;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    @media (max-width: 640px) {
+        #archon-build-process .archon-build-process__inner {
+            padding: 88px 20px 56px;
+        }
+
+        #archon-build-process .archon-build-process__title {
+            font-size: clamp(2.1rem, 10vw, 3.2rem);
+            margin-bottom: 18px;
+        }
+
+        #archon-build-process .archon-build-process__intro {
+            font-size: 1rem;
+            margin-bottom: 32px;
+        }
+
+        #archon-build-process .archon-build-process__step {
+            border-radius: 18px;
+            padding: 22px 18px;
+        }
+
+        #archon-build-process .archon-build-process__step-title {
+            font-size: 1.35rem;
         }
     }
 
@@ -2901,7 +2961,7 @@
                 var bodies = Array.prototype.slice.call(timeline.querySelectorAll(".archon-build-process__step-body"));
                 if (!steps.length || !bodies.length) return;
 
-                if (window.matchMedia && window.matchMedia("(max-width: 1024px)").matches) {
+                if (window.matchMedia && window.matchMedia("(max-width: 767px)").matches) {
                     steps.forEach(function (step, index) {
                         var body = bodies[index];
                         step.style.opacity = "1";
