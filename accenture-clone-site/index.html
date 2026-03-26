@@ -1613,10 +1613,13 @@
 
         #hero_custom .hero_custom__headline {
             grid-column: 1;
-            max-width: 7.2ch;
+            width: min(100%, 22rem);
+            max-width: 22rem;
             line-height: 0.92;
             letter-spacing: -0.04em;
             padding-bottom: 0;
+            justify-self: center;
+            margin-inline: auto;
         }
 
         #hero_custom .hero_custom__headline__text {
@@ -1629,8 +1632,9 @@
 
         #hero_custom .hero_custom__body {
             grid-column: 1;
-            justify-self: end;
-            max-width: min(100%, 22rem);
+            justify-self: center;
+            width: min(100%, 22rem);
+            max-width: 22rem;
             gap: 9px;
         }
 

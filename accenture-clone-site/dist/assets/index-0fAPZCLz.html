@@ -1613,10 +1613,13 @@
 
         #hero_custom .hero_custom__headline {
             grid-column: 1;
-            max-width: 7.2ch;
+            width: min(100%, 22rem);
+            max-width: 22rem;
             line-height: 0.92;
             letter-spacing: -0.04em;
             padding-bottom: 0;
+            justify-self: center;
+            margin-inline: auto;
         }
 
         #hero_custom .hero_custom__headline__text {
@@ -1629,8 +1632,9 @@
 
         #hero_custom .hero_custom__body {
             grid-column: 1;
-            justify-self: end;
-            max-width: min(100%, 22rem);
+            justify-self: center;
+            width: min(100%, 22rem);
+            max-width: 22rem;
             gap: 9px;
         }
 
@@ -1687,19 +1691,19 @@
         }
 
         .archon-credibility-band .archon-credibility-band__inner {
-            width: min(42rem, calc(100% - 24px)) !important;
+            width: min(48rem, calc(100% - 24px)) !important;
             display: flex !important;
             flex-wrap: wrap !important;
             justify-content: center !important;
-            gap: 14px 16px !important;
+            gap: 16px 18px !important;
             align-items: stretch !important;
         }
 
         .archon-credibility-band .archon-credibility-band__item {
-            width: calc(50% - 8px) !important;
-            flex: 0 1 calc(50% - 8px) !important;
-            max-width: calc(50% - 8px) !important;
-            min-height: 108px !important;
+            width: calc(33.333% - 12px) !important;
+            flex: 0 1 calc(33.333% - 12px) !important;
+            max-width: calc(33.333% - 12px) !important;
+            min-height: 112px !important;
             position: relative !important;
             border-left: 0 !important;
             padding: 10px 14px !important;
@@ -1712,13 +1716,15 @@
             left: 0 !important;
             top: 0 !important;
             width: 1px !important;
-            height: 76px !important;
+            height: 72px !important;
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.08)) !important;
         }
 
+        .archon-credibility-band .archon-credibility-band__item:nth-child(4),
         .archon-credibility-band .archon-credibility-band__item:nth-child(5) {
-            width: calc(50% - 8px) !important;
-            max-width: calc(50% - 8px) !important;
+            width: calc(33.333% - 12px) !important;
+            flex: 0 1 calc(33.333% - 12px) !important;
+            max-width: calc(33.333% - 12px) !important;
         }
 
         .archon-credibility-band .archon-credibility-band__item h3 {
@@ -1737,14 +1743,14 @@
         }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 760px) {
         .archon-credibility-band {
             padding: 14px 0 10px !important;
         }
 
         .archon-credibility-band .archon-credibility-band__inner {
             width: min(34rem, calc(100% - 20px)) !important;
-            gap: 10px 12px !important;
+            gap: 12px !important;
         }
 
         .archon-credibility-band .archon-credibility-band__item {
@@ -1753,7 +1759,7 @@
             width: calc(50% - 6px) !important;
             flex: 0 1 calc(50% - 6px) !important;
             max-width: calc(50% - 6px) !important;
-            min-height: 94px !important;
+            min-height: 96px !important;
             padding: 8px 10px 8px 10px !important;
         }
 
@@ -1764,6 +1770,7 @@
 
         .archon-credibility-band .archon-credibility-band__item:nth-child(5) {
             width: calc(50% - 6px) !important;
+            flex: 0 1 calc(50% - 6px) !important;
             max-width: calc(50% - 6px) !important;
         }
 
@@ -1783,10 +1790,11 @@
         }
     }
 
-    @media (max-width: 390px) {
+    @media (max-width: 520px) {
         .archon-credibility-band .archon-credibility-band__inner {
             display: flex !important;
             flex-direction: column !important;
+            width: min(28rem, calc(100% - 20px)) !important;
         }
 
         .archon-credibility-band .archon-credibility-band__item,
