@@ -208,9 +208,9 @@
     }
 
     #carousel-09c18bca55 .rad-carousel-image-and-text__slide-text {
-        width: min(100%, 26rem) !important;
+        width: 100% !important;
         min-height: auto;
-        max-width: min(100%, 26rem);
+        max-width: 100%;
         justify-content: flex-start;
         align-self: start;
         gap: 0.8rem !important;
@@ -218,14 +218,16 @@
     }
 
     #carousel-09c18bca55 .rad-carousel-image-and-text__slide-title {
-        max-width: 13.5ch !important;
+        width: 100%;
+        max-width: 100% !important;
         font-size: clamp(1.24rem, 3vw, 1.72rem) !important;
         line-height: 1.05 !important;
         letter-spacing: -0.024em !important;
     }
 
     #carousel-09c18bca55 .rad-carousel-image-and-text__slide-body {
-        max-width: 34ch !important;
+        width: 100%;
+        max-width: 100% !important;
         font-size: 0.92rem !important;
         line-height: 1.42 !important;
     }
@@ -294,23 +296,25 @@
     }
 
     #carousel-09c18bca55 .rad-carousel-image-and-text__slide-text {
-        width: min(100%, 100%) !important;
+        width: 100% !important;
         min-height: auto;
-        max-width: min(100%, 100%);
+        max-width: 100%;
         justify-content: flex-start;
         align-self: start;
         gap: 0.7rem !important;
     }
 
     #carousel-09c18bca55 .rad-carousel-image-and-text__slide-title {
-        max-width: 13.2ch !important;
+        width: 100%;
+        max-width: 100% !important;
         font-size: clamp(1.1rem, 5.2vw, 1.34rem) !important;
         line-height: 1.06 !important;
         letter-spacing: -0.02em !important;
     }
 
     #carousel-09c18bca55 .rad-carousel-image-and-text__slide-body {
-        max-width: 31ch !important;
+        width: 100%;
+        max-width: 100% !important;
         font-size: 0.88rem !important;
         line-height: 1.42 !important;
     }
