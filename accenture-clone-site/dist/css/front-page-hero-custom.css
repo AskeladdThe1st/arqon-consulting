@@ -808,7 +808,7 @@
         }
 
         #block-tilegrid .rad-card-grid__slider-container {
-            display: flex;
+            display: none !important;
             justify-content: center;
             align-items: center;
             padding: 18px 20px 0;
@@ -887,6 +887,7 @@
 
         @media (max-width: 767px) {
             #block-tilegrid .rad-card-grid__slider-container {
+                display: flex !important;
                 padding: 14px 16px 0;
             }
 

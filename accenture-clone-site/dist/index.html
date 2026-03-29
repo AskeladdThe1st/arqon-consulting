@@ -26,7 +26,7 @@
       content="Archon designs and deploys structured AI and cloud systems that move beyond experimentation."
     >
     <meta itemprop="image" content="/images/hero/cloud.png">
-    <link rel="canonical" href="/assets/index-BhwWD9lt.html">
+    <link rel="canonical" href="/assets/index-yzipYvSJ.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Archon | AI Transformation, Engineered">
     <meta
@@ -289,8 +289,8 @@
   margin-top:28px;
 }
 </style>
-  <link rel="stylesheet" crossorigin href="/assets/index-CcBTZT_5.css">
-  <link rel="stylesheet" crossorigin href="/assets/archon-chrome-bw-Pjgre.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-DI70KaWg.css">
+  <link rel="stylesheet" crossorigin href="/assets/archon-chrome-CRd9CHdn.css">
 </head>
     <body class="radicalaccenturedesign generic page basicpage " id="page-f3f3debf6f" data-barba="wrapper" data-cmp-data-layer-enabled="">
         
@@ -2954,21 +2954,26 @@
 }
 @media (max-width: 1023px) {
     #carousel-09c18bca55 {
-        --archon-carousel-peek: 0rem;
-        --archon-carousel-shell-padding: 1.5rem;
-        --archon-carousel-media-height: auto;
+        --archon-carousel-peek: 0.65rem;
+        --archon-carousel-shell-padding: 0.9rem;
+        --archon-carousel-media-height: clamp(10.25rem, 23vw, 12.25rem);
+        --archon-carousel-control-gap: 0.55rem;
     }
     #carousel-09c18bca55 .rad-carousel-image-and-text__carousel::after {
-        display: none;
+        display: block;
+        top: var(--archon-carousel-shell-padding);
+        width: var(--archon-carousel-peek);
+        height: var(--archon-carousel-media-height);
+        opacity: 0.58;
     }
     #carousel-09c18bca55 .rad-carousel-image-and-text__slide {
         display: none;
         grid-template-columns: 1fr;
         align-items: stretch;
         min-height: auto;
-        width: 100%;
-        row-gap: 1.75rem;
-        padding: var(--archon-carousel-shell-padding);
+        width: calc(100% - var(--archon-carousel-peek));
+        row-gap: 0.75rem;
+        padding: var(--archon-carousel-shell-padding) 0 0 var(--archon-carousel-shell-padding);
     }
     #carousel-09c18bca55:not([data-archon-carousel-ready="true"]) .rad-carousel-image-and-text__slide:first-child,
     #carousel-09c18bca55 .rad-carousel-image-and-text__slide.is-active {
@@ -2981,23 +2986,169 @@
     }
     #carousel-09c18bca55 .cmp-image {
         max-width: none;
-        height: auto;
-        aspect-ratio: 16 / 10;
+        height: var(--archon-carousel-media-height);
+        aspect-ratio: 16 / 8.6;
     }
     #carousel-09c18bca55 .rad-carousel-image-and-text__slide-text {
-        padding: 0 0 0.5rem;
+        width: min(100%, 23rem) !important;
+        padding: 0 0.7rem 0 0;
         min-height: auto;
         max-width: none;
+        gap: 0.72rem;
+    }
+    #carousel-09c18bca55 .rad-carousel-image-and-text__slide-title {
+        max-width: 14.5ch;
+        font-size: clamp(1.2rem, 3vw, 1.55rem) !important;
+        line-height: 1.06 !important;
+        letter-spacing: -0.03em !important;
+    }
+    #carousel-09c18bca55 .rad-carousel-image-and-text__slide-body {
+        max-width: 36ch;
+        font-size: 0.92rem !important;
+        line-height: 1.38 !important;
+    }
+    #carousel-09c18bca55 .archon-carousel-cta .hero_cta_2 {
+        gap: 0.55rem !important;
+    }
+    #carousel-09c18bca55 .archon-carousel-cta .cta_span {
+        font-size: 0.76rem !important;
+        letter-spacing: 0.09em !important;
+        text-transform: uppercase !important;
+    }
+    #carousel-09c18bca55 .archon-carousel-cta .hero_custom__cta__icon {
+        width: 1.7rem !important;
+        height: 1.7rem !important;
+        min-width: 1.7rem !important;
     }
     #carousel-09c18bca55 .rad-carousel__custom-controls,
     #carousel-09c18bca55 .rad-carousel-image-and-text__custom-controls-wrapper {
         width: 100%;
-        margin-top: 2rem;
-        padding: 0 var(--archon-carousel-shell-padding) var(--archon-carousel-shell-padding);
+        margin-top: 0.55rem !important;
+        padding: 0 var(--archon-carousel-shell-padding) 0.75rem !important;
     }
-    #carousel-09c18bca55 .rad-carousel-image-and-text__slide-title,
+    #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button,
+    #carousel-09c18bca55 .rad-carousel-image-and-text__next-button,
+    #carousel-09c18bca55 .rad-media-overlay__play,
+    #carousel-09c18bca55 .rad-carousel__pause {
+        width: 2.15rem !important;
+        height: 2.15rem !important;
+        min-width: 2.15rem !important;
+        padding: 0 !important;
+    }
+    #carousel-09c18bca55 .rad-carousel__page-numbers {
+        font-size: 0.74rem !important;
+        gap: 0.22rem !important;
+    }
+}
+
+@media (max-width: 599px) {
+    #carousel-09c18bca55 {
+        --archon-carousel-peek: 0.45rem;
+        --archon-carousel-shell-padding: 0.75rem;
+        --archon-carousel-media-height: clamp(8.75rem, 28vw, 10rem);
+    }
+    #carousel-09c18bca55 .cmp-image {
+        aspect-ratio: 16 / 6.9;
+    }
+    #carousel-09c18bca55 .rad-carousel-image-and-text__slide {
+        row-gap: 0.55rem;
+    }
+    #carousel-09c18bca55 .rad-carousel-image-and-text__slide-text {
+        width: min(100%, 21.25rem) !important;
+        gap: 0.55rem !important;
+        padding-right: 0.45rem !important;
+    }
+    #carousel-09c18bca55 .rad-carousel-image-and-text__slide-title {
+        max-width: 16.5ch;
+        font-size: clamp(0.98rem, 4.7vw, 1.2rem) !important;
+        line-height: 1.04 !important;
+        letter-spacing: -0.024em !important;
+    }
     #carousel-09c18bca55 .rad-carousel-image-and-text__slide-body {
-        max-width: none;
+        max-width: 38ch;
+        font-size: 0.8rem !important;
+        line-height: 1.3 !important;
+    }
+    #carousel-09c18bca55 .rad-carousel-image-and-text__slide-cta {
+        margin-top: 0;
+    }
+    #carousel-09c18bca55 .archon-carousel-cta .cta_span {
+        font-size: 0.66rem !important;
+        letter-spacing: 0.08em !important;
+    }
+    #carousel-09c18bca55 .archon-carousel-cta .hero_custom__cta__icon {
+        width: 1.45rem !important;
+        height: 1.45rem !important;
+        min-width: 1.45rem !important;
+    }
+    #carousel-09c18bca55 .rad-carousel__custom-controls,
+    #carousel-09c18bca55 .rad-carousel-image-and-text__custom-controls-wrapper {
+        margin-top: 0.35rem !important;
+        padding: 0 var(--archon-carousel-shell-padding) 0.55rem !important;
+    }
+    #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button,
+    #carousel-09c18bca55 .rad-carousel-image-and-text__next-button,
+    #carousel-09c18bca55 .rad-media-overlay__play,
+    #carousel-09c18bca55 .rad-carousel__pause {
+        width: 1.78rem !important;
+        height: 1.78rem !important;
+        min-width: 1.78rem !important;
+    }
+    #carousel-09c18bca55 .rad-carousel__page-numbers {
+        font-size: 0.62rem !important;
+        gap: 0.16rem !important;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+    #carousel-09c18bca55 {
+        --archon-carousel-peek: 0.65rem;
+        --archon-carousel-shell-padding: 0.9rem;
+        --archon-carousel-media-height: clamp(10rem, 22vw, 11.5rem);
+    }
+    #carousel-09c18bca55 .rad-carousel-image-and-text__slide {
+        row-gap: 0.75rem;
+    }
+    #carousel-09c18bca55 .rad-carousel-image-and-text__slide-text {
+        width: min(100%, 22rem) !important;
+        gap: 0.72rem !important;
+        padding-right: 0.7rem !important;
+    }
+    #carousel-09c18bca55 .rad-carousel-image-and-text__slide-title {
+        max-width: 14.5ch;
+        font-size: clamp(1.18rem, 3vw, 1.5rem) !important;
+        line-height: 1.06 !important;
+        letter-spacing: -0.03em !important;
+    }
+    #carousel-09c18bca55 .rad-carousel-image-and-text__slide-body {
+        max-width: 36ch;
+        font-size: 0.9rem !important;
+        line-height: 1.36 !important;
+    }
+    #carousel-09c18bca55 .archon-carousel-cta .cta_span {
+        font-size: 0.75rem !important;
+        letter-spacing: 0.09em !important;
+    }
+    #carousel-09c18bca55 .archon-carousel-cta .hero_custom__cta__icon {
+        width: 1.7rem !important;
+        height: 1.7rem !important;
+        min-width: 1.7rem !important;
+    }
+    #carousel-09c18bca55 .rad-carousel__custom-controls,
+    #carousel-09c18bca55 .rad-carousel-image-and-text__custom-controls-wrapper {
+        margin-top: 0.55rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+    #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button,
+    #carousel-09c18bca55 .rad-carousel-image-and-text__next-button,
+    #carousel-09c18bca55 .rad-media-overlay__play,
+    #carousel-09c18bca55 .rad-carousel__pause {
+        width: 2.15rem !important;
+        height: 2.15rem !important;
+        min-width: 2.15rem !important;
+    }
+    #carousel-09c18bca55 .rad-carousel__page-numbers {
+        font-size: 0.86rem !important;
     }
 }
 </style>"></div>

@@ -217,59 +217,6 @@
   display: none;
 }
 
-.rad-global-nav__menu-open {
-  width: 42px !important;
-  height: 42px !important;
-  min-width: 42px !important;
-  min-height: 42px !important;
-  border-radius: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
-  color: rgba(255, 255, 255, 0.9) !important;
-  box-shadow: none !important;
-  transition: opacity 180ms ease;
-}
-
-.rad-global-nav__menu-open:hover,
-.rad-global-nav__menu-open:focus-visible {
-  background: transparent !important;
-  color: rgba(255, 255, 255, 0.98) !important;
-  opacity: 1;
-}
-
-.rad-global-nav__menu-open .rad-icon__menu {
-  display: block;
-  width: 18px;
-  height: 14px;
-  color: inherit;
-  font-size: 0 !important;
-  background-image:
-    linear-gradient(currentColor, currentColor),
-    linear-gradient(currentColor, currentColor),
-    linear-gradient(currentColor, currentColor);
-  background-repeat: no-repeat;
-  background-size: 100% 2px, 100% 2px, 100% 2px;
-  background-position: 50% 0, 50% 50%, 50% 100%;
-}
-
-.rad-global-nav__menu-open .rad-icon__menu::before,
-.rad-global-nav__menu-open .rad-icon__menu::after {
-  content: none !important;
-}
-
-.rad-global-nav__wrapper,
-.rad-global-nav__container {
-  background: transparent !important;
-}
-
-.rad-global-nav__primary-nav {
-  background: #000000 !important;
-}
-
-.rad-global-nav__menu-close {
-  color: rgba(255, 255, 255, 0.9) !important;
-}
-
 @media (max-width: 1023px) {
   .site-header__inner {
     min-height: 72px;
@@ -344,6 +291,46 @@
     background: #000000 !important;
   }
 
+  .rad-global-nav__menu-open {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: none !important;
+    transition: opacity 180ms ease;
+  }
+
+  .rad-global-nav__menu-open:hover,
+  .rad-global-nav__menu-open:focus-visible {
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.98) !important;
+    opacity: 1;
+  }
+
+  .rad-global-nav__menu-open .rad-icon__menu {
+    display: block;
+    width: 18px;
+    height: 14px;
+    color: inherit;
+    font-size: 0 !important;
+    background-image:
+      linear-gradient(currentColor, currentColor),
+      linear-gradient(currentColor, currentColor),
+      linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-size: 100% 2px, 100% 2px, 100% 2px;
+    background-position: 50% 0, 50% 50%, 50% 100%;
+  }
+
+  .rad-global-nav__menu-open .rad-icon__menu::before,
+  .rad-global-nav__menu-open .rad-icon__menu::after {
+    content: none !important;
+  }
+
   .rad-global-nav__primary-nav {
     background: #000000 !important;
     border-left: 1px solid rgba(255, 255, 255, 0.1);
@@ -374,6 +361,10 @@
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
+  }
+
+  .rad-global-nav__menu-close {
+    color: rgba(255, 255, 255, 0.9) !important;
   }
 
   .rad-global-nav__menu-close:hover,
