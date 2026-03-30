@@ -165,18 +165,21 @@
 
 @media (max-width: 1023px) {
     #carousel-09c18bca55 {
-        --archon-carousel-peek: 0.45rem;
+        --archon-carousel-peek: clamp(4.75rem, 16vw, 7.5rem);
         --archon-carousel-shell-padding: 0.95rem;
         --archon-carousel-control-gap: 0.6rem;
-        --archon-carousel-media-height: clamp(11rem, 34vw, 15rem);
+        --archon-carousel-media-height: clamp(10.25rem, 31vw, 13.75rem);
+        display: flex !important;
+        flex-direction: column !important;
     }
 
     #carousel-09c18bca55 .rad-carousel-image-and-text__carousel::after {
         display: block;
         top: var(--archon-carousel-shell-padding);
+        right: 0;
         width: var(--archon-carousel-peek);
         height: var(--archon-carousel-media-height);
-        opacity: 0.5;
+        opacity: 0.62;
     }
 
     #carousel-09c18bca55 .rad-carousel-image-and-text__slide {
@@ -184,7 +187,7 @@
         grid-template-columns: 1fr;
         align-items: start;
         min-height: auto;
-        width: calc(100% - var(--archon-carousel-peek));
+        width: calc(100% - var(--archon-carousel-peek) - 0.4rem);
         column-gap: 0;
         row-gap: 0.85rem;
         padding: var(--archon-carousel-shell-padding) var(--archon-carousel-shell-padding) 0 var(--archon-carousel-shell-padding);
@@ -254,8 +257,17 @@
 
     #carousel-09c18bca55 .rad-carousel__custom-controls,
     #carousel-09c18bca55 .rad-carousel-image-and-text__custom-controls-wrapper {
-        width: 100%;
-        margin-top: 0.35rem !important;
+        order: 2 !important;
+        position: relative !important;
+        inset: auto !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: calc(100% - var(--archon-carousel-peek) - 0.4rem) !important;
+        max-width: calc(100% - var(--archon-carousel-peek) - 0.4rem) !important;
+        box-sizing: border-box !important;
+        align-self: flex-start !important;
+        margin-top: 0.85rem !important;
         padding: 0 var(--archon-carousel-shell-padding) 0.6rem !important;
     }
 
@@ -263,23 +275,94 @@
     #carousel-09c18bca55 .rad-carousel-image-and-text__next-button,
     #carousel-09c18bca55 .rad-media-overlay__play,
     #carousel-09c18bca55 .rad-carousel__pause {
-        width: 2.15rem !important;
-        height: 2.15rem !important;
-        min-width: 2.15rem !important;
+        width: 3.125rem !important;
+        height: 3.125rem !important;
+        min-width: 3.125rem !important;
         padding: 0 !important;
+        border: 1px solid rgba(255, 255, 255, 0.22) !important;
+        border-radius: 3px !important;
+        background: rgba(255, 255, 255, 0.02) !important;
+        box-shadow: none !important;
+        color: #fff !important;
+        transition: background-color 180ms ease, border-color 180ms ease !important;
+    }
+
+    #carousel-09c18bca55 .rad-media-overlay__play .rad-icon,
+    #carousel-09c18bca55 .rad-carousel__pause .rad-icon {
+        color: inherit !important;
+        font-size: 20px !important;
+        line-height: 1 !important;
+    }
+
+    #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button,
+    #carousel-09c18bca55 .rad-carousel-image-and-text__next-button,
+    #carousel-09c18bca55 .rad-media-overlay__play,
+    #carousel-09c18bca55 .rad-carousel__pause {
+        border-width: 1.6px !important;
+        background: rgba(50, 50, 50, 0.94) !important;
+        border-color: rgba(255, 255, 255, 0.18) !important;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.04) !important;
+    }
+
+    #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button .rad-icon,
+    #carousel-09c18bca55 .rad-carousel-image-and-text__next-button .rad-icon {
+        color: inherit !important;
+        font-size: 20px !important;
+        line-height: 1 !important;
+    }
+
+    #carousel-09c18bca55 .rad-media-overlay__play .rad-icon:after,
+    #carousel-09c18bca55 .rad-carousel__pause .rad-icon:after,
+    #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button .rad-icon:after,
+    #carousel-09c18bca55 .rad-carousel-image-and-text__next-button .rad-icon:after {
+        color: inherit !important;
+    }
+
+    #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button:hover,
+    #carousel-09c18bca55 .rad-carousel-image-and-text__next-button:hover,
+    #carousel-09c18bca55 .rad-media-overlay__play:hover,
+    #carousel-09c18bca55 .rad-carousel__pause:hover {
+        background: #C79200 !important;
+        border-color: #C79200 !important;
+        color: #fff !important;
     }
 
     #carousel-09c18bca55 .rad-carousel__page-numbers {
-        font-size: 0.74rem !important;
-        gap: 0.22rem !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-width: 4rem !important;
+        height: auto !important;
+        padding: 0 4px !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        color: #fff !important;
+        font-size: 1rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.06em !important;
+        gap: 0 !important;
+    }
+
+    #carousel-09c18bca55 .rad-carousel__page-numbers-current,
+    #carousel-09c18bca55 .rad-carousel__page-numbers-total {
+        min-width: 1.5ch !important;
+        text-align: center !important;
+    }
+
+    #carousel-09c18bca55 .rad-carousel__page-numbers span[aria-hidden="true"] {
+        opacity: 0.45 !important;
+        padding: 0 6px !important;
     }
 }
 
 @media (max-width: 599px) {
     #carousel-09c18bca55 {
-        --archon-carousel-peek: 0.3rem;
+        --archon-carousel-peek: clamp(3.4rem, 11vw, 4.8rem);
         --archon-carousel-shell-padding: 0.8rem;
-        --archon-carousel-media-height: clamp(9.75rem, 49vw, 12rem);
+        --archon-carousel-media-height: clamp(8.8rem, 42vw, 10.6rem);
+        display: flex !important;
+        flex-direction: column !important;
     }
 
     #carousel-09c18bca55 .rad-carousel-image-and-text__slide {
@@ -288,6 +371,7 @@
         min-height: auto;
         row-gap: 0.75rem;
         column-gap: 0;
+        width: calc(100% - var(--archon-carousel-peek) - 0.3rem);
     }
 
     #carousel-09c18bca55 .cmp-image {
@@ -332,7 +416,17 @@
 
     #carousel-09c18bca55 .rad-carousel__custom-controls,
     #carousel-09c18bca55 .rad-carousel-image-and-text__custom-controls-wrapper {
-        margin-top: 0.3rem !important;
+        order: 2 !important;
+        position: relative !important;
+        inset: auto !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: calc(100% - var(--archon-carousel-peek) - 0.3rem) !important;
+        max-width: calc(100% - var(--archon-carousel-peek) - 0.3rem) !important;
+        box-sizing: border-box !important;
+        align-self: flex-start !important;
+        margin-top: 0.8rem !important;
         padding: 0 var(--archon-carousel-shell-padding) 0.55rem !important;
     }
 
@@ -340,13 +434,79 @@
     #carousel-09c18bca55 .rad-carousel-image-and-text__next-button,
     #carousel-09c18bca55 .rad-media-overlay__play,
     #carousel-09c18bca55 .rad-carousel__pause {
-        width: 1.95rem !important;
-        height: 1.95rem !important;
-        min-width: 1.95rem !important;
+        width: 2.875rem !important;
+        height: 2.875rem !important;
+        min-width: 2.875rem !important;
+        border: 1px solid rgba(255, 255, 255, 0.22) !important;
+        border-radius: 3px !important;
+        background: rgba(255, 255, 255, 0.02) !important;
+        box-shadow: none !important;
+        color: #fff !important;
+        transition: background-color 180ms ease, border-color 180ms ease !important;
+    }
+
+    #carousel-09c18bca55 .rad-media-overlay__play .rad-icon,
+    #carousel-09c18bca55 .rad-carousel__pause .rad-icon {
+        color: inherit !important;
+        font-size: 20px !important;
+        line-height: 1 !important;
+    }
+
+    #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button,
+    #carousel-09c18bca55 .rad-carousel-image-and-text__next-button,
+    #carousel-09c18bca55 .rad-media-overlay__play,
+    #carousel-09c18bca55 .rad-carousel__pause {
+        border-width: 1.5px !important;
+        background: rgba(50, 50, 50, 0.94) !important;
+        border-color: rgba(255, 255, 255, 0.18) !important;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.04) !important;
+    }
+
+    #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button .rad-icon,
+    #carousel-09c18bca55 .rad-carousel-image-and-text__next-button .rad-icon {
+        color: inherit !important;
+        font-size: 20px !important;
+        line-height: 1 !important;
+    }
+
+    #carousel-09c18bca55 .rad-media-overlay__play .rad-icon:after,
+    #carousel-09c18bca55 .rad-carousel__pause .rad-icon:after,
+    #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button .rad-icon:after,
+    #carousel-09c18bca55 .rad-carousel-image-and-text__next-button .rad-icon:after {
+        color: inherit !important;
+    }
+
+    #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button:hover,
+    #carousel-09c18bca55 .rad-carousel-image-and-text__next-button:hover,
+    #carousel-09c18bca55 .rad-media-overlay__play:hover,
+    #carousel-09c18bca55 .rad-carousel__pause:hover {
+        background: #C79200 !important;
+        border-color: #C79200 !important;
+        color: #fff !important;
     }
 
     #carousel-09c18bca55 .rad-carousel__page-numbers {
-        font-size: 0.7rem !important;
-        gap: 0.18rem !important;
+        min-width: 3.5rem !important;
+        height: auto !important;
+        padding: 0 4px !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        color: #fff !important;
+        font-size: 0.95rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.06em !important;
+        gap: 0 !important;
+    }
+
+    #carousel-09c18bca55 .rad-carousel__page-numbers-current,
+    #carousel-09c18bca55 .rad-carousel__page-numbers-total {
+        min-width: 1.5ch !important;
+        text-align: center !important;
+    }
+
+    #carousel-09c18bca55 .rad-carousel__page-numbers span[aria-hidden="true"] {
+        opacity: 0.45 !important;
+        padding: 0 6px !important;
     }
 }
