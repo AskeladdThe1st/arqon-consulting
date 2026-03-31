@@ -3731,35 +3731,58 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         (function () {
-            function initArchonBuildProcessTimeline() {
-                var section = document.getElementById("archon-build-process");
-                var timeline = document.getElementById("archon-build-process-timeline");
-                if (!section || !timeline || timeline.dataset.timelineInitialized === "true") return;
-                timeline.dataset.timelineInitialized = "true";
+            function resetArchonBuildProcessStyles(section, timeline, steps, bodies) {
+                var timelineScroll = section ? section.querySelector(".archon-build-process__timeline-scroll") : null;
+                var nodes = timeline ? timeline.querySelector(".archon-build-process__nodes") : null;
 
-                if (!window.gsap || !window.ScrollTrigger) return;
-
-                gsap.registerPlugin(ScrollTrigger);
-
-                var steps = Array.prototype.slice.call(timeline.querySelectorAll(".archon-build-process__step"));
-                var bodies = Array.prototype.slice.call(timeline.querySelectorAll(".archon-build-process__step-body"));
-                if (!steps.length || !bodies.length) return;
-
-                if (window.matchMedia && window.matchMedia("(max-width: 767px)").matches) {
-                    steps.forEach(function (step, index) {
-                        var body = bodies[index];
-                        step.style.opacity = "1";
-                        step.style.transform = "none";
-                        step.style.flexGrow = "1";
-                        step.style.background = index === 0 ? "rgba(243, 198, 35, 0.16)" : "rgba(255, 255, 255, 0.04)";
-                        if (body) {
-                            body.style.opacity = "1";
-                            body.style.maxHeight = "none";
-                            body.style.visibility = "visible";
-                        }
-                    });
-                    return;
+                if (section && section.__archonBuildProcessTl) {
+                    if (section.__archonBuildProcessTl.scrollTrigger) {
+                        section.__archonBuildProcessTl.scrollTrigger.kill(true);
+                    }
+                    section.__archonBuildProcessTl.kill();
+                    section.__archonBuildProcessTl = null;
                 }
+
+                if (section) {
+                    section.style.transform = "";
+                }
+                if (timeline) {
+                    timeline.style.transform = "";
+                    timeline.style.height = "";
+                    timeline.style.overflow = "";
+                }
+                if (timelineScroll) {
+                    timelineScroll.style.height = "";
+                    timelineScroll.style.overflow = "";
+                }
+                if (nodes) {
+                    nodes.style.transform = "";
+                }
+
+                (steps || []).forEach(function (step) {
+                    step.style.opacity = "";
+                    step.style.transform = "";
+                    step.style.flexGrow = "";
+                    step.style.background = "";
+                    step.style.maxWidth = "";
+                });
+
+                (bodies || []).forEach(function (body) {
+                    body.style.opacity = "";
+                    body.style.maxHeight = "";
+                    body.style.visibility = "";
+                });
+            }
+
+            function createArchonBuildProcessTimeline(section, timeline, steps, bodies, options) {
+                var cardsTl;
+                var scrollOptions = options || {};
+                var timelineScroll = section.querySelector(".archon-build-process__timeline-scroll");
+                var nodes = timeline.querySelector(".archon-build-process__nodes");
+                var verticalTrack = !!scrollOptions.verticalTrack;
+                var gap = nodes ? parseFloat(window.getComputedStyle(nodes).gap || "16") : 16;
+                var viewportHeight;
+                var offsets;
 
                 if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
                     steps.forEach(function (step, index) {
@@ -3786,16 +3809,28 @@
                 });
                 gsap.set(bodies, { autoAlpha: 0, maxHeight: 0 });
 
-                var cardsTl = gsap.timeline({
+                if (verticalTrack && timelineScroll && nodes && steps[0]) {
+                    viewportHeight = Math.round(steps[0].offsetHeight);
+                    timelineScroll.style.height = viewportHeight + "px";
+                    timelineScroll.style.overflow = "hidden";
+                    timeline.style.height = viewportHeight + "px";
+                    timeline.style.overflow = "hidden";
+                    gsap.set(nodes, { y: 0 });
+                    offsets = steps.map(function (step, index) {
+                        return -1 * (index * (viewportHeight + gap));
+                    });
+                }
+
+                cardsTl = gsap.timeline({
                     defaults: { overwrite: "auto" },
                     scrollTrigger: {
                         trigger: section,
-                        start: "top top",
-                        end: "+=320%",
+                        start: scrollOptions.start || "top top",
+                        end: scrollOptions.end || "+=320%",
                         scrub: 0.85,
-                        pin: true,
-                        pinReparent: true,
-                        pinSpacing: true,
+                        pin: scrollOptions.pin !== false,
+                        pinReparent: scrollOptions.pin !== false,
+                        pinSpacing: scrollOptions.pin !== false,
                         refreshPriority: 2,
                         anticipatePin: 1,
                         invalidateOnRefresh: true
@@ -3803,6 +3838,14 @@
                 });
 
                 function addState(activeIndex, position) {
+                    if (verticalTrack && nodes && offsets) {
+                        cardsTl.to(nodes, {
+                            duration: 0.8,
+                            y: offsets[activeIndex],
+                            ease: "none"
+                        }, position);
+                    }
+
                     steps.forEach(function (step, index) {
                         var xOffset = 0;
                         if (index < activeIndex) xOffset = -8;
@@ -3833,7 +3876,53 @@
                 addState(1, 1.25);
                 addState(2, 2.5);
                 addState(3, 3.75);
+                section.__archonBuildProcessTl = cardsTl;
+            }
 
+            function initArchonBuildProcessTimeline() {
+                var section = document.getElementById("archon-build-process");
+                var timeline = document.getElementById("archon-build-process-timeline");
+                var steps;
+                var bodies;
+
+                if (!section || !timeline || section.dataset.archonBuildProcessReady === "true") return;
+                if (!window.gsap || !window.ScrollTrigger) return;
+
+                gsap.registerPlugin(ScrollTrigger);
+
+                steps = Array.prototype.slice.call(timeline.querySelectorAll(".archon-build-process__step"));
+                bodies = Array.prototype.slice.call(timeline.querySelectorAll(".archon-build-process__step-body"));
+                if (!steps.length || !bodies.length) return;
+
+                section.dataset.archonBuildProcessReady = "true";
+                section.__archonBuildProcessMm = gsap.matchMedia();
+
+                section.__archonBuildProcessMm.add("(max-width: 1024px)", function () {
+                    resetArchonBuildProcessStyles(section, timeline, steps, bodies);
+                    createArchonBuildProcessTimeline(section, timeline, steps, bodies, {
+                        start: "top top",
+                        end: "+=620%",
+                        pin: true,
+                        verticalTrack: window.matchMedia && window.matchMedia("(max-width: 767px)").matches
+                    });
+
+                    return function () {
+                        resetArchonBuildProcessStyles(section, timeline, steps, bodies);
+                    };
+                });
+
+                section.__archonBuildProcessMm.add("(min-width: 1025px)", function () {
+                    resetArchonBuildProcessStyles(section, timeline, steps, bodies);
+                    createArchonBuildProcessTimeline(section, timeline, steps, bodies, {
+                        start: "top top",
+                        end: "+=320%",
+                        pin: true
+                    });
+
+                    return function () {
+                        resetArchonBuildProcessStyles(section, timeline, steps, bodies);
+                    };
+                });
             }
 
             window.addEventListener("load", initArchonBuildProcessTimeline);
