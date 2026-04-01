@@ -4030,23 +4030,38 @@
     </script>
 	    <script type="text/javascript">
 	        (function () {
+            function teardownArchonHorizontalDemo(container) {
+                if (!container) return;
+
+                if (container.__archonHorizontalTween) {
+                    if (container.__archonHorizontalTween.scrollTrigger) {
+                        container.__archonHorizontalTween.scrollTrigger.kill(true);
+                    }
+                    container.__archonHorizontalTween.kill();
+                    container.__archonHorizontalTween = null;
+                }
+
+                container.style.transform = "";
+                delete container.dataset.gsapInitialized;
+            }
+
             function initArchonHorizontalDemo() {
                 var container = document.getElementById("archon-horizontal-demo-container");
                 if (!container || container.dataset.gsapInitialized === "true") return;
-	                if (!window.gsap || !window.ScrollTrigger) return;
-	                if (window.matchMedia && window.matchMedia("(max-width: 1024px), (prefers-reduced-motion: reduce)").matches) return;
+		                if (!window.gsap || !window.ScrollTrigger) return;
+		                if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-	                container.dataset.gsapInitialized = "true";
+		                container.dataset.gsapInitialized = "true";
 
-	                gsap.registerPlugin(ScrollTrigger);
+		                gsap.registerPlugin(ScrollTrigger);
 
                 var totalPanels = container.querySelectorAll(".horizontal-section").length;
                 gsap.set(container, { xPercent: 0 });
 
-                var horizontalTween = gsap.to(container, {
-                    xPercent: -100 * (totalPanels - 1) / totalPanels,
-                    ease: "none",
-                    lazy: false,
+	                var horizontalTween = gsap.to(container, {
+	                    xPercent: -100 * (totalPanels - 1) / totalPanels,
+	                    ease: "none",
+	                    lazy: false,
                     scrollTrigger: {
                         trigger: "#archon-horizontal-demo",
                         start: "top top",
@@ -4060,15 +4075,30 @@
                         invalidateOnRefresh: true,
                         end: function () {
                             var travelDistance = Math.max(container.scrollWidth - window.innerWidth, 0);
-                            return "+=" + Math.max(travelDistance * 1.7, window.innerWidth * 2.5);
+	                            return "+=" + Math.max(travelDistance * 1.7, window.innerWidth * 2.5);
+	                        }
+	                    }
+	                });
+	                container.__archonHorizontalTween = horizontalTween;
+	            }
+		            window.addEventListener("load", initArchonHorizontalDemo);
+		            window.addEventListener("radTransitionFinished", initArchonHorizontalDemo);
+                window.addEventListener("resize", function () {
+                    var container = document.getElementById("archon-horizontal-demo-container");
+
+                    clearTimeout(window.__archonHorizontalDemoResizeTimer);
+                    window.__archonHorizontalDemoResizeTimer = setTimeout(function () {
+                        if (!container) return;
+                        teardownArchonHorizontalDemo(container);
+                        initArchonHorizontalDemo();
+
+                        if (window.ScrollTrigger) {
+                            ScrollTrigger.refresh();
                         }
-                    }
+                    }, 140);
                 });
-            }
-	            window.addEventListener("load", initArchonHorizontalDemo);
-	            window.addEventListener("radTransitionFinished", initArchonHorizontalDemo);
-		        })();
-	    </script>
+			        })();
+		    </script>
 		    <script type="text/javascript">
 		        (function () {
 		            function initArchonCardGridInteractions() {
