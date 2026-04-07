@@ -222,6 +222,7 @@
     min-height: 72px;
     padding: 0 1.5rem;
     position: relative;
+    justify-content: center;
   }
 
   .site-nav {
@@ -230,6 +231,34 @@
 
   .site-header__menu-open {
     display: inline-flex;
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  .site-header .ArchonLogo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    z-index: 1;
+  }
+
+  .site-header .ArchonLogo:hover,
+  .site-header .ArchonLogo:focus-visible {
+    transform: translate(-50%, -50%);
+  }
+
+  .site-header .ArchonLogo__icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .site-header .ArchonLogo__text {
+    font-size: 17px;
   }
 
   .site-header__mobile-nav {
@@ -434,20 +463,5 @@
 @media (max-width: 900px) {
   :root {
     --archon-chrome-width: 100vw;
-  }
-
-  .site-header__inner {
-    min-height: 88px;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 18px;
-    padding: 16px 20px;
-  }
-
-  .site-nav {
-    gap: 18px;
-    flex-wrap: wrap;
-    margin-left: 0;
   }
 }

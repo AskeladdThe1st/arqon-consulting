@@ -329,7 +329,10 @@ a {
   }
 
   .capability-item__visual {
-    justify-content: flex-start;
+    width: fit-content;
+    max-width: min(100%, 180px);
+    justify-content: center;
+    align-self: flex-start;
     min-height: auto;
     padding: 14px;
   }
