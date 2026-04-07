@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Archon Insights</title>
+    <meta
+      name="description"
+      content="Archon insights on AI, business growth, and transformation."
+    />
+    <link rel="stylesheet" href="css/insights-page.css?v=20260404-2" />
+    <link rel="stylesheet" href="css/archon-chrome.css?v=20260401-2" />
+    <style>
+      @media (min-width: 721px) and (max-width: 1024px) {
+        .insights-hero__grid {
+          grid-template-columns: minmax(0, 0.74fr) minmax(0, 1.26fr) !important;
+          gap: 22px !important;
+          align-items: center !important;
+        }
+        .insights-hero__content {
+          max-width: 23rem !important;
+        }
+        .insights-hero__title {
+          font-size: clamp(1.95rem, 3.4vw, 2.9rem) !important;
+          line-height: 0.97 !important;
+        }
+        .insights-hero__copy {
+          max-width: 23rem !important;
+          font-size: 0.92rem !important;
+          line-height: 1.54 !important;
+        }
+        .insights-hero__actions {
+          gap: 12px !important;
+          margin-top: 22px !important;
+        }
+        .insights-button {
+          min-height: 48px !important;
+          padding: 0 18px !important;
+        }
+
+        .insights-hero__media {
+          max-width: none !important;
+          margin-left: 0 !important;
+          display: flex !important;
+        }
+
+        .insights-hero-art {
+          width: 100% !important;
+          min-height: 500px !important;
+        }
+
+        .insights-hero-art__image {
+          object-fit: cover !important;
+        }
+
+        .insights-feature-card {
+          grid-template-columns: minmax(0, 1fr) minmax(260px, 0.84fr);
+          gap: 22px;
+        }
+
+        .insights-card-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .insights-mini-card:last-child {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .insights-hero__media {
+          max-width: none;
+          margin-left: 0;
+        }
+
+        .insights-hero__media,
+        .insights-hero-art,
+        .insights-feature-card__media,
+        .insights-feature-art {
+          min-height: auto;
+        }
+
+        .insights-hero-art,
+        .insights-feature-art {
+          aspect-ratio: 16 / 10;
+        }
+
+        .insights-feature-card,
+        .insights-card-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-shell site-header__inner">
+        <a href="/index.html" class="ArchonLogo" aria-label="Archon Home">
+          <svg
+            class="ArchonLogo__icon"
+            role="img"
+            width="28"
+            height="28"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="archonGlyphGrad" x1="4" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#B88400"></stop>
+                <stop offset="1" stop-color="#FFE072"></stop>
+              </linearGradient>
+            </defs>
+            <path
+              class="ArchonLogo__glyph--main"
+              d="M3 29L14.8 3h2.6L29 29h-5.5l-2-4.8h-11L8.5 29H3ZM12 19.6h8L16 9.7l-4 9.9Z"
+              fill="url(#archonGlyphGrad)"
+            ></path>
+            <path
+              class="ArchonLogo__glyph--cut"
+              d="M20 15h4.5l-3.1 6.8H17L20 15Z"
+              fill="#050505"
+              opacity="0.9"
+            ></path>
+          </svg>
+          <span class="ArchonLogo__text" aria-hidden="true">rchon</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="/index.html">Home</a>
+          <a href="/services.html">Services</a>
+          <a href="/insights-index.html" aria-current="page">Insights</a>
+          <a href="/contact-us.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="insights-editorial-page">
+      <section class="insights-hero">
+        <div class="insights-shell">
+          <a class="insights-back" href="/index.html">Back to Home</a>
+          <div class="insights-hero__grid">
+            <div class="insights-hero__content">
+              <p class="insights-eyebrow">Insights</p>
+              <h1 class="insights-hero__title">Our Insights</h1>
+              <p class="insights-hero__copy">
+                Our latest thinking on AI, business growth, and transformation.
+                This page is intentionally simple so new ideas, case studies, and
+                point-of-view pieces can be added over time without the site
+                feeling overbuilt.
+              </p>
+              <div class="insights-hero__actions">
+                <a class="insights-button insights-button--primary" href="#latest-highlights">View highlights</a>
+                <a class="insights-button insights-button--ghost" href="/services.html">Explore services</a>
+              </div>
+            </div>
+
+            <div class="insights-hero__media">
+              <!-- Hero image path: images/insights/globe.png -->
+              <div class="insights-hero-art">
+                <img class="insights-hero-art__image" src="images/insights/globe.png" alt="Abstract digital globe" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="insights-highlights" id="latest-highlights">
+        <div class="insights-shell">
+          <div class="insights-section-heading">
+            <p class="insights-kicker">Latest highlights</p>
+            <h2>Highlights from a focused and growing insights page</h2>
+          </div>
+
+          <article class="insights-feature-card">
+            <div class="insights-feature-card__media">
+              <!-- Featured image path: images/insights/neaural-type.jpg -->
+              <div class="insights-feature-art">
+                <img class="insights-feature-art__image" src="images/insights/neaural-type.jpg" alt="Featured insights artwork" />
+              </div>
+            </div>
+
+            <div class="insights-feature-card__copy">
+              <p class="insights-card-tag">Coming soon</p>
+              <h3>Fresh perspectives are on the way</h3>
+              <p>
+                As new insights are published, this space can highlight practical
+                thinking on AI, cloud, operating models, and growth. Until then,
+                the page stays concise, credible, and easy to scan.
+              </p>
+              <a class="insights-inline-link" href="/services.html">Explore services</a>
+            </div>
+          </article>
+
+          <div class="insights-card-grid">
+            <article class="insights-mini-card insights-mini-card--static">
+              <!-- Card 1 image path: images/insights/Ai&Data.png -->
+              <div class="insights-mini-card__art">
+                <img class="insights-mini-card__image" src="images/insights/Ai&Data.png" alt="AI and data artwork" />
+              </div>
+              <p class="insights-card-tag">Focus area</p>
+              <h3>AI and data</h3>
+              <p>Practical thinking on intelligence, responsible adoption, and business use cases.</p>
+            </article>
+
+            <article class="insights-mini-card insights-mini-card--static">
+              <!-- Card 2 image path: images/insights/cloud-benning.png -->
+              <div class="insights-mini-card__art">
+                <img class="insights-mini-card__image" src="images/insights/cloud-benning.png" alt="Cloud and platforms artwork" />
+              </div>
+              <p class="insights-card-tag">Focus area</p>
+              <h3>Cloud and platforms</h3>
+              <p>How modern infrastructure supports faster delivery, resilience, and scale.</p>
+            </article>
+
+            <article class="insights-mini-card insights-mini-card--static">
+              <!-- Card 3 image path: images/insights/growth.png -->
+              <div class="insights-mini-card__art">
+                <img class="insights-mini-card__image" src="images/insights/growth.png" alt="Growth and strategy artwork" />
+              </div>
+              <p class="insights-card-tag">Focus area</p>
+              <h3>Growth and strategy</h3>
+              <p>Clear perspectives on reinvention, operating models, and where to place bets.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="custom-footer" id="footer">
+      <nav class="custom-footer__nav">
+        <a href="/index.html">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/insights-index.html">Insights</a>
+        <a href="/contact-us.html">Contact</a>
+      </nav>
+      <div class="custom-footer__copyright">
+        Archon provides advisory and engineering services and does not provide legal, regulatory, or compliance certification services.
+      </div>
+      <div class="custom-footer__copyright">
+        &copy; 2026 Archon Systems. All rights reserved.
+      </div>
+    </footer>
+      <script src="js/site-link-guard.js"></script>
+    <script src="js/archon-site.js" type="text/javascript"></script>
+  </body>
+</html>

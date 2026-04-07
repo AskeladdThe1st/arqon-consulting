@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 848" role="img" aria-label="Gotham inspired operational AI artwork">
+  <defs>
+    <linearGradient id="opsBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050505"/>
+      <stop offset="0.62" stop-color="#0d0f14"/>
+      <stop offset="1" stop-color="#141922"/>
+    </linearGradient>
+    <radialGradient id="opsGlow" cx="0.75" cy="0.22" r="0.42">
+      <stop offset="0" stop-color="#ffe072" stop-opacity="0.95"/>
+      <stop offset="0.38" stop-color="#f3c623" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#f3c623" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="opsWave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7a5a00"/>
+      <stop offset="0.55" stop-color="#f3c623"/>
+      <stop offset="1" stop-color="#ffe9a3"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="848" fill="url(#opsBg)"/>
+  <circle cx="454" cy="156" r="146" fill="url(#opsGlow)"/>
+  <g opacity="0.2" stroke="#f3c623" stroke-width="2">
+    <path d="M0 160H600"/>
+    <path d="M0 196H600"/>
+    <path d="M0 232H600"/>
+  </g>
+  <g fill="none" stroke="url(#opsWave)" stroke-linecap="round">
+    <path d="M-20 560C78 492 146 620 236 556S388 482 470 558 598 620 640 564" stroke-width="10"/>
+    <path d="M-20 594C72 530 150 656 238 590S388 522 474 600 598 656 640 596" stroke-width="8" opacity="0.95"/>
+    <path d="M-20 628C66 568 150 692 238 632S394 560 478 638 598 690 640 636" stroke-width="7" opacity="0.86"/>
+    <path d="M-20 662C70 604 154 724 238 668S396 596 480 672 604 724 640 670" stroke-width="6" opacity="0.72"/>
+  </g>
+  <g fill="#090a0e">
+    <path d="M0 848V646l58-24 40 18 42-48 50 18 30-34 34 30 42-62 42 26 44-40 28 22 44-44 36 20 36-38 34 24v332Z"/>
+    <rect x="46" y="450" width="46" height="196"/>
+    <rect x="98" y="416" width="34" height="230"/>
+    <rect x="150" y="488" width="54" height="158"/>
+    <rect x="218" y="404" width="64" height="242"/>
+    <rect x="298" y="460" width="58" height="186"/>
+    <rect x="368" y="372" width="70" height="274"/>
+    <rect x="458" y="430" width="54" height="216"/>
+    <rect x="524" y="470" width="42" height="176"/>
+  </g>
+  <g fill="#f3c623" opacity="0.72">
+    <rect x="59" y="470" width="8" height="18"/>
+    <rect x="74" y="470" width="8" height="18"/>
+    <rect x="107" y="438" width="7" height="16"/>
+    <rect x="118" y="438" width="7" height="16"/>
+    <rect x="234" y="430" width="10" height="18"/>
+    <rect x="248" y="430" width="10" height="18"/>
+    <rect x="382" y="394" width="11" height="20"/>
+    <rect x="399" y="394" width="11" height="20"/>
+    <rect x="474" y="454" width="9" height="18"/>
+    <rect x="488" y="454" width="9" height="18"/>
+  </g>
+</svg>

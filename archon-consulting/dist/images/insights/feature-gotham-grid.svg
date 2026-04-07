@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-label="Gotham inspired insight feature artwork">
+  <defs>
+    <linearGradient id="featBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050505"/>
+      <stop offset="1" stop-color="#171b24"/>
+    </linearGradient>
+    <pattern id="featGrid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#212733" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="featLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7a5a00"/>
+      <stop offset="0.55" stop-color="#f3c623"/>
+      <stop offset="1" stop-color="#ffe9a3"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="700" fill="url(#featBg)"/>
+  <rect width="900" height="700" fill="url(#featGrid)" opacity="0.78"/>
+  <g opacity="0.12" fill="#f3c623">
+    <circle cx="174" cy="142" r="120"/>
+    <circle cx="706" cy="564" r="144"/>
+  </g>
+  <g fill="none" stroke="url(#featLine)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M110 520h690" stroke-width="8"/>
+    <path d="M166 260c18-82 86-136 168-136 72 0 132 40 160 104 62 6 110 56 110 118 0 66-54 120-120 120H214c-66 0-120-54-120-120s54-120 120-120h22" stroke-width="7"/>
+    <path d="M212 260V112m108 82V84m108 112V122m108 150V168" stroke-width="5" opacity="0.82"/>
+    <path d="M184 548v88m90-88v70m92-70v102m92-102v84m90-84v66" stroke-width="4" opacity="0.78"/>
+    <path d="M232 470l-58 60m150-92-62 110m156-84-96 84m148-66-72 48" stroke-width="4" opacity="0.84"/>
+  </g>
+  <g fill="#f3c623">
+    <circle cx="212" cy="112" r="8"/>
+    <circle cx="320" cy="84" r="8"/>
+    <circle cx="536" cy="168" r="8"/>
+    <circle cx="174" cy="530" r="7"/>
+    <circle cx="266" cy="618" r="7"/>
+    <circle cx="450" cy="632" r="7"/>
+    <circle cx="640" cy="614" r="7"/>
+  </g>
+</svg>

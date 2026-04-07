@@ -1,0 +1,22 @@
+/* Homepage take over for non-en - Mixed media block - bottom padding */
+@media (min-width: 800px){
+  .mixedmediatextblock {
+      padding-bottom: 2.5%;
+  }
+}
+@media (min-width: 1100px){
+  .mixedmediatextblock {
+      padding-bottom: 6.5%;
+  }
+
+@media (min-width: 2500px) {
+    .rad-homepage-hero.rad-homepage-hero--medium.rad-homepage-hero--cross .rad-homepage-hero__headline {
+        font-size: calc(5.2vh + 1.6vw);
+    }
+}
+@media (min-width: 600px) and (max-width: 999px)  {
+    .rad-homepage-hero.rad-homepage-hero--medium.rad-homepage-hero--cross .rad-homepage-hero__headline {
+        font-size: calc(3vh + 2vw);
+    }
+}
+}

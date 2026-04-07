@@ -1,0 +1,109 @@
+:root {
+    --archon-bg: #090b0f;
+    --archon-bg-soft: #121722;
+    --archon-surface: #1a202b;
+    --archon-surface-2: #242d3b;
+    --archon-text: #e7ecf5;
+    --archon-text-dim: #a8b0bf;
+    --archon-accent: #f3c623;
+    --archon-accent-2: #ffe072;
+    --archon-border: rgba(243, 198, 35, 0.25);
+}
+
+html,
+body {
+    background: var(--archon-bg) !important;
+    color: var(--archon-text) !important;
+}
+
+body {
+    background-image:
+        radial-gradient(circle at 15% -10%, rgba(120, 135, 161, 0.15), transparent 36%),
+        radial-gradient(circle at 90% 0%, rgba(94, 163, 214, 0.12), transparent 30%);
+    background-attachment: fixed;
+}
+
+.rad-global-nav,
+.rad-global-nav__wrapper,
+.rad-global-nav__container,
+.custom-footer,
+.rad-global-nav__menu-item-content,
+.rad-global-nav__mobile-footer {
+    background: linear-gradient(180deg, var(--archon-bg-soft) 0%, var(--archon-bg) 100%) !important;
+    border-color: var(--archon-border) !important;
+}
+
+.rad-content-grid-card,
+.rad-card,
+.rad-awards-card,
+.rad-editorial-grid__card,
+.rad-client-carousel__content,
+.rad-global-nav__menu-item-content,
+.cmp-container {
+    background-color: var(--archon-surface) !important;
+    border-color: var(--archon-border) !important;
+}
+
+.rad-content-grid-card:hover,
+.rad-card:hover,
+.rad-awards-card:hover,
+.rad-editorial-grid__card:hover {
+    background-color: var(--archon-surface-2) !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.rad-button__text,
+.rad-content-grid-card__title,
+.editorial-grid-card__title,
+.ArchonLogo,
+.ArchonLogo__text {
+    color: var(--archon-text) !important;
+}
+
+p,
+li,
+.rad-content-grid-card__description,
+.editorial-grid-card__body,
+.custom-footer__copyright {
+    color: var(--archon-text-dim) !important;
+}
+
+a,
+.rad-global-nav__menu-items a,
+.rad-global-nav__menu-items button,
+.custom-footer a,
+.rad-global-nav__l2-link,
+.rad-global-nav__footer-link {
+    color: var(--archon-accent) !important;
+}
+
+a:hover,
+.rad-global-nav__menu-items a:hover,
+.rad-global-nav__menu-items button:hover,
+.custom-footer a:hover,
+.rad-global-nav__l2-link:hover,
+.rad-global-nav__footer-link:hover {
+    color: var(--archon-accent-2) !important;
+}
+
+.rad-button,
+.rad-icon-button,
+button,
+input,
+select,
+textarea {
+    border-color: var(--archon-border) !important;
+}
+
+.rad-button--primary,
+.rad-icon-button--primary,
+.hero_custom__cta__icon {
+    background: var(--archon-accent) !important;
+    color: #111317 !important;
+}
+
+.rad-button--primary:hover,
+.rad-icon-button--primary:hover,
+.hero_custom__cta:hover .hero_custom__cta__icon {
+    background: var(--archon-accent-2) !important;
+}
