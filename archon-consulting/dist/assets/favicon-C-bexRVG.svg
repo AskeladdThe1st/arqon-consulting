@@ -1,16 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
   <defs>
-    <linearGradient id="archonFaviconGlyph" x1="14" y1="52" x2="50" y2="12" gradientUnits="userSpaceOnUse">
+    <linearGradient id="archonFaviconGlyph" x1="16" y1="53" x2="50" y2="11" gradientUnits="userSpaceOnUse">
       <stop stop-color="#B88400"/>
       <stop offset="1" stop-color="#FFE072"/>
     </linearGradient>
-    <linearGradient id="archonFaviconFrame" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#2A3340"/>
-      <stop offset="1" stop-color="#11161F"/>
-    </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="18" fill="#090B0F"/>
-  <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#archonFaviconFrame)" stroke="#FFFFFF" stroke-opacity="0.06"/>
-  <path d="M6 58L29.6 6H34.8L58 58H47L43 48.4H21L17 58H6ZM24 39.2H40L32 19.4L24 39.2Z" fill="url(#archonFaviconGlyph)"/>
-  <path d="M40 30H49L42.8 43.6H34L40 30Z" fill="#090B0F" opacity="0.94"/>
+  <rect width="64" height="64" rx="14" fill="#050505"/>
+  <path d="M10 56L28.7 12H32.8L51 56H42.1L38.8 47.8H22.1L18.8 56H10ZM24.9 40.1H36L30.5 25.7L24.9 40.1Z" fill="url(#archonFaviconGlyph)"/>
+  <path d="M36.2 31.3H45L39.4 43.9H31.3L36.2 31.3Z" fill="#050505" opacity="0.92"/>
 </svg>
