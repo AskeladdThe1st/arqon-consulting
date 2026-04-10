@@ -3472,33 +3472,35 @@
 	    </div>
 
     <style>
-    #archon-horizontal-demo {
-        background: #000;
-        margin-top: clamp(2rem, 4vw, 3.5rem);
-        min-height: auto;
-        overflow-x: hidden;
+	    #archon-horizontal-demo {
+	        background: #000;
+	        --archon-horizontal-demo-header-offset: 0px;
+	        --archon-horizontal-demo-stage-height: 100vh;
+	        margin-top: clamp(2rem, 4vw, 3.5rem);
+	        min-height: auto;
+	        overflow-x: hidden;
         isolation: isolate;
         position: relative;
         z-index: 2;
     }
 
-    #archon-horizontal-demo-container {
-        display: flex;
-        flex-wrap: nowrap;
-        height: 100vh;
-        width: 400%;
-        will-change: transform;
-        transform: translate3d(0, 0, 0);
+	    #archon-horizontal-demo-container {
+	        display: flex;
+	        flex-wrap: nowrap;
+	        height: var(--archon-horizontal-demo-stage-height);
+	        width: 400%;
+	        will-change: transform;
+	        transform: translate3d(0, 0, 0);
     }
 
-    #archon-horizontal-demo .horizontal-section {
-        align-items: flex-end;
-        background-color: #000;
-        display: flex;
-        height: 100vh;
-        justify-content: flex-start;
-        overflow: hidden;
-        padding: clamp(1.5rem, 3.2vw, 3.25rem);
+	    #archon-horizontal-demo .horizontal-section {
+	        align-items: flex-end;
+	        background-color: #000;
+	        display: flex;
+	        height: var(--archon-horizontal-demo-stage-height);
+	        justify-content: flex-start;
+	        overflow: hidden;
+	        padding: clamp(1.5rem, 3.2vw, 3.25rem);
         position: relative;
         width: 100vw;
     }
@@ -3641,36 +3643,42 @@
         text-transform: uppercase;
     }
 
-        @media (max-width: 1024px) {
-        #archon-horizontal-demo-container {
-            grid-template-columns: 1fr;
-        }
+	        @media (max-width: 1024px) {
+	        #archon-horizontal-demo {
+	            --archon-horizontal-demo-stage-height: calc(100svh - var(--archon-horizontal-demo-header-offset));
+	        }
 
-        #archon-horizontal-demo .horizontal-section {
-            min-height: 72vh;
-            padding: 1rem;
-        }
+	        #archon-horizontal-demo-container {
+	            grid-template-columns: 1fr;
+	        }
 
-        #archon-horizontal-demo .heading {
-            font-size: clamp(2.05rem, 9vw, 3.1rem);
+	        #archon-horizontal-demo .horizontal-section {
+	            min-height: var(--archon-horizontal-demo-stage-height);
+	            padding: 0.9rem 1rem 1rem;
+	        }
+
+	        #archon-horizontal-demo .heading {
+	            font-size: clamp(2.05rem, 9vw, 3.1rem);
             letter-spacing: -0.02em;
             line-height: 1.02;
         }
 
-        #archon-horizontal-demo .archon-horizontal-demo__copy {
-            max-width: calc(100vw - 2rem);
-            padding: 1.15rem 1rem;
-        }
+	        #archon-horizontal-demo .archon-horizontal-demo__copy {
+	            max-width: calc(100vw - 2rem);
+	            padding: 1rem 0.95rem;
+	        }
 
-        #archon-horizontal-demo .archon-horizontal-demo__body,
-        #archon-horizontal-demo .archon-horizontal-demo__list li {
-            font-size: 0.95rem;
-        }
+	        #archon-horizontal-demo .archon-horizontal-demo__body,
+	        #archon-horizontal-demo .archon-horizontal-demo__list li {
+	            font-size: 0.92rem;
+	        }
 
-        #archon-horizontal-demo .archon-horizontal-demo__footer {
-            align-items: stretch;
-            flex-direction: column;
-        }
+	        #archon-horizontal-demo .archon-horizontal-demo__footer {
+	            align-items: stretch;
+	            flex-direction: column;
+	            gap: 0.7rem;
+	            margin-top: 1.05rem;
+	        }
 
         #archon-horizontal-demo .archon-horizontal-demo__cta,
         #archon-horizontal-demo .archon-horizontal-demo__tag {
@@ -4055,10 +4063,23 @@
             window.addEventListener("radTransitionFinished", initArchonBuildProcessTimeline);
         })();
     </script>
-	    <script type="text/javascript">
-	        (function () {
-            function teardownArchonHorizontalDemo(container) {
-                if (!container) return;
+		    <script type="text/javascript">
+		        (function () {
+	            function updateArchonHorizontalDemoStageMetrics() {
+	                var section = document.getElementById("archon-horizontal-demo");
+	                var header = document.querySelector(".rad-global-nav__wrapper") || document.querySelector(".rad-global-nav");
+	                var headerHeight = 0;
+
+	                if (!section) return;
+	                if (window.matchMedia && window.matchMedia("(max-width: 1024px)").matches && header) {
+	                    headerHeight = Math.round(header.getBoundingClientRect().height);
+	                }
+
+	                section.style.setProperty("--archon-horizontal-demo-header-offset", headerHeight + "px");
+	            }
+
+	            function teardownArchonHorizontalDemo(container) {
+	                if (!container) return;
 
                 if (container.__archonHorizontalTween) {
                     if (container.__archonHorizontalTween.scrollTrigger) {
@@ -4072,13 +4093,14 @@
                 delete container.dataset.gsapInitialized;
             }
 
-            function initArchonHorizontalDemo() {
-                var container = document.getElementById("archon-horizontal-demo-container");
-                if (!container || container.dataset.gsapInitialized === "true") return;
-		                if (!window.gsap || !window.ScrollTrigger) return;
-		                if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+	            function initArchonHorizontalDemo() {
+	                var container = document.getElementById("archon-horizontal-demo-container");
+	                if (!container || container.dataset.gsapInitialized === "true") return;
+			                if (!window.gsap || !window.ScrollTrigger) return;
+			                if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-		                container.dataset.gsapInitialized = "true";
+			                updateArchonHorizontalDemoStageMetrics();
+			                container.dataset.gsapInitialized = "true";
 
 		                gsap.registerPlugin(ScrollTrigger);
 
@@ -4107,17 +4129,24 @@
 	                    }
 	                });
 	                container.__archonHorizontalTween = horizontalTween;
-	            }
-		            window.addEventListener("load", initArchonHorizontalDemo);
-		            window.addEventListener("radTransitionFinished", initArchonHorizontalDemo);
-                window.addEventListener("resize", function () {
-                    var container = document.getElementById("archon-horizontal-demo-container");
+		            }
+			            window.addEventListener("load", function () {
+			                updateArchonHorizontalDemoStageMetrics();
+			                initArchonHorizontalDemo();
+			            });
+			            window.addEventListener("radTransitionFinished", function () {
+			                updateArchonHorizontalDemoStageMetrics();
+			                initArchonHorizontalDemo();
+			            });
+	                window.addEventListener("resize", function () {
+	                    var container = document.getElementById("archon-horizontal-demo-container");
 
-                    clearTimeout(window.__archonHorizontalDemoResizeTimer);
-                    window.__archonHorizontalDemoResizeTimer = setTimeout(function () {
-                        if (!container) return;
-                        teardownArchonHorizontalDemo(container);
-                        initArchonHorizontalDemo();
+	                    clearTimeout(window.__archonHorizontalDemoResizeTimer);
+	                    window.__archonHorizontalDemoResizeTimer = setTimeout(function () {
+	                        if (!container) return;
+	                        updateArchonHorizontalDemoStageMetrics();
+	                        teardownArchonHorizontalDemo(container);
+	                        initArchonHorizontalDemo();
 
                         if (window.ScrollTrigger) {
                             ScrollTrigger.refresh();

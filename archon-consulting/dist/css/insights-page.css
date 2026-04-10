@@ -444,34 +444,35 @@ img {
 
 @media (min-width: 721px) and (max-width: 1024px) {
   .insights-hero__grid {
-    grid-template-columns: minmax(0, 0.74fr) minmax(0, 1.26fr);
-    gap: 22px;
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+    gap: 28px;
     align-items: center;
   }
 
   .insights-hero__content {
-    max-width: 23rem;
+    max-width: none;
   }
 
   .insights-hero__title {
-    font-size: clamp(1.95rem, 3.4vw, 2.9rem);
-    line-height: 0.97;
+    max-width: 8ch;
+    font-size: clamp(2.7rem, 4.8vw, 4rem);
+    line-height: 0.94;
   }
 
   .insights-hero__copy {
-    max-width: 23rem;
-    font-size: 0.92rem;
-    line-height: 1.54;
+    max-width: 31rem;
+    font-size: 1rem;
+    line-height: 1.64;
   }
 
   .insights-hero__actions {
-    gap: 12px;
-    margin-top: 22px;
+    gap: 14px;
+    margin-top: 24px;
   }
 
   .insights-button {
-    min-height: 48px;
-    padding: 0 18px;
+    min-height: 50px;
+    padding: 0 20px;
   }
 
   .insights-hero__media {
@@ -482,7 +483,7 @@ img {
 
   .insights-hero-art {
     width: 100%;
-    min-height: 500px;
+    min-height: 420px;
   }
 
   .insights-hero-art__image {
