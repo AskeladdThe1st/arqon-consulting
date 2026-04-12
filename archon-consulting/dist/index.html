@@ -32,7 +32,7 @@
       content="Archon designs and deploys structured AI and cloud systems that move beyond experimentation."
     >
     <meta itemprop="image" content="/images/hero/cloud.png">
-    <link rel="canonical" href="/assets/index-B8mrh5EW.html">
+    <link rel="canonical" href="/assets/index-NAclebdV.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Archon | AI Transformation, Engineered">
     <meta
@@ -4185,28 +4185,27 @@
 
 		                gsap.registerPlugin(ScrollTrigger);
 
-                var totalPanels = container.querySelectorAll(".horizontal-section").length;
-                gsap.set(container, { xPercent: 0 });
+	                var totalPanels = container.querySelectorAll(".horizontal-section").length;
+	                gsap.set(container, { xPercent: 0 });
 
 	                var horizontalTween = gsap.to(container, {
 	                    xPercent: -100 * (totalPanels - 1) / totalPanels,
 	                    ease: "none",
 	                    lazy: false,
-                    scrollTrigger: {
-                        trigger: "#archon-horizontal-demo",
-                        start: "top top",
-                        pin: true,
-                        pinType: "fixed",
-                        pinSpacing: true,
-                        scrub: 0.85,
-                        refreshPriority: 1,
-                        anticipatePin: 1,
-                        fastScrollEnd: false,
-                        invalidateOnRefresh: true,
-                        end: function () {
-                            var travelDistance = Math.max(container.scrollWidth - window.innerWidth, 0);
-	                            return "+=" + Math.max(travelDistance * 1.7, window.innerWidth * 2.5);
-	                        }
+	                    scrollTrigger: {
+	                        trigger: "#archon-horizontal-demo",
+	                        start: "top top",
+	                        pin: true,
+	                        pinSpacing: true,
+	                        scrub: 0.85,
+	                        refreshPriority: 1,
+	                        anticipatePin: 1,
+	                        fastScrollEnd: false,
+	                        invalidateOnRefresh: true,
+	                        end: function () {
+	                            var travelDistance = Math.max(container.scrollWidth - window.innerWidth, 0);
+		                            return "+=" + Math.max(travelDistance * 1.7, window.innerWidth * 2.5);
+		                        }
 	                    }
 	                });
 	                container.__archonHorizontalTween = horizontalTween;
