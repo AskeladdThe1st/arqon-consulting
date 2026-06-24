@@ -4,6 +4,7 @@ const { defineConfig } = require("vite");
 
 const rootDir = __dirname;
 const staticDirs = ["css", "fonts", "images", "js"];
+const staticFiles = ["sitemap.xml", "robots.txt"];
 
 const pageInputs = [
   "index.html",
@@ -38,6 +39,17 @@ module.exports = defineConfig({
 
           rmSync(targetDir, { recursive: true, force: true });
           cpSync(sourceDir, targetDir, { recursive: true });
+        });
+
+        staticFiles.forEach((fileName) => {
+          const sourceFile = resolve(rootDir, fileName);
+          const targetFile = resolve(distDir, fileName);
+
+          if (!existsSync(sourceFile)) {
+            return;
+          }
+
+          cpSync(sourceFile, targetFile);
         });
       },
     },
